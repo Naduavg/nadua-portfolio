@@ -1,0 +1,557 @@
+/* =============== BASISSTIJLEN =============== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "avenir-next-lt-pro", sans-serif;
+font-weight: 80;
+font-style: normal;
+  display: flex;
+  justify-content: center;
+  font-size: 1vw;
+}
+
+.alles {
+  width: 90%;
+  display: flex;
+justify-self: center;
+margin-top: 27%;
+}
+
+/* typografie*/
+
+
+h1{
+    /*background-color: #14580C;*/
+    text-align: center;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+}
+
+
+.titel{
+  font-family: "Capriola", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "meursault-variable", serif;
+  font-variation-settings: "wdth" 100, "wght" 600;
+  font-size: 300%;
+  color: rgb(0, 0, 0);
+}
+
+p{
+  font-family: "avenir-next-lt-pro", sans-serif;
+font-weight: 80;
+font-style: normal;
+  text-align: center;
+  font-size: 100%;
+}
+
+/* =============== TABBEN MENU =============== */
+/* menu balk*/
+.menu{
+  display: flex;
+  justify-content: space-around;
+}
+
+.tablink {
+  font-family: "avenir-next-lt-pro", sans-serif;
+font-weight: 80;
+font-style: normal;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1% 1%;
+  font-size: 1.3vw;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tablink:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
+  padding: 1% 1%;
+}
+
+.tabcontent {
+  color: rgb(0, 0, 0);
+  display: none;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.tabmenu {
+  display: flex;
+  flex-wrap: wrap; /* zorgt dat knoppen op kleinere schermen afbreken */
+  justify-content: space-between;
+  gap: 0.5em;
+  margin: 1em auto;
+  padding: 0.5em 0;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* =============== FOTOGRAFIE =============== */
+
+.select {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+.select:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+}
+
+
+.uitleg{
+  font-size: 110%;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.header-container {
+  position: relative;
+  width: 100vw;
+  height: auto;
+}
+
+#headerlaag1{
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  height: auto;
+  border-radius: 0%;
+}
+
+#headerlaag2{
+  position: absolute;
+  z-index: 2;
+  width: 15.7%;
+  height: auto;
+  display: flex;
+  justify-self: center;
+  margin-left: 11.5%;
+  margin-top: 3%;
+  animation-name: headerfoto;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.titelnaam{
+  text-align: right;
+  display: flex;
+  justify-self: end;
+  position: absolute;
+  font-family: "powell", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 6vw; 
+  font-style: normal;
+  font-weight: 70;
+  z-index: 3;
+  margin-top: 5.4%; 
+  margin-right: 53%;
+  line-height: 0.6;
+  animation-name: headernaam;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+
+.headersubtekst{
+  position: absolute;
+  z-index: 5;
+  width: 15%;
+  height: auto;
+  display: flex;
+  justify-self: center;
+  margin-left: 43%;
+  margin-top: 13.8%;
+  line-height: 1;
+  color: rgb(151, 158, 108);
+  font-size: 3.6vw; 
+  animation-name: headersubtekst;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  font-variation-settings: "wght" 600, "wdth" 1;
+}
+
+.titelsmiley{
+  text-align: right;
+  display: flex;
+  justify-self: center;
+  position: absolute;
+  font-family: "powell", sans-serif;
+  color: rgb(151, 158, 108);
+  font-size: 7vw; 
+  font-style: normal;
+  font-weight: 70;
+  z-index: 3;
+  margin-top: 18%;
+  margin-left: 90%;
+  line-height: 0.6;
+  animation-name: headersubtekst;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.titelsmiley:hover {
+  font-size: 900%;
+  transform: scale(1.5);
+}
+
+
+.top{
+position: absolute;
+z-index: 6;
+opacity: 20%;
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+}
+
+figure{
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 100%;
+    border-radius: 8px;
+}
+figcaption {
+  text-align: center;
+  margin-top: 0.3em;
+}
+
+.fotorij{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2%;
+    padding-bottom: 2%;
+    justify-content: space-between;
+}
+
+  
+
+.fotocollumn{
+  display: flex;
+  flex-direction: column;
+  column-gap: 2%;
+  padding-bottom: 2%;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.fotoik{
+margin-left: 30%;
+margin-right: 30%;
+width: 40%;
+border-style: solid;
+border-width: 10px;
+border-color: rgb(151, 158, 108);
+}
+
+
+.fotosize{
+  height: 180px;    /* alle afbeeldingen dezelfde hoogte */
+  width: auto;      /* breedte past zich aan om verhoudingen te behouden */
+  max-width: 100%;
+  flex-shrink: 0;   /* voorkomt dat afbeeldingen kleiner worden dan hun proportie */
+  object-fit: cover; /* zorgt dat afbeelding netjes binnen de hoogte past */
+}
+
+
+.contenthobby{
+  display: flex;
+  align-self: center;
+  width: 80%;
+  flex-direction: column; /* Standaard verticale layout */
+  align-items: center;    /* Centreert alle children horizontaal */
+}
+
+
+.kopje{
+font-size: 140%;
+display: flex;
+justify-content: center;
+}
+
+.kopjeVideo{
+  font-size: 100%;
+  display: flex;
+  justify-content: center;
+  }
+
+.uitlegonderproject{
+  font-size: 110%;
+  margin-bottom: 5%;
+  letter-spacing: 1px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+
+.footer{
+  display: block;
+  font-style: italic;
+  unicode-bidi: isolate;
+  font-size: 70%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.video {
+  width: 100%;       /* Vul de hele breedte van de container */
+  height: auto;      /* Behoud aspect-ratio */
+  border-radius: 1em;
+  display: block;
+  object-fit: cover; /* Geen extra ruimte, vult container */
+  aspect-ratio: 16 / 9; /* Zorgt voor consistente hoogte */
+
+}
+
+.videocategorien {
+  display: flex;
+  gap: 2%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.videocategorien > div {
+  flex: 0 0 49%; /* Twee kolommen van 49%, plus 2% gap = 100% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.video4kant {
+  width: 100%;       /* Vul de hele breedte van de container */
+  height: auto;      /* Behoud aspect-ratio */
+  border-radius: 1em;
+  display: block;
+  object-fit: cover; /* Geen extra ruimte, vult container */
+  aspect-ratio: 1 / 1; /* Zorgt voor consistente hoogte */
+}
+
+.fotospaginas{
+  width: 75%;
+  justify-self: center;
+}
+
+.fotosnaast{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+.fotosnaast4boven{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.fotosnaastoneven{
+  width: 100%;
+  display: flex;
+  gap: 2%; /* ruimte tussen de foto's */
+  justify-content: space-between;
+  height: auto;
+  align-items: flex-start; /* zorgt dat de bovenkanten gelijk zijn */
+  margin-bottom: 5%;
+}
+
+.fotosnaastonevenboven{
+  width: 100%;
+  display: flex;
+  gap: 2%; /* ruimte tussen de foto's */
+  justify-content: space-between;
+  height: auto;
+  align-items: flex-start; /* zorgt dat de bovenkanten gelijk zijn */
+  margin-bottom: 2%;
+}
+
+
+#scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(151, 158, 108);
+  color: white;
+  padding: 0px 0;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.balktekst{
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+}
+
+.balktekststyle{
+  font-family: "powell", sans-serif;
+  font-style: normal;
+  font-weight: 70;
+  font-size: 2vw;
+  margin: 1%;
+}
+
+#scroll-bar.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+@media (max-width: 800px) {
+
+  body{
+    font-size: 2.2vw;
+    width: 100%;
+  }
+
+  #headerlaag1{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    margin-top: -30%;
+    border-radius: 0%;
+  }
+  
+  #headerlaag2{
+  display: none;
+  }
+
+  .headersubtekst{
+    z-index: 4;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    font-size: 4vw;
+    margin-top: 8%;
+    margin-left: 17%;
+  }
+
+.titelnaam{
+  margin-top: 5%;
+  margin-right: 50;
+  font-size: 8vw;
+}
+
+.titelsmiley{
+  color: rgb(255, 255, 255);
+  margin-top: 15%;
+}
+
+
+.titelsmiley:hover{
+font-size: 6vw;
+}
+
+
+  .fotorij {
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .fotoik {
+    width: 80%;
+    display: flex;
+    align-self: center;
+  }
+
+  .tablink {
+    width: 90%;
+  }
+
+  .tabmenu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tablink {
+    width: 90%;
+    font-size: 3.3vw;
+  }
+
+  p, .uitleg, .uitlegonderproject {
+    margin: 1em 5%;
+    font-size: 3vw;
+  }
+
+  .videocategorien > div {
+    flex: 0 0 100%;
+  }
+  
+  .balktekststyle{
+    font-size: 5vw;
+    margin: 1%;
+  }
+
+
+  
+}
+
+/*     Animatie    */
+@keyframes headerfoto{
+  0%{ transform: translateX(1000px); }
+  100%{ transform: translateX(0px); }
+}
+
+@keyframes headernaam{
+  0%{ transform: translateY(-500px); }
+  100%{ transform: translateY(0px); }
+}
+
+@keyframes headersubtekst{
+  0%{ transform: translateX(2000px); }
+  100%{ transform: translateX(0px); }
+}
+
+
