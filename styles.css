@@ -6,16 +6,18 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "avenir-next-lt-pro", sans-serif;
-font-weight: 80;
-font-style: normal;
+  font-family: "brevia", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   display: flex;
   justify-content: center;
   font-size: 1vw;
+
 }
 
 .alles {
-  width: 90%;
+  margin-left: 10vw;
+  margin-right: 10vw;
   display: flex;
 justify-self: center;
 margin-top: 27%;
@@ -25,6 +27,9 @@ margin-top: 27%;
 
 
 h1{
+  font-family: "aptly", sans-serif;
+font-weight: 500;
+font-style: normal;
     /*background-color: #14580C;*/
     text-align: center;
     color: rgb(0, 0, 0);
@@ -34,22 +39,24 @@ h1{
 
 
 .titel{
-  font-family: "Capriola", sans-serif;
-  font-weight: 400;
+  font-family: "aptly", sans-serif;
+  font-weight: 500;
   font-style: normal;
 }
 
 h3 {
-  font-family: "meursault-variable", serif;
+  font-family: "puffin-display-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   font-variation-settings: "wdth" 100, "wght" 600;
   font-size: 300%;
   color: rgb(0, 0, 0);
 }
 
 p{
-  font-family: "avenir-next-lt-pro", sans-serif;
-font-weight: 80;
-font-style: normal;
+  font-family: "brevia", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   text-align: center;
   font-size: 100%;
 }
@@ -58,13 +65,13 @@ font-style: normal;
 /* menu balk*/
 .menu{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .tablink {
-  font-family: "avenir-next-lt-pro", sans-serif;
-font-weight: 80;
-font-style: normal;
+  font-family: "puffin-display-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   border: none;
@@ -99,7 +106,6 @@ font-style: normal;
   gap: 0.5em;
   margin: 1em auto;
   padding: 0.5em 0;
-  max-width: 1200px;
   width: 100%;
 }
 
@@ -163,15 +169,17 @@ font-style: normal;
   display: flex;
   justify-self: end;
   position: absolute;
-  font-family: "powell", sans-serif;
-  color: rgb(255, 255, 255);
-  font-size: 6vw; 
+  font-family: "aptly", sans-serif;
+  font-weight: 500;
   font-style: normal;
-  font-weight: 70;
+  color: rgb(255, 255, 255);
+  font-size: 7vw; 
   z-index: 3;
-  margin-top: 5.4%; 
+  margin-top: 4%; 
   margin-right: 55%;
-  line-height: 0.6;
+  line-height: 0.7;
+  letter-spacing: -0.3vw;
+  font-stretch: condensed;
   animation-name: headernaam;
   animation-duration: 1s;
   animation-iteration-count: 1;
@@ -198,6 +206,9 @@ font-style: normal;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-fill-mode: both;
+  font-family: "aptly", sans-serif;
+  font-weight: 900;
+  font-style: normal;
   font-variation-settings: "wght" 600, "wdth" 1;
 }
 
@@ -206,7 +217,6 @@ font-style: normal;
   display: flex;
   justify-self: center;
   position: absolute;
-  font-family: "powell", sans-serif;
   z-index: 3;
   margin-top: 13%;
   margin-left: 90%;
@@ -218,7 +228,7 @@ font-style: normal;
   animation-fill-mode: both;
   width: 9vw;
   cursor: pointer;
-  transition: ease-in-out;
+  transition: ease-in-out;  
   transition-duration: 220ms;
 }
 
@@ -327,8 +337,6 @@ justify-content: center;
   margin-right: 10%;
 }
 
-
-
 .footer{
   display: block;
   font-style: italic;
@@ -336,7 +344,15 @@ justify-content: center;
   font-size: 70%;
   margin-top: 5%;
   margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.logorond{
+  width: 7vw;
+
+  }
 
 .video {
   width: 100%;       /* Vul de hele breedte van de container */
@@ -429,8 +445,6 @@ justify-content: center;
   justify-content: center;
 }
 
-
-
 .balktekst{
   display: flex;
   justify-content: space-between;
@@ -439,12 +453,12 @@ justify-content: center;
 }
 
 .balktekststyle{
-  font-family: "powell", sans-serif;
-  font-style: normal;
-  font-weight: 70;
+  font-family: "aptly", sans-serif;
+font-weight: 500;
+font-style: normal;
   font-size: 2vw;
   margin-top: 1%;
-  margin-bottom: 0%;
+  margin-bottom: 1%;
 }
 
 #scroll-bar.visible {
@@ -453,7 +467,13 @@ justify-content: center;
 }
 
 
+.wit{
+  display: none;
+}
 
+.groen{
+  display: unset;
+}
 
 @media (max-width: 800px) {
 
@@ -480,25 +500,30 @@ justify-content: center;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
-    font-size: 4vw;
-    margin-top: 8%;
-    margin-left: 17%;
+    font-family: "aptly", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 6.7vw;
+    margin-top: 3%;
+    margin-left: 10%;
   }
 
 .titelnaam{
-  margin-top: 5%;
+  margin-top: 3%;
   margin-right: 50;
-  font-size: 8vw;
+  font-size: 9vw;
 }
 
 .titelsmiley{
   color: rgb(255, 255, 255);
-  margin-top: 15%;
+  margin-top: 3%;
+  margin-left: 80vw;
+  width: 14vw;
 }
 
-
 .titelsmiley:hover{
-font-size: 6vw;
+  margin-top: 6%;
+  width: 12vw;
 }
 
 
@@ -543,6 +568,13 @@ font-size: 6vw;
   }
 
 
+  .wit{
+    display: unset;
+  }
+  
+  .groen{
+    display: none;
+  }
   
 }
 
@@ -563,3 +595,40 @@ font-size: 6vw;
 }
 
 
+
+
+/* 
+
+titel med
+font-family: "aptly", sans-serif;
+font-weight: 500;
+font-style: normal;
+
+titel black
+font-family: aptly, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+kopje
+font-family: "puffin-display-soft", sans-serif;
+font-weight: 500;
+font-style: normal;
+
+algemene tekst light
+font-family: "brevia", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+algemene tekst reg
+font-family: "brevia", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+algemene tekst mid
+font-family: "brevia", sans-serif;
+font-weight: 500;
+font-style: normal;
+
+
+
+*/
