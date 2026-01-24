@@ -408,7 +408,7 @@ justify-content: center;
 .fotosnaastoneven{
   width: 100%;
   display: flex;
-  gap: 2%; /* ruimte tussen de foto's */
+  gap: 2vw; /* ruimte tussen de foto's */
   justify-content: space-between;
   height: auto;
   align-items: flex-start; /* zorgt dat de bovenkanten gelijk zijn */
@@ -418,7 +418,7 @@ justify-content: center;
 .fotosnaastonevenboven{
   width: 100%;
   display: flex;
-  gap: 2%; /* ruimte tussen de foto's */
+  gap: 2vw; /* ruimte tussen de foto's */
   justify-content: space-between;
   height: auto;
   align-items: flex-start; /* zorgt dat de bovenkanten gelijk zijn */
@@ -466,6 +466,9 @@ font-style: normal;
   pointer-events: auto;
 }
 
+.scrollloggo{
+  width: 3vw;
+}
 
 .wit{
   display: none;
@@ -474,6 +477,12 @@ font-style: normal;
 .groen{
   display: unset;
 }
+
+.hamburger {
+  display: none;
+}
+
+
 
 @media (max-width: 800px) {
 
@@ -544,17 +553,19 @@ justify-content: space-around;
 
 .fotospaginas{
   width: 95%;
-display: flex;  
-justify-self: center;
+  display: flex;
+  gap: 1vw;
+  flex-direction: column;
 }
 
 
-
-
+.logorond{
+  width: 17vw;
+  }
 
   .fotorij {
     flex-direction: column;
-    gap: 1em;
+    gap: 1vw;
     align-items: center;
   }
 
@@ -589,7 +600,7 @@ justify-self: center;
   
   .balktekststyle{
     font-size: 5vw;
-    margin: 1%;
+    margin: 2vw;
   }
 
 
@@ -601,11 +612,94 @@ justify-self: center;
     display: none;
   }
   
+  .scrollloggo{
+    width: 7vw;
+    margin-top: 0vw;
+  }
+
   .breederijfotos{
     width: 95%;
     justify-self: center;
   }  
+
+/* ===== Hamburger menu (alleen mobile) ===== */
+
+
+  /* hamburger zichtbaar */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 2000;
+    background: none;
+    border: none;
+    font-size: 8vw;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+
+  /* tabmenu = overlay */
+  .tabmenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: 50vw;
+    background-color: rgba(255, 255, 255, 0.98);
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 2rem;
+    gap: 1vw;
+    border-radius: 3vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  /* open toestand */
+  .tabmenu.open {
+    transform: translateX(0);
+  }
+
+  .tablink {
+    width: 100%;
+    text-align: left;
+    font-size: 4.5vw;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.98);
+  }
+
+  .menu-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+  }
+  
+  .menu-title {
+    font-family: "puffin-display-soft", sans-serif;
+    font-size: 6vw;
+    font-weight: 500;
+  }
+  
+  .menu-close {
+    background: none;
+    border: none;
+    font-size: 6vw;
+    cursor: pointer;
+  }
+
 }
+
+
+
+
+
 /*     Animatie    */
 @keyframes headerfoto{
   0%{ transform: translateX(1000px); }
