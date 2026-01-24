@@ -627,17 +627,33 @@ justify-content: space-around;
 
   /* hamburger zichtbaar */
   .hamburger {
-    display: block;
+    display: flex;
     position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 2000;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 3000;
     background: none;
     border: none;
     font-size: 8vw;
     cursor: pointer;
     color: rgb(255, 255, 255);
+
+    width: 40px;
+    height: 27px;
+
+    flex-direction: column;
+  justify-content: space-between;
+
   }
+
+  .hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+  }
+
 
   /* tabmenu = overlay */
   .tabmenu {
@@ -688,11 +704,33 @@ justify-content: space-around;
   }
   
   .menu-close {
+    width: 20px;
+    height: 20px;
+    position: relative;
     background: none;
     border: none;
-    font-size: 6vw;
     cursor: pointer;
   }
+  
+  .menu-close::before,
+  .menu-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+  }
+  
+  .menu-close::before {
+    transform: rotate(45deg);
+  }
+  
+  .menu-close::after {
+    transform: rotate(-45deg);
+  }
+  
 
 }
 
