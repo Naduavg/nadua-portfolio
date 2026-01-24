@@ -625,16 +625,14 @@ justify-content: space-around;
 
   /* hamburger zichtbaar */
   .hamburger {
-    display: flex;
-    position: fixed; 
+    position: fixed;
+    top: 4vw;
+    right: 4vw;
+    width: 12vw;
     z-index: 3000;
     background: none;
     border: none;
-    cursor: pointer;
-    width: 12vw;
-    height: auto;
-    margin-top: 9vw;
-    right: 9vw;
+    padding: 0;
   }
 
   .hamburger img {
