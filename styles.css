@@ -261,9 +261,8 @@ figure{
 
 img{
     width: 100%;
-    border-radius: 0.8vw;
+    border-radius: 8px;
 }
-
 figcaption {
   text-align: center;
   margin-top: 0.3em;
@@ -389,9 +388,9 @@ justify-content: center;
   aspect-ratio: 1 / 1; /* Zorgt voor consistente hoogte */
 }
 
-.fotospaginas {
-  margin-left: auto;
-  margin-right: auto;
+.fotospaginas{
+  width: 75%;
+  justify-self: center;
 }
 
 .fotosnaast{
@@ -487,9 +486,6 @@ font-style: normal;
 
 @media (max-width: 800px) {
 
-
-
-
   body{
     font-size: 2.2vw;
     width: 100%;
@@ -538,16 +534,22 @@ justify-content: space-around;
   margin-top: 27%;
   }
 
-  img{
-    border-radius: 1.3vw;
-}
-
 
 .titelnaam{
   font-size: 9vw;
 }
 
+.titelsmiley{
+  color: rgb(255, 255, 255);
+  margin-top: 3%;
+  margin-left: 80vw;
+  width: 14vw;
+}
 
+.titelsmiley:hover{
+  margin-top: 6%;
+  width: 12vw;
+}
 
 .fotospaginas{
   width: 95%;
@@ -625,51 +627,17 @@ justify-content: space-around;
 
   /* hamburger zichtbaar */
   .hamburger {
+    display: block;
     position: fixed;
-    top: 4vw;
-    right: 4vw;
-    width: 12vw;
-    z-index: 3000;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 2000;
     background: none;
     border: none;
-    padding: 0;
+    font-size: 8vw;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
   }
-
-  .hamburger img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-
-
-  
-  .titelsmiley{
-    margin-top: 0vw;
-    margin-right: auto;
-    transition: none;
-
-  }
-
-
-  .tabmenu *:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-  .tablink *:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-
-.titelsmiley:hover {
-  margin-top: auto;
-  margin-right: auto;
-  width: auto;
-  transition: none;
-  box-shadow: none;
-}
-
 
   /* tabmenu = overlay */
   .tabmenu {
@@ -678,7 +646,7 @@ justify-content: space-around;
     right: 0;
     height: auto;
     width: 50vw;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.98);
     z-index: 1500;
     display: flex;
     flex-direction: column;
@@ -697,9 +665,6 @@ justify-content: space-around;
     transform: translateX(0);
   }
 
-
-
-
   .tablink {
     width: 100%;
     text-align: left;
@@ -707,15 +672,6 @@ justify-content: space-around;
     padding: 2vw;
     background-color: rgba(255, 255, 255, 0.98);
   }
-
-  .tablink:hover,
-  .tablink:active,
-  .tablink:focus {
-    transform: none;
-    box-shadow: none;
-    transition: none;
-  }
-
 
   .menu-header {
     width: 100%;
@@ -726,53 +682,21 @@ justify-content: space-around;
   }
   
   .menu-title {
-    font-family: "aptly", sans-serif;
-    font-size: 7vw;
+    font-family: "puffin-display-soft", sans-serif;
+    font-size: 6vw;
     font-weight: 500;
   }
   
   .menu-close {
-    width: 5vw;
-    height: 5vw;
-    position: relative;
     background: none;
     border: none;
+    font-size: 6vw;
     cursor: pointer;
   }
-  
-  .menu-close::before,
-  .menu-close::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: black;
-  }
-  
-  .menu-close::before {
-    transform: rotate(45deg);
-  }
-  
-  .menu-close::after {
-    transform: rotate(-45deg);
-  }
-  
-
 
 }
 
 
-@media (hover: none) {
-  .tablink:hover,
-  .select:hover,
-  .titelsmiley:hover,
-  .hamburger:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-}
 
 
 
