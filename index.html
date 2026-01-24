@@ -42,7 +42,9 @@
 					
 					<h1 class="titelsmiley" id="balk">
 						<img src="beeldthumbnails/header/FullBLOEMHAND.png" alt="logofull" class="groen">
-						<img src="beeldthumbnails/header/FullWitBLOEMHAND.png" alt="logofull" class="wit">
+						<button class="hamburger" id="hamburger" aria-label="Menu openen" class="wit">
+							☰
+						  </button>
 					</h1>
 				</div>
 					<!-- <img src="beeld/HEADER.png" alt="header" class="top"> -->
@@ -52,15 +54,25 @@
 						<p class="balktekststyle">
 							Nadua van Gorkum
 						</p>
-						<p class="balktekststyle">
-							<img src="beeldthumbnails/header/LogoWitBLOEMHAND.png" alt="logowit" style="width: 3vw;">
+						<p >
+							<img src="beeldthumbnails/header/LogoWitBLOEMHAND.png" alt="logowit" class="scrollloggo">
 						</p>
 						</div>
 					  </div>
 <div class="alles" >
 				<div id="menu"> 
 	<!-- menu tabs-->
+
+
+
 	<div class="tabmenu">
+		<div class="menu-header">
+			<span class="menu-title">Menu</span>
+			<button class="menu-close" id="menuClose" aria-label="Menu sluiten">
+			  ✕
+			</button>
+		  </div>
+		  
 						<button class="tablink" onclick="openPage('fotografie', this, 'rgba(198, 228, 201)')" id="defaultOpen">fotografie.</button>
 						<button class="tablink" onclick="openPage('video', this, 'rgba(198, 228, 201)')">video.</button>
 						<button class="tablink" onclick="openPage('gamedesign', this, 'rgba(198, 228, 201)')">game design.</button>
@@ -70,6 +82,7 @@
 					<!-- 	<button class="tablink" onclick="openPage('hobby', this, 'rgba(198, 228, 201)')">hobby's.</button> -->
 						<button class="tablink" onclick="openPage('overmij', this, 'rgba(198, 228, 201)')">over mij.</button>
 					</div>
+					
 					<div>
 	<!-- fotografie-->	
 						<!-- fotografie -->
@@ -982,6 +995,7 @@
 						<div id="overmij" class="tabcontent">
 							<h3>Over mij.</h3>
 							<p class="uitleg">
+
 							<figure>
 								<img src="beeldthumbnails/ik.jpg" alt="ik" class="fotoik" style="border-radius: auto;">
 								<figcaption>me.</figcaption>
