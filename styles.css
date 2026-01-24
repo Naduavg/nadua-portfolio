@@ -261,8 +261,9 @@ figure{
 
 img{
     width: 100%;
-    border-radius: 8px;
+    border-radius: 0.8vw;
 }
+
 figcaption {
   text-align: center;
   margin-top: 0.3em;
@@ -486,6 +487,9 @@ font-style: normal;
 
 @media (max-width: 800px) {
 
+
+
+
   body{
     font-size: 2.2vw;
     width: 100%;
@@ -533,6 +537,10 @@ justify-content: space-around;
   justify-self: center;
   margin-top: 27%;
   }
+
+  img{
+    border-radius: 1.3vw;
+}
 
 
 .titelnaam{
@@ -629,12 +637,32 @@ justify-content: space-around;
     right: 9vw;
   }
 
+  .hamburger img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+
+  
   .titelsmiley{
     margin-top: 0vw;
     margin-right: auto;
+    transition: none;
+
   }
 
-  
+
+  .tabmenu *:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .tablink *:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
 
 .titelsmiley:hover {
   margin-top: auto;
@@ -682,13 +710,12 @@ justify-content: space-around;
     background-color: rgba(255, 255, 255, 0.98);
   }
 
-  .tablink:hover {
+  .tablink:hover,
+  .tablink:active,
+  .tablink:focus {
+    transform: none;
     box-shadow: none;
-    padding: 0;
-    font-size: 4.5vw;
     transition: none;
-    padding: auto;
-    scale: none;
   }
 
 
@@ -735,9 +762,19 @@ justify-content: space-around;
   }
   
 
+
 }
 
 
+@media (hover: none) {
+  .tablink:hover,
+  .select:hover,
+  .titelsmiley:hover,
+  .hamburger:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
 
 
 
