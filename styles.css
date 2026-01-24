@@ -544,8 +544,10 @@ justify-content: space-around;
 
 .fotospaginas{
   width: 95%;
-  justify-self: center;
+display: flex;  
+justify-self: center;
 }
+
 
 
 
