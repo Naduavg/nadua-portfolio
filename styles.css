@@ -637,10 +637,9 @@ justify-content: space-around;
     font-size: 8vw;
     cursor: pointer;
     color: rgb(255, 255, 255);
-    background-color: rgb(0, 104, 56);
 
-    width: 50px;
-    height: 34px;
+    width: 12vw;
+    height: 8vw;
 
     flex-direction: column;
   justify-content: space-between;
@@ -652,7 +651,6 @@ justify-content: space-around;
     height: 4px;
     width: 100%;
     background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
     border-radius: 2px;
   }
 
@@ -706,8 +704,8 @@ justify-content: space-around;
   }
   
   .menu-close {
-    width: 20px;
-    height: 20px;
+    width: 5vw;
+    height: 5vw;
     position: relative;
     background: none;
     border: none;
