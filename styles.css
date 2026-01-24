@@ -700,8 +700,8 @@ justify-content: space-around;
   }
   
   .menu-title {
-    font-family: "puffin-display-soft", sans-serif;
-    font-size: 6vw;
+    font-family: "aptly", sans-serif;
+    font-size: 7vw;
     font-weight: 500;
   }
   
@@ -758,39 +758,3 @@ justify-content: space-around;
 
 
 
-
-/* 
-
-titel med
-font-family: "aptly", sans-serif;
-font-weight: 500;
-font-style: normal;
-
-titel black
-font-family: aptly, sans-serif;
-font-weight: 700;
-font-style: normal;
-
-kopje
-font-family: "puffin-display-soft", sans-serif;
-font-weight: 500;
-font-style: normal;
-
-algemene tekst light
-font-family: "brevia", sans-serif;
-font-weight: 300;
-font-style: normal;
-
-algemene tekst reg
-font-family: "brevia", sans-serif;
-font-weight: 400;
-font-style: normal;
-
-algemene tekst mid
-font-family: "brevia", sans-serif;
-font-weight: 500;
-font-style: normal;
-
-
-
-*/
