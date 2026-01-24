@@ -388,9 +388,9 @@ justify-content: center;
   aspect-ratio: 1 / 1; /* Zorgt voor consistente hoogte */
 }
 
-.fotospaginas{
-  width: 75%;
-  justify-self: center;
+.fotospaginas {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fotosnaast{
@@ -631,7 +631,7 @@ justify-content: space-around;
     position: fixed;
     top: 1.2rem;
     right: 1.2rem;
-    z-index: 3000;
+    z-index: 5000;
     background: none;
     border: none;
     font-size: 8vw;
