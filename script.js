@@ -221,3 +221,31 @@ window.addEventListener("scroll", function() {
     scrollBar.classList.remove("visible");
   }
 });
+
+
+// Hamburger menu – alleen mobile
+const hamburger = document.getElementById("hamburger");
+const tabmenu = document.querySelector(".tabmenu");
+const menuClose = document.getElementById("menuClose");
+
+if (hamburger && tabmenu) {
+  hamburger.addEventListener("click", () => {
+    tabmenu.classList.add("open");
+  });
+}
+
+if (menuClose && tabmenu) {
+  menuClose.addEventListener("click", () => {
+    tabmenu.classList.remove("open");
+  });
+}
+
+// sluit menu na tab klik (mobile)
+document.querySelectorAll(".tablink").forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 800) {
+      tabmenu.classList.remove("open");
+    }
+  });
+});
+
