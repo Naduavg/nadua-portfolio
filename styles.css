@@ -261,8 +261,9 @@ figure{
 
 img{
     width: 100%;
-    border-radius: 8px;
+    border-radius: 0.8vw;
 }
+
 figcaption {
   text-align: center;
   margin-top: 0.3em;
@@ -490,6 +491,10 @@ font-style: normal;
     font-size: 2.2vw;
     width: 100%;
   }
+
+  img{
+    border-radius: 1.3vw;
+}
 
   #headerlaag1{
     position: absolute;
