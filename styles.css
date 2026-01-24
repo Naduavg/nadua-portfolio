@@ -629,7 +629,6 @@ justify-content: space-around;
   .hamburger {
     display: flex;
     position: fixed;
-    top: 1.2rem;
     right: 1.2rem;
     z-index: 5000;
     background: none;
@@ -638,20 +637,17 @@ justify-content: space-around;
     cursor: pointer;
     color: rgb(255, 255, 255);
 
-    width: 12vw;
-    height: 8vw;
 
     flex-direction: column;
   justify-content: space-between;
 
   }
 
-  .hamburger span {
-    display: block;
-    height: 4px;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 2px;
+  .hamburger h1 {
+    margin: 0vw;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    line-height: 4vw;
   }
 
 
