@@ -552,13 +552,16 @@ justify-content: space-around;
   cursor: pointer;
 }
 
+
+
 .titelsmiley:hover{
   margin-top: 3%;
   width: 14vw;
 }
 
 .fotospaginas{
-  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   gap: 1vw;
   flex-direction: column;
