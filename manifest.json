@@ -1,0 +1,34 @@
+ {
+   "name": "Nadua van Gorkum",
+   "short_name": "NvG",
+   "start_url": "index.html",
+   "scope": ".",
+   "display": "standalone",
+   "background_color": "#FFFFF",
+   "theme_color": "#FFFFF",
+   "orientation": "portrait",
+   "icons": [
+     {
+      "src": "beeldthumbnails//Logobloemhand.png",
+      "type": "image/png",
+       "sizes": "48x48"
+     },
+     {
+      "src": "beeldthumbnails//Logobloemhand.png",
+      "type": "image/png",
+       "sizes": "96x96"
+     },
+     {
+       "src": "beeldthumbnails//Logobloemhand.png",
+       "type": "image/png",
+      "sizes": "192x192"
+    },
+     {
+       "src": "beeldthumbnails/header/FullBLOEMHAND.png",
+      "type": "image/png",
+      "sizes": "512x512"
+   }
+  ]
+ }
+
+ 
