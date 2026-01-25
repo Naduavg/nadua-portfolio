@@ -562,9 +562,11 @@ justify-content: space-around;
 .fotospaginas{
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  gap: 1vw;
-  flex-direction: column;
+    width: 95%;
+    display: flex;
+    gap: 1vw;
+    flex-direction: column;
+  
 }
 
 
