@@ -690,7 +690,7 @@ justify-content: space-around;
     text-align: left;
     font-size: 4.5vw;
     padding: 2vw;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgb(255, 255, 255);
   }
 
   .menu-header {
@@ -712,6 +712,8 @@ justify-content: space-around;
     border: none;
     font-size: 6vw;
     cursor: pointer;
+    color: black;
+
   }
 
 }
