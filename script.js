@@ -320,4 +320,3 @@ document.querySelectorAll(".tablink").forEach(link => {
     }
   });
 });
-
