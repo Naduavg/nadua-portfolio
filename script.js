@@ -174,6 +174,9 @@ window.addEventListener("load", function () {
         img.closest("#preloader") ||
         img.closest("#scroll-bar") ||
         img.closest(".titelsmiley") ||
+        img.closest(".logorond") ||
+        img.closest("#headerlaag1") ||
+        img.closest(".headerlaag2") ||
         img.id === "hamburger"
       ) {
         return;
@@ -290,6 +293,7 @@ if (scrollBarClick) {
     if (defaultTab) defaultTab.click();
   });
 }
+
 
 // Hamburger menu – alleen mobile
 const hamburger = document.getElementById("hamburger");
