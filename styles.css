@@ -1,323 +1,855 @@
-// Algemene tab wisselaar
-function openPage(pageName, elmnt, color) {
-  // Verberg alle tabbladen
-  const tabcontent = document.getElementsByClassName("tabcontent");
-  for (let i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+/* =============== BASISSTIJLEN =============== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "brevia", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  font-size: 1vw;
+
+}
+
+.alles {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  display: flex;
+justify-self: center;
+margin-top: 27%;
+}
+
+/* typografie*/
+
+
+h1{
+  font-family: "aptly", sans-serif;
+font-weight: 500;
+font-style: normal;
+    /*background-color: #14580C;*/
+    text-align: center;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+}
+
+
+.titel{
+  font-family: "aptly", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "puffin-display-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "wght" 600;
+  font-size: 300%;
+  color: rgb(0, 0, 0);
+}
+
+p{
+  font-family: "brevia", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  font-size: 100%;
+}
+
+/* =============== TABBEN MENU =============== */
+/* menu balk*/
+.menu{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tablink {
+  font-family: "puffin-display-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1% 1%;
+  font-size: 1.3vw;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tablink:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
+  padding: 1% 1%;
+}
+
+.tabcontent {
+  color: rgb(0, 0, 0);
+  display: none;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.tabmenu {
+  display: flex;
+  flex-wrap: wrap; /* zorgt dat knoppen op kleinere schermen afbreken */
+  justify-content: space-between;
+  gap: 0.5em;
+  margin: 1em auto;
+  padding: 0.5em 0;
+  width: 100%;
+}
+
+/* Titel en sluit-knop van mobiele menu standaard verbergen op desktop */
+.menu-header {
+  display: none;
+}
+
+/* =============== FOTOGRAFIE =============== */
+
+.select {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  // Reset achtergrondkleur van alle tabknoppen
-  const tablinks = document.getElementsByClassName("tablink");
-  for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
+.select:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+}
+
+
+.uitleg{
+  font-size: 110%;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+/* =============== PRELOADER =============== */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0, 104, 56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-logo {
+  width: 20vw;
+  max-width: 200px;
+}
+
+.header-container {
+  position: relative;
+  width: 100vw;
+  height: auto;
+}
+
+/* =============== LIGHTBOX (FULLSCREEN IMAGE) =============== */
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 8000;
+}
+
+#lightbox.open {
+  display: flex;
+}
+
+#lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 0.8vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 8100;
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.header-container {
+  position: relative;
+  width: 100vw;
+  height: auto;
+}
+
+#headerlaag1{
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  height: auto;
+  border-bottom-left-radius: 1.5vw;
+  border-bottom-right-radius: 1.5vw;
+  border-top-left-radius: 0vw;
+  border-top-right-radius: 0vw;
+}
+
+#headerlaag2{
+  position: absolute;
+  z-index: 2;
+  width: 15.7%;
+  height: auto;
+  display: flex;
+  justify-self: center;
+  margin-left: 11.5%;
+  margin-top: 3%;
+  animation-name: headerfoto;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.titelnaam{
+  text-align: right;
+  display: flex;
+  justify-self: end;
+  position: absolute;
+  font-family: "aptly", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+  font-size: 7vw; 
+  z-index: 3;
+  margin-top: 4%; 
+  margin-right: 55%;
+  line-height: 0.7;
+  letter-spacing: -0.3vw;
+  font-stretch: condensed;
+  animation-name: headernaam;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+
+.headersubtekst{
+  position: absolute;
+  z-index: 5;
+  width: 15%;
+  height: auto;
+  display: flex;
+  justify-self: center;
+  margin-left: 47%;
+  margin-top: 13.8%;
+  line-height: 1;
+  /*color: rgb(151, 158, 108); */
+  color: rgb(0, 104, 56);
+  font-size: 3.6vw; 
+  animation-name: headersubtekst;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  font-family: "aptly", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings: "wght" 600, "wdth" 1;
+}
+
+.titelsmiley{
+  text-align: right;
+  display: flex;
+  justify-self: center;
+  position: absolute;
+  z-index: 3;
+  margin-top: 13%;
+  margin-left: 90%;
+  margin-right: 5%;
+  animation-name: headersubtekst;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  width: 9vw;
+  cursor: pointer;
+  transition: ease-in-out;  
+  transition-duration: 220ms;
+}
+
+
+
+.titelsmiley:hover {
+  margin-top: 9%;
+  width: 12vw;
+  transition: ease-in-out;
+  transition-duration: 220ms;
+  box-shadow: 8%;
+}
+
+
+.top{
+position: absolute;
+z-index: 6;
+opacity: 20%;
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+}
+
+figure{
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 100%;
+    border-radius: 0.8vw;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 0.3em;
+}
+
+.fotorij{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2%;
+    padding-bottom: 2%;
+    justify-content: space-between;
+}
+
+  
+
+.fotocollumn{
+  display: flex;
+  flex-direction: column;
+  column-gap: 2%;
+  padding-bottom: 2%;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.fotoik{
+margin-left: 30%;
+margin-right: 30%;
+width: 40%;
+border-style: solid;
+border-width: 10px;
+border-color: rgb(0, 104, 56);
+}
+
+
+.fotosize{
+  height: 180px;    /* alle afbeeldingen dezelfde hoogte */
+  width: auto;      /* breedte past zich aan om verhoudingen te behouden */
+  max-width: 100%;
+  flex-shrink: 0;   /* voorkomt dat afbeeldingen kleiner worden dan hun proportie */
+  object-fit: cover; /* zorgt dat afbeelding netjes binnen de hoogte past */
+}
+
+
+.contenthobby{
+  display: flex;
+  align-self: center;
+  width: 80%;
+  flex-direction: column; /* Standaard verticale layout */
+  align-items: center;    /* Centreert alle children horizontaal */
+}
+
+
+.kopje{
+font-size: 140%;
+display: flex;
+justify-content: center;
+}
+
+.kopjeVideo{
+  font-size: 100%;
+  display: flex;
+  justify-content: center;
   }
 
-  // Toon geselecteerd tabblad
-  const selectedTab = document.getElementById(pageName);
-  if (selectedTab) selectedTab.style.display = "block";
+.uitlegonderproject{
+  font-size: 110%;
+  margin-bottom: 5%;
+  letter-spacing: 1px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
-  // Geef de actieve knop een kleur
-  if (elmnt) elmnt.style.backgroundColor = color;
+.footer{
+  display: block;
+  font-style: italic;
+  unicode-bidi: isolate;
+  font-size: 70%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  // Reset fotografie tab
-  if (pageName === "fotografie") {
-    resetFotografieTab();
+.logorond{
+  width: 7vw;
+
   }
 
-  // Reset CMD tab
-  if (pageName === "CMDprojecten") {
-    resetCMDTab();
+.video {
+  width: 100%;       /* Vul de hele breedte van de container */
+  height: auto;      /* Behoud aspect-ratio */
+  border-radius: 1em;
+  display: block;
+  object-fit: cover; /* Geen extra ruimte, vult container */
+  aspect-ratio: 16 / 9; /* Zorgt voor consistente hoogte */
+
+}
+
+.videocategorien {
+  display: flex;
+  gap: 2%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.videocategorien > div {
+  flex: 0 0 49%; /* Twee kolommen van 49%, plus 2% gap = 100% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.video4kant {
+  width: 100%;       /* Vul de hele breedte van de container */
+  height: auto;      /* Behoud aspect-ratio */
+  border-radius: 1em;
+  display: block;
+  object-fit: cover; /* Geen extra ruimte, vult container */
+  aspect-ratio: 1 / 1; /* Zorgt voor consistente hoogte */
+}
+
+.fotospaginas{
+  width: 75%;
+  justify-self: center;
+}
+
+.fotosnaast{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+.fotosnaast4boven{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.fotosnaastoneven{
+  width: 100%;
+  display: flex;
+  gap: 2vw; /* ruimte tussen de foto's */
+  justify-content: space-between;
+  height: auto;
+  align-items: flex-start; /* zorgt dat de bovenkanten gelijk zijn */
+  margin-bottom: 5%;
+}
+
+.fotosnaastonevenboven{
+  width: 100%;
+  display: flex;
+  gap: 2vw; /* ruimte tussen de foto's */
+  justify-content: space-between;
+  height: auto;
+  align-items: flex-start; /* zorgt dat de bovenkanten gelijk zijn */
+  margin-bottom: 2%;
+}
+
+
+#scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0, 104, 56);
+  color: white;
+  padding: 0px 0;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.balktekst{
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+  align-content: center;
+}
+
+.balktekststyle{
+  font-family: "aptly", sans-serif;
+font-weight: 500;
+font-style: normal;
+  font-size: 2vw;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#scroll-bar.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scrollloggo{
+  width: 3vw;
+}
+
+.wit{
+  display: none;
+}
+
+.groen{
+  display: unset;
+}
+
+.hamburger {
+  display: none;
+}
+
+
+
+@media (max-width: 800px) {
+
+  body{
+    font-size: 2.2vw;
+    width: 100%;
   }
 
-  // Verberg alle sub-content
-  hideAllSubContent();
+  img{
+    border-radius: 1.3vw;
 }
 
-// -------------------------
-// Fotografie functionaliteit
-// -------------------------
-
-function resetFotografieTab() {
-  const fotografieDiv = document.getElementById("fotografie");
-
-  // Laat fotorijen, titel en uitleg zien
-  const fotorijen = fotografieDiv.querySelectorAll(".fotorij");
-  fotorijen.forEach(rij => rij.style.display = "flex");
-
-  const h3 = fotografieDiv.querySelector("h3");
-  if (h3) h3.style.display = "block";
-
-  const uitlegP = fotografieDiv.querySelector(".uitleg");
-  if (uitlegP) uitlegP.style.display = "block";
-}
-
-function showPhotoCategory(contentId) {
-  const allContentIds = [
-    "katten-content",
-    "mensen-content",
-    "herfst-content",
-    "zomer-content",
-    "eten-content",
-    "lightroom-content",
-    "MDES-content",
-    "generatief-content",
-    "FUTU-content",
-    "READ-content",
-    "Bieb-content",
-    "PMED-content"
-  ];
-
-  // Verberg alles
-  allContentIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.style.display = "none";
-  });
-
-  // Toon alleen de gewenste content
-  const selectedContent = document.getElementById(contentId);
-  if (selectedContent) selectedContent.style.display = "block";
-
-  // Verberg hoofdinhoud fotografie indien van toepassing
-  if (["katten-content", "mensen-content", "herfst-content", "zomer-content", "eten-content", "lightroom-content"].includes(contentId)) {
-    const fotografieDiv = document.getElementById("fotografie");
-    if (fotografieDiv) {
-      const fotorijen = fotografieDiv.querySelectorAll(".fotorij");
-      fotorijen.forEach(rij => rij.style.display = "none");
-
-      const h3 = fotografieDiv.querySelector("h3");
-      if (h3) h3.style.display = "none";
-
-      const uitlegP = fotografieDiv.querySelector(".uitleg");
-      if (uitlegP) uitlegP.style.display = "none";
-    }
+  #headerlaag1{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    margin-top: -25%;
+    border-radius: 0%;
+  }
+  
+  #headerlaag2{
+  display: none;
   }
 
-  // Verberg hoofdinhoud CMD indien van toepassing
-  if (["MDES-content", "generatief-content", "FUTU-content", "READ-content", "Bieb-content", "PMED-content"].includes(contentId)) {
-    const cmdDiv = document.getElementById("CMDprojecten");
-    if (cmdDiv) {
-      const fotorijen = cmdDiv.querySelectorAll(".fotorij");
-      fotorijen.forEach(rij => rij.style.display = "none");
-
-      const h3 = cmdDiv.querySelector("h3");
-      if (h3) h3.style.display = "none";
-
-      const uitlegP = cmdDiv.querySelector(".uitleg");
-      if (uitlegP) uitlegP.style.display = "none";
-    }
-  }
+.headertelefoon{
+display: flex;
+justify-content: space-around;
 }
 
-// CMD functionaliteit
 
-function resetCMDTab() {
-  const cmdDiv = document.getElementById("CMDprojecten");
-
-  // Laat fotorijen, titel en uitleg zien
-  const fotorijen = cmdDiv.querySelectorAll(".fotorij");
-  fotorijen.forEach(rij => rij.style.display = "flex");
-
-  const h3 = cmdDiv.querySelector("h3");
-  if (h3) h3.style.display = "block";
-
-  const uitlegP = cmdDiv.querySelector(".uitleg");
-  if (uitlegP) uitlegP.style.display = "block";
-}
-
-// Verberg alles bij tab wissel
-
-function hideAllSubContent() {
-  const allContentIds = [
-    "katten-content",
-    "mensen-content",
-    "herfst-content",
-    "zomer-content",
-    "eten-content",
-    "lightroom-content",
-    "MDES-content",
-    "generatief-content",
-    "FUTU-content",
-    "READ-content",
-    "Bieb-content",
-    "PMED-content"
-  ];
-
-  allContentIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.style.display = "none";
-  });
-}
-
-// Pagina standaard starten met fotografie en laadscherm verbergen
-
-window.addEventListener("load", function () {
-  const defaultTab = document.getElementById("defaultOpen");
-  if (defaultTab) defaultTab.click();
-
-  const preloader = document.getElementById("preloader");
-  if (preloader) {
-    preloader.classList.add("hidden");
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 500);
+  .headersubtekst{
+    z-index: 5;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    font-family: "aptly", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 6.7vw;
+    width: auto;
+    height: auto;
+    margin: auto;
+    margin-top: 3%;
+    cursor: pointer;
   }
 
-  // Fullscreen image viewer (lightbox)
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightbox-image");
-  const lightboxClose = document.querySelector(".lightbox-close");
-
-  if (lightbox && lightboxImage) {
-    document.querySelectorAll("img").forEach(img => {
-      // Sla logo's en knoppen over
-      if (
-        img.closest("#preloader") ||
-        img.closest("#scroll-bar") ||
-        img.closest(".titelsmiley") ||
-        img.closest(".logorond") ||
-        img.closest("#headerlaag1") ||
-        img.closest(".headerlaag2") ||
-        img.id === "hamburger"
-      ) {
-        return;
-      }
-
-      // Sla afbeeldingen met eigen onclick (navigatie) over
-      if (img.getAttribute("onclick")) {
-        return;
-      }
-
-      img.style.cursor = "zoom-in";
-
-      img.addEventListener("click", () => {
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt || "";
-        lightbox.classList.add("open");
-        lightbox.setAttribute("aria-hidden", "false");
-      });
-    });
-
-    if (lightboxClose) {
-      lightboxClose.addEventListener("click", () => {
-        lightbox.classList.remove("open");
-        lightbox.setAttribute("aria-hidden", "true");
-        lightboxImage.src = "";
-      });
-    }
-
-    // Klik naast de afbeelding sluit de lightbox
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        lightbox.classList.remove("open");
-        lightbox.setAttribute("aria-hidden", "true");
-        lightboxImage.src = "";
-      }
-    });
+  .alles {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  justify-self: center;
+  margin-top: 27%;
   }
-});
 
-// Knop-functies fotografie
 
-function showKattenContent() {
-  showPhotoCategory("katten-content");
+.titelnaam{
+  font-size: 9vw;
 }
 
-function showMensenContent() {
-  showPhotoCategory("mensen-content");
-}
-
-function showHerfstContent() {
-  showPhotoCategory("herfst-content");
-}
-
-function showZomerContent() {
-  showPhotoCategory("zomer-content");
-}
-
-function showEtenContent() {
-  showPhotoCategory("eten-content");
-}
-
-function showLightroomContent() {
-  showPhotoCategory("lightroom-content");
-}
-
-// Knop-functies CMD
-
-function showMDESContent() {
-  showPhotoCategory("MDES-content");
-}
-
-function showgeneratiefContent() {
-  showPhotoCategory("generatief-content");
-}
-
-function showFUTUContent() {
-  showPhotoCategory("FUTU-content");
-}
-
-function showREADContent() {
-  showPhotoCategory("READ-content");
-}
-
-function showBiebContent() {
-  showPhotoCategory("Bieb-content");
-}
-
-function showPMEDContent() {
-  showPhotoCategory("PMED-content");
+.titelsmiley{
+  color: rgb(255, 255, 255);
+  margin-top: 3%;
+  margin-left: 80vw;
+  width: 14vw;
+  cursor: pointer;
 }
 
 
 
-const balk = document.getElementById("balk");
+.titelsmiley:hover{
+  margin-top: 3%;
+  width: 14vw;
+}
 
-window.addEventListener("scroll", function() {
-  const scrollBar = document.getElementById("scroll-bar");
-  const balkTop = balk.getBoundingClientRect().top;
+.fotospaginas{
+  margin-left: auto;
+  margin-right: auto;
+    width: 95%;
+    display: flex;
+    gap: 1vw;
+    flex-direction: column;
+  
+}
 
-  // Als het menu de bovenkant van de viewport raakt
-  if (balkTop <= 0) {
-    scrollBar.classList.add("visible");
-  } else {
-    scrollBar.classList.remove("visible");
+
+.logorond{
+  width: 17vw;
   }
-});
 
-// Klik op de scroll-balk: terug naar boven & naar home-tab
-const scrollBarClick = document.getElementById("scroll-bar");
-if (scrollBarClick) {
-  scrollBarClick.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    const defaultTab = document.getElementById("defaultOpen");
-    if (defaultTab) defaultTab.click();
-  });
+  .fotorij {
+    flex-direction: column;
+    gap: 1vw;
+    align-items: center;
+  }
+
+  /* Alle beeld-rijen onder elkaar op mobiel */
+  .fotosnaast,
+  .fotosnaast4boven,
+  .fotosnaastoneven,
+  .fotosnaastonevenboven {
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+  }
+
+  /* Alle afbeeldingen op mobiel volle breedte */
+  .fotorij img,
+  .fotospaginas img,
+  .fotosnaast img,
+  .fotosnaast4boven img,
+  .fotosnaastoneven img,
+  .fotosnaastonevenboven img,
+  .breederijfotos img {
+    width: 100% !important;
+    height: auto;
+  }
+
+  .fotoik {
+    width: 80%;
+    display: flex;
+    align-self: center;
+  }
+
+  .tablink {
+    width: 90%;
+  }
+
+  .tabmenu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tablink {
+    width: 90%;
+    font-size: 3.3vw;
+  }
+
+  p, .uitleg, .uitlegonderproject {
+    margin: 1em 5%;
+    font-size: 3vw;
+  }
+
+  .videocategorien > div {
+    flex: 0 0 100%;
+  }
+  
+  .videocategorien {
+    flex-direction: column;
+  }
+  
+  .balktekststyle{
+    font-size: 5vw;
+    margin: 2vw;
+  }
+
+
+  .wit{
+    display: unset;
+  }
+  
+  .groen{
+    display: none;
+  }
+  
+  .scrollloggo{
+    width: 7vw;
+    margin-top: 0vw;
+  }
+
+  .breederijfotos{
+    width: 95%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+  }  
+
+/* ===== Hamburger menu (alleen mobile) ===== */
+
+
+  /* hamburger zichtbaar */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 6000;
+    background: none;
+    border: none;
+    font-size: 8vw;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+
+  .hamburger img {
+    pointer-events: none;
+  }
+
+
+  /* tabmenu = overlay */
+  .tabmenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: 50vw;
+    background-color: rgb(255, 255, 255);
+   z-index: 5000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 2rem;
+    gap: 1vw;
+    border-radius: 3vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  /* open toestand */
+  .tabmenu.open {
+    transform: translateX(0);
+  }
+
+  .tablink {
+    width: 100%;
+    text-align: left;
+    font-size: 4.5vw;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.98);
+  }
+
+  .tablink:hover {
+    transform: none;
+    width: 100%;
+    text-align: left;
+    font-size: 4.5vw;
+    padding: 2vw;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .menu-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+  }
+  
+  .menu-title {
+    font-family: "aptly", sans-serif;
+    font-size: 7vw;
+    font-weight: 500;
+  }
+  
+  .menu-close {
+    background: none;
+    border: none;
+    font-size: 6vw;
+    cursor: pointer;
+    color: black;
+
+  }
+
 }
 
 
-// Hamburger menu – alleen mobile
-const hamburger = document.getElementById("hamburger");
-const tabmenu = document.querySelector(".tabmenu");
-const menuClose = document.getElementById("menuClose");
 
-if (hamburger && tabmenu) {
-  hamburger.addEventListener("click", () => {
-    tabmenu.classList.add("open");
-  });
+
+
+/*     Animatie    */
+@keyframes headerfoto{
+  0%{ transform: translateX(1000px); }
+  100%{ transform: translateX(0px); }
 }
 
-if (menuClose && tabmenu) {
-  menuClose.addEventListener("click", () => {
-    tabmenu.classList.remove("open");
-  });
+@keyframes headernaam{
+  0%{ transform: translateY(-500px); }
+  100%{ transform: translateY(0px); }
 }
 
-// sluit menu na tab klik (mobile)
-document.querySelectorAll(".tablink").forEach(link => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth <= 800) {
-      tabmenu.classList.remove("open");
-    }
-  });
-});
+@keyframes headersubtekst{
+  0%{ transform: translateX(2000px); }
+  100%{ transform: translateX(0px); }
+}
+
+
+
+
 
