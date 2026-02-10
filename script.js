@@ -291,7 +291,6 @@ if (scrollBarClick) {
   });
 }
 
-
 // Hamburger menu – alleen mobile
 const hamburger = document.getElementById("hamburger");
 const tabmenu = document.querySelector(".tabmenu");
