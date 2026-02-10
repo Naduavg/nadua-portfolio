@@ -109,6 +109,11 @@ p{
   width: 100%;
 }
 
+/* Titel en sluit-knop van mobiele menu standaard verbergen op desktop */
+.menu-header {
+  display: none;
+}
+
 /* =============== FOTOGRAFIE =============== */
 
 .select {
@@ -129,6 +134,29 @@ p{
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 5%;
+}
+
+/* =============== PRELOADER =============== */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0, 104, 56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-logo {
+  width: 20vw;
+  max-width: 200px;
 }
 
 .header-container {
@@ -444,6 +472,7 @@ justify-content: center;
   border-top-right-radius: 0;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .balktekst{
@@ -580,6 +609,28 @@ justify-content: space-around;
     align-items: center;
   }
 
+  /* Alle beeld-rijen onder elkaar op mobiel */
+  .fotosnaast,
+  .fotosnaast4boven,
+  .fotosnaastoneven,
+  .fotosnaastonevenboven {
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+  }
+
+  /* Alle afbeeldingen op mobiel volle breedte */
+  .fotorij img,
+  .fotospaginas img,
+  .fotosnaast img,
+  .fotosnaast4boven img,
+  .fotosnaastoneven img,
+  .fotosnaastonevenboven img,
+  .breederijfotos img {
+    width: 100% !important;
+    height: auto;
+  }
+
   .fotoik {
     width: 80%;
     display: flex;
@@ -609,6 +660,10 @@ justify-content: space-around;
     flex: 0 0 100%;
   }
   
+  .videocategorien {
+    flex-direction: column;
+  }
+  
   .balktekststyle{
     font-size: 5vw;
     margin: 2vw;
@@ -631,6 +686,9 @@ justify-content: space-around;
   .breederijfotos{
     width: 95%;
     justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
   }  
 
 /* ===== Hamburger menu (alleen mobile) ===== */
