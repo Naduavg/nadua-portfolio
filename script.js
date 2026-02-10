@@ -161,6 +161,56 @@ window.addEventListener("load", function () {
       preloader.style.display = "none";
     }, 500);
   }
+
+  // Fullscreen image viewer (lightbox)
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxClose = document.querySelector(".lightbox-close");
+
+  if (lightbox && lightboxImage) {
+    document.querySelectorAll("img").forEach(img => {
+      // Sla logo's en knoppen over
+      if (
+        img.closest("#preloader") ||
+        img.closest("#scroll-bar") ||
+        img.closest(".titelsmiley") ||
+        img.id === "hamburger"
+      ) {
+        return;
+      }
+
+      // Sla afbeeldingen met eigen onclick (navigatie) over
+      if (img.getAttribute("onclick")) {
+        return;
+      }
+
+      img.style.cursor = "zoom-in";
+
+      img.addEventListener("click", () => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt || "";
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener("click", () => {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+      });
+    }
+
+    // Klik naast de afbeelding sluit de lightbox
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+      }
+    });
+  }
 });
 
 // Knop-functies fotografie
