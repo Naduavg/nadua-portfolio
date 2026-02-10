@@ -148,11 +148,20 @@ function hideAllSubContent() {
   });
 }
 
-// Pagina standaard starten met fotografie
+// Pagina standaard starten met fotografie en laadscherm verbergen
 
-window.onload = function () {
-  document.getElementById("defaultOpen").click();
-};
+window.addEventListener("load", function () {
+  const defaultTab = document.getElementById("defaultOpen");
+  if (defaultTab) defaultTab.click();
+
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.classList.add("hidden");
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 500);
+  }
+});
 
 // Knop-functies fotografie
 
@@ -221,6 +230,16 @@ window.addEventListener("scroll", function() {
     scrollBar.classList.remove("visible");
   }
 });
+
+// Klik op de scroll-balk: terug naar boven & naar home-tab
+const scrollBarClick = document.getElementById("scroll-bar");
+if (scrollBarClick) {
+  scrollBarClick.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    const defaultTab = document.getElementById("defaultOpen");
+    if (defaultTab) defaultTab.click();
+  });
+}
 
 
 // Hamburger menu – alleen mobile
