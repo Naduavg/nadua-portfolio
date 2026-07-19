@@ -9,22 +9,22 @@
    "orientation": "portrait",
    "icons": [
      {
-      "src": "beeldthumbnails/icon/LogoBLOEMHAND.png",
+       "src": "beeldthumbnails/header/illu.png",
       "type": "image/png",
        "sizes": "48x48"
      },
      {
-      "src": "beeldthumbnails/icon/LogoBLOEMHAND.png",
+       "src": "beeldthumbnails/header/illu.png",
       "type": "image/png",
        "sizes": "96x96"
      },
      {
-       "src": "beeldthumbnails/icon/LogoBLOEMHAND.png",
+       "src": "beeldthumbnails/header/illu.png",
        "type": "image/png",
       "sizes": "192x192"
     },
      {
-       "src": "beeldthumbnails/icon/LogoBLOEMHANDXL.png",
+       "src": "beeldthumbnails/header/illu.png",
       "type": "image/png",
       "sizes": "512x512"
    }
