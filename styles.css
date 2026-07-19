@@ -1,4 +1,19 @@
 /* =============== BASISSTIJLEN =============== */
+
+nothing{
+  color: #bcc955;
+  color: #ebd680;
+  color: #bbc9d1;
+  color: #e5c4b5;
+  color: #c4786d;
+  color: #f0d6f5;
+  color: #ebc680;
+  color: #bbc9d1;
+
+  
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -12,15 +27,23 @@ body {
   display: flex;
   justify-content: center;
   font-size: 1vw;
-
+  background-color: #ebd680;
 }
 
 .alles {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 27%;
+  width: 100%;
   display: flex;
-justify-self: center;
-margin-top: 27%;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 /* typografie*/
@@ -32,7 +55,7 @@ font-weight: 500;
 font-style: normal;
     /*background-color: #14580C;*/
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #1a2d4f;
     display: flex;
     justify-content: center;
 }
@@ -45,12 +68,12 @@ font-style: normal;
 }
 
 h3 {
-  font-family: "puffin-display-soft", sans-serif;
+font-family: "brevia", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-variation-settings: "wdth" 100, "wght" 600;
   font-size: 300%;
-  color: rgb(0, 0, 0);
+  color: #1a2d4f;
 }
 
 p{
@@ -68,30 +91,33 @@ p{
   justify-content: space-between;
 }
 
+
 .tablink {
   font-family: "puffin-display-soft", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-style: normal;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  color: #1a2d4f;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 1% 1%;
   font-size: 1.3vw;
   border-radius: 8px;
+  background-color: #ebd680;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ 
 }
+
 
 .tablink:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.03);
+ /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   */
+  transform: scale(1.3);
   padding: 1% 1%;
-}
+} 
 
 .tabcontent {
-  color: rgb(0, 0, 0);
+  color: #1a2d4f;
   display: none;
   width: 100%;
   text-align: center;
@@ -101,17 +127,41 @@ p{
 
 .tabmenu {
   display: flex;
-  flex-wrap: wrap; /* zorgt dat knoppen op kleinere schermen afbreken */
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   gap: 0.5em;
-  margin: 1em auto;
-  padding: 0.5em 0;
+  padding: 0.5em 10vw 1.2em;
   width: 100%;
+  box-sizing: border-box;
+  background-color: #ebd680;
+  border-bottom-left-radius: 1.5vw;
+  border-bottom-right-radius: 1.5vw;
+  position: relative;
+  z-index: 2;
+}
+
+.tabmenu .tablink {
+  flex: 1 1 auto;
+  white-space: nowrap;
+}
+
+/* Inhoud onder het menu: volle witte achtergrond */
+.page-content {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0;
+  margin-top: -1.5vw;
+  padding: calc(2em + 1.5vw) 10vw 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 /* Titel en sluit-knop van mobiele menu standaard verbergen op desktop */
 .menu-header {
   display: none;
+  
 }
 
 /* =============== FOTOGRAFIE =============== */
@@ -141,7 +191,7 @@ p{
 #preloader {
   position: fixed;
   inset: 0;
-  background-color: rgb(0, 104, 56);
+  background-color: #1a2d4f;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,7 +267,7 @@ p{
   position: absolute;
   z-index: 1;
   width: 50%;
-  height: auto;
+  height: 26vw;
   border-bottom-left-radius: 1.5vw;
   border-bottom-right-radius: 1.5vw;
   border-top-left-radius: 0vw;
@@ -251,7 +301,7 @@ p{
   color: rgb(255, 255, 255);
   font-size: 7vw; 
   z-index: 3;
-  margin-top: 4%; 
+  margin-top: 9%; 
   margin-right: 55%;
   line-height: 0.7;
   letter-spacing: -0.3vw;
@@ -275,7 +325,7 @@ p{
   margin-top: 13.8%;
   line-height: 1;
   /*color: rgb(151, 158, 108); */
-  color: rgb(0, 104, 56);
+  color: #1a2d4f;
   font-size: 3.6vw; 
   animation-name: headersubtekst;
   animation-duration: 1.5s;
@@ -294,7 +344,7 @@ p{
   justify-self: center;
   position: absolute;
   z-index: 3;
-  margin-top: 13%;
+  margin-top: 12.7%;
   margin-left: 90%;
   margin-right: 5%;
   animation-name: headersubtekst;
@@ -302,7 +352,7 @@ p{
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-fill-mode: both;
-  width: 9vw;
+  width: 5vw;
   cursor: pointer;
   transition: ease-in-out;  
   transition-duration: 220ms;
@@ -311,8 +361,8 @@ p{
 
 
 .titelsmiley:hover {
-  margin-top: 9%;
-  width: 12vw;
+  margin-top: 10.5%;
+  width: 6vw;
   transition: ease-in-out;
   transition-duration: 220ms;
   box-shadow: 8%;
@@ -338,6 +388,7 @@ figure{
 img{
     width: 100%;
     border-radius: 0.8vw;
+
 }
 
 figcaption {
@@ -372,7 +423,7 @@ margin-right: 30%;
 width: 40%;
 border-style: solid;
 border-width: 10px;
-border-color: rgb(0, 104, 56);
+border-color: #ffff;
 }
 
 
@@ -415,15 +466,21 @@ justify-content: center;
 }
 
 .footer{
-  display: block;
+  display: flex;
   font-style: italic;
   unicode-bidi: isolate;
   font-size: 70%;
   margin-top: 5%;
-  margin-bottom: 10%;
-  display: flex;
+  margin-bottom: 0;
+  padding-bottom: 10%;
   flex-direction: column;
   align-items: center;
+  background-color: #ffffff;
+}
+
+footer {
+  background-color: #ffffff;
+  width: 100%;
 }
 
 .logorond{
@@ -438,13 +495,15 @@ justify-content: center;
   display: block;
   object-fit: cover; /* Geen extra ruimte, vult container */
   aspect-ratio: 16 / 9; /* Zorgt voor consistente hoogte */
-
+  max-width: 100%;
 }
 
 .videocategorien {
   display: flex;
   gap: 2%;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   flex-wrap: wrap;
 }
 
@@ -463,6 +522,7 @@ justify-content: center;
   display: block;
   object-fit: cover; /* Geen extra ruimte, vult container */
   aspect-ratio: 1 / 1; /* Zorgt voor consistente hoogte */
+  max-width: 100%;
 }
 
 .fotospaginas{
@@ -503,14 +563,20 @@ justify-content: center;
 }
 
 
+#video > .video {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #scroll-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(0, 104, 56);
+  background-color: #1a2d4f;
   color: white;
-  padding: 0px 0;
+  padding: 0.6vw 0;
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
@@ -520,14 +586,21 @@ justify-content: center;
   border-top-right-radius: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
 .balktekst{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 84%;
-  align-content: center;
+}
+
+.balktekst p {
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .balktekststyle{
@@ -535,8 +608,10 @@ justify-content: center;
 font-weight: 500;
 font-style: normal;
   font-size: 2vw;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 #scroll-bar.visible {
@@ -546,6 +621,7 @@ font-style: normal;
 
 .scrollloggo{
   width: 3vw;
+  display: block;
 }
 
 .wit{
@@ -609,11 +685,18 @@ justify-content: space-around;
   }
 
   .alles {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 27%;
+    width: 100%;
     display: flex;
-  justify-self: center;
-  margin-top: 27%;
+    flex-direction: column;
+  }
+
+  .page-content {
+    padding: calc(2em + 1.5vw) 2.5vw 0;
+    width: 100%;
+    margin-top: -1.5vw;
   }
 
 
@@ -848,6 +931,8 @@ justify-content: space-around;
   0%{ transform: translateX(2000px); }
   100%{ transform: translateX(0px); }
 }
+
+
 
 
 
