@@ -2,14 +2,17 @@
 
 nothing{
   color: #bcc955;
+  color: #67752f;
   color: #ebd680;
   color: #bbc9d1;
   color: #e5c4b5;
   color: #c4786d;
   color: #f0d6f5;
   color: #ebc680;
+  color: #e2a651;
   color: #bbc9d1;
-
+  color: #1a2d4f;
+  color: #f4f4f3;
   
 }
 
@@ -21,39 +24,38 @@ nothing{
 body {
   margin: 0;
   padding: 0;
-  font-family: "brevia", sans-serif;
+  font-family: "Chelsea Market", cursive;
   font-weight: 300;
   font-style: normal;
-  display: flex;
-  justify-content: center;
+  display: block;
   font-size: 1vw;
-  background-color: #ebd680;
+  background-color: #ffffff;
+  color: #1a2d4f;
 }
 
 .alles {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 27%;
+  margin: 0;
   width: 100%;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: stretch;
 }
 
 #menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
+  align-items: stretch;
 }
 
 /* typografie*/
 
 
 h1{
-  font-family: "aptly", sans-serif;
+  font-family: "Londrina Solid", sans-serif;
 font-weight: 500;
 font-style: normal;
-    /*background-color: #14580C;*/
     text-align: center;
     color: #1a2d4f;
     display: flex;
@@ -62,100 +64,385 @@ font-style: normal;
 
 
 .titel{
-  font-family: "aptly", sans-serif;
+  font-family: "Londrina Solid", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 h3 {
-font-family: "brevia", sans-serif;
-  font-weight: 500;
+font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
   font-style: normal;
-  font-variation-settings: "wdth" 100, "wght" 600;
   font-size: 300%;
-  color: #1a2d4f;
+  color: #67752f;
+  letter-spacing: 0.28em;
+}
+
+.paginatitel,
+h3.paginatitel {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
+  color: #67752f;
+  font-size: 4.2vw;
+  text-align: center;
+  margin: 0.4em 0 0.2em;
+  letter-spacing: 0.28em;
+}
+
+.pagina-uitleg {
+  font-family: brevia, sans-serif;
+  color: #bcc955;
+  font-size: 1.1vw;
+  margin: 0 0 1.5em;
 }
 
 p{
-  font-family: "brevia", sans-serif;
+  font-family: brevia, sans-serif;
   font-weight: 300;
   font-style: normal;
   text-align: center;
   font-size: 100%;
+  color: #bcc955;
 }
 
 /* =============== TABBEN MENU =============== */
-/* menu balk*/
 .menu{
   display: flex;
   justify-content: space-between;
 }
 
+.site-name {
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0 0 1.5em;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
+  color: #1a2d4f;
+  line-height: 0.95;
+  font-size: 1.7vw;
+  letter-spacing: 0.22em;
+}
+
+.site-name span {
+  display: block;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.site-name span:first-child {
+  font-size: 1.95em;
+}
 
 .tablink {
-  font-family: "puffin-display-soft", sans-serif;
-  font-weight: 700;
+  font-family: "Chelsea Market", cursive;
+  font-weight: 600;
   font-style: normal;
-  color: #1a2d4f;
+  color: #e2a651;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 1% 1%;
-  font-size: 1.3vw;
-  border-radius: 8px;
-  background-color: #ebd680;
-  cursor: pointer;
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- 
+  padding: 0.35em 0;
+  font-size: 1.15vw;
+  border-radius: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  width: 100%;
+  text-align: left;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
+.tablink:hover,
+.tablink.actief,
+.sublink:hover,
+.sublink.actief {
+  color: #1a2d4f;
+  transform: none;
+}
 
-.tablink:hover {
- /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   */
-  transform: scale(1.3);
-  padding: 1% 1%;
-} 
+.ster {
+  width: 0.85em;
+  height: 0.85em;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.nav-group .submenu {
+  display: none;
+  flex-direction: column;
+  padding: 0.2em 0 0.6em 1.6em;
+}
+
+.nav-group:hover .submenu {
+  display: flex;
+}
+
+.sublink {
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0.15em 0;
+  font-family: "Chelsea Market", cursive;
+  font-size: 0.95vw;
+  color: #e2a651;
+}
+
+.submenu-lijn {
+  border: none;
+  border-top: 1px dashed #e2a651;
+  width: 80%;
+  margin: 0.4em 0;
+}
 
 .tabcontent {
   color: #1a2d4f;
   display: none;
   width: 100%;
   text-align: center;
-  display: flex;
-  justify-content: center;
 }
 
 .tabmenu {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5em;
-  padding: 0.5em 10vw 1.2em;
-  width: 100%;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 1.8vw 2.2vw;
+  width: fit-content;
+  min-width: 0;
   box-sizing: border-box;
-  background-color: #ebd680;
-  border-bottom-left-radius: 1.5vw;
-  border-bottom-right-radius: 1.5vw;
-  position: relative;
+  background-color: #f4f4f3;
+  border-radius: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
   z-index: 2;
 }
 
-.tabmenu .tablink {
-  flex: 1 1 auto;
-  white-space: nowrap;
+.tabmenu::-webkit-scrollbar {
+  display: none;
 }
 
-/* Inhoud onder het menu: volle witte achtergrond */
+.sidebar-voet {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+  padding-top: 1.5em;
+}
+
+.sidebar-voet p {
+  margin: 0.4em 0 0;
+  font-size: 0.85vw;
+  color: #1a2d4f;
+}
+
+.sidebar-avatar {
+  width: 3.8vw;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+/* Inhoud naast het menu */
 .page-content {
   background-color: #ffffff;
-  width: 100%;
+  flex: 1;
+  width: auto;
+  min-width: 0;
   margin: 0;
-  margin-top: -1.5vw;
-  padding: calc(2em + 1.5vw) 10vw 0;
+  padding: 1.5vw 2vw 4vw;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+  min-height: 100vh;
+}
+
+.header-container,
+.titelsmiley,
+.hamburger {
+  display: none;
+}
+
+#scroll-bar {
+  display: none;
+}
+
+.home-collage {
+  position: relative;
+  width: 46vw;
+  height: 28vw;
+  margin: 2vw auto 1vw;
+}
+
+.home-foto {
+  position: absolute;
+  object-fit: cover;
+  border: 0.45vw solid #ffffff;
+  border-radius: 0.4vw;
+  box-shadow: 0 8px 20px rgba(26, 45, 79, 0.18);
+}
+
+.home-foto-midden {
+  width: 28vw;
+  height: 22vw;
+  left: 7vw;
+  top: 1vw;
+  z-index: 2;
+}
+
+.home-foto-links {
+  width: 16vw;
+  height: 11vw;
+  left: 0;
+  bottom: 1vw;
+  z-index: 3;
+}
+
+.home-foto-rechts {
+  width: 13vw;
+  height: 18vw;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.home-groet {
+  font-family: "Chelsea Market", cursive;
+  color: #e2a651;
+  font-size: 2.4vw;
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+
+.overmij-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4vw;
+  text-align: left;
+  max-width: 78vw;
+  margin: 0 auto 3vw;
+}
+
+.overmij-tekst {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9vw;
+}
+
+.overmij-tekst p {
+  text-align: left;
+  margin: 0;
+}
+
+.overmij-groet {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
+  color: #1a2d4f;
+  font-size: 1.8vw;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.overmij-lead {
+  font-family: "Chelsea Market", cursive;
+  color: #1a2d4f;
+  font-size: 1.25vw;
+  margin: 0;
+}
+
+.overmij-feitjes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95vw;
+}
+
+.overmij-feitjes p {
+  font-family: brevia, sans-serif;
+  color: #1a2d4f;
+  font-size: 1.05vw;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  text-align: left;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45em;
+}
+
+.overmij-feitjes p > span {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.overmij-feitjes .ster {
+  width: 0.85em;
+  height: 0.85em;
+  margin-top: 0.28em;
+  flex-shrink: 0;
+}
+
+.overmij-feitjes strong {
+  font-weight: 700;
+}
+
+.overmij-label {
+  font-family: "Chelsea Market", cursive;
+  font-weight: 400;
+  color: #1a2d4f;
+  font-size: 1.25vw;
+  margin: 0.6vw 0 0;
+}
+
+.hobby-iconen {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.1em;
+  margin: 0.2em 0 0.4em;
+}
+
+.hobby-iconen img {
+  height: 2.4vw;
+  width: auto;
+  max-width: 3.2vw;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.overmij-afscheid {
+  margin-top: 0.8vw;
+}
+
+.overmij-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+}
+
+.overmij-contact p {
+  font-family: brevia, sans-serif;
+  color: #1a2d4f;
+  font-size: 1.05vw;
+  line-height: 1.45;
+  text-align: left;
+  margin: 0;
+}
+
+.overmij-contact span {
+  font-family: "Chelsea Market", cursive;
+  color: #1a2d4f;
+  font-size: 0.95em;
 }
 
 /* Titel en sluit-knop van mobiele menu standaard verbergen op desktop */
@@ -178,6 +465,8 @@ p{
 
 
 .uitleg{
+  font-family: brevia, sans-serif;
+  color: #bcc955;
   font-size: 110%;
   text-align: center;
   letter-spacing: 1px;
@@ -191,7 +480,7 @@ p{
 #preloader {
   position: fixed;
   inset: 0;
-  background-color: #1a2d4f;
+  background-color: #bcc955;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,19 +529,43 @@ p{
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.lightbox-close {
+.lightbox-close,
+.lightbox-nav {
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
   background: none;
   border: none;
   color: #ffffff;
   font-size: 2.5rem;
+  line-height: 1;
   cursor: pointer;
   z-index: 8100;
+  padding: 0;
+  font-family: inherit;
 }
 
-.lightbox-close:focus-visible {
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.lightbox-prev {
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-nav[hidden] {
+  display: none;
+}
+
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 4px;
 }
@@ -295,7 +608,7 @@ p{
   display: flex;
   justify-self: end;
   position: absolute;
-  font-family: "aptly", sans-serif;
+  font-family: "Londrina Solid", sans-serif;
   font-weight: 500;
   font-style: normal;
   color: rgb(255, 255, 255);
@@ -332,7 +645,7 @@ p{
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-fill-mode: both;
-  font-family: "aptly", sans-serif;
+  font-family: "Londrina Solid", sans-serif;
   font-weight: 900;
   font-style: normal;
   font-variation-settings: "wght" 600, "wdth" 1;
@@ -391,6 +704,12 @@ img{
 
 }
 
+.fotoik {
+  border-radius: 0 !important;
+  border: 8px solid #ffffff;
+  box-shadow: none;
+}
+
 figcaption {
   text-align: center;
   margin-top: 0.3em;
@@ -418,12 +737,32 @@ figcaption {
 
 
 .fotoik{
-margin-left: 30%;
-margin-right: 30%;
-width: 40%;
-border-style: solid;
-border-width: 10px;
-border-color: #ffff;
+width: 28%;
+border-radius: 0 !important;
+border: 8px solid #ffffff;
+}
+
+#fotografie figure {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5vw 2vw;
+}
+
+#fotografie .fotorij {
+  display: contents;
+}
+
+#fotografie figcaption {
+  color: #67752f;
+}
+
+.kopje {
+  font-family: "Londrina Solid", sans-serif;
+  color: #67752f;
+}
+
+footer {
+  display: none;
 }
 
 
@@ -446,9 +785,10 @@ border-color: #ffff;
 
 
 .kopje{
-font-size: 140%;
+font-size: 4.2vw;
 display: flex;
 justify-content: center;
+letter-spacing: 0.28em;
 }
 
 .kopjeVideo{
@@ -458,6 +798,8 @@ justify-content: center;
   }
 
 .uitlegonderproject{
+  font-family: brevia, sans-serif;
+  color: #bcc955;
   font-size: 110%;
   margin-bottom: 5%;
   letter-spacing: 1px;
@@ -498,6 +840,44 @@ footer {
   max-width: 100%;
 }
 
+.video-rij {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4vw;
+  width: 88%;
+  margin: 1.5vw auto 5vw;
+}
+
+.video-rij-omgekeerd {
+  flex-direction: row-reverse;
+}
+
+.video-rij .video {
+  width: 54%;
+  flex-shrink: 0;
+}
+
+.video-rij-tekst {
+  flex: 1;
+  text-align: left;
+}
+
+.video-rij-tekst h3 {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
+  color: #1a2d4f;
+  font-size: 2.2vw;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.35em;
+  text-align: left;
+}
+
+.video-rij-tekst .uitlegonderproject {
+  margin: 0;
+  text-align: left;
+}
+
 .videocategorien {
   display: flex;
   gap: 2%;
@@ -526,8 +906,773 @@ footer {
 }
 
 .fotospaginas{
-  width: 75%;
+  width: auto;
+  margin-left: 6vw;
+  margin-right: 6vw;
   justify-self: center;
+  box-sizing: border-box;
+}
+
+/* Feit of Fictie */
+.feit-pagina {
+  width: auto;
+  margin: 0 6vw 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2.2vw;
+}
+
+.feit-pagina .feit-breed {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.6vw;
+}
+
+.feit-titel {
+  width: min(72%, 820px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.feit-sectie {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+}
+
+.feit-sectie-kop {
+  font-family: "Chelsea Market", cursive;
+  font-weight: 400;
+  color: #1a2d4f;
+  font-size: 1.8vw;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0;
+}
+
+.feit-tekst {
+  font-family: brevia, sans-serif;
+  color: #bcc955;
+  font-size: 1.1vw;
+  line-height: 1.45;
+  text-align: left;
+  margin: 0;
+  max-width: 58em;
+}
+
+.feit-vraag {
+  font-weight: 500;
+  margin-top: 0.6vw;
+}
+
+.feit-blok {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.6vw;
+  align-items: start;
+}
+
+.feit-blok-tekst {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+}
+
+.feit-blok-beeld {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5vw;
+}
+
+.feit-lijst {
+  font-family: brevia, sans-serif;
+  color: #bcc955;
+  font-size: 1.05vw;
+  line-height: 1.45;
+  text-align: left;
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.feit-lijst li + li {
+  margin-top: 0.25em;
+}
+
+.feit-lijst a {
+  color: #67752f;
+}
+
+.feit-lijst-nummers {
+  padding-left: 1.4em;
+}
+
+.feit-blok-middelen {
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+}
+
+.feit-middelen-beelden {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1vw;
+  align-items: start;
+}
+
+.feit-middelen-beelden img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5vw;
+}
+
+.feit-rij {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 1.2vw;
+}
+
+.feit-rij > img,
+.feit-rij > video {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.6vw;
+  display: block;
+}
+
+/* Same height: journey is wider (~2:1 native at equal height) */
+.feit-rij-twee {
+  align-items: flex-start;
+}
+
+.feit-rij-twee > img {
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  aspect-ratio: auto;
+}
+
+.feit-rij-twee > img:first-child {
+  flex: 2 1 0;
+}
+
+.feit-rij-twee > img:last-child {
+  flex: 1 1 0;
+}
+
+.feit-video {
+  width: 100%;
+  border-radius: 0.6vw;
+  display: block;
+  background: #1a2d4f;
+}
+
+.feit-video-groot {
+  width: 100%;
+  max-height: 70vh;
+}
+
+.feit-kop {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
+  color: #1a2d4f;
+  font-size: 3.2vw;
+  letter-spacing: 0.06em;
+  margin: 1vw 0 0;
+  text-align: center;
+}
+
+.feit-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1vw;
+}
+
+.feit-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 0.5vw;
+  display: block;
+}
+
+/* Photoshop */
+.ps-pagina {
+  width: auto;
+  margin: 0 6vw 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2vw;
+}
+
+.ps-pagina .paginatitel {
+  margin-bottom: 0.4vw;
+}
+
+.ps-sectie {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  margin-top: 1vw;
+}
+
+.ps-kop {
+  font-family: "Chelsea Market", cursive;
+  font-weight: 400;
+  color: #1a2d4f;
+  font-size: 1.6vw;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0;
+}
+
+.ps-tekst {
+  font-family: brevia, sans-serif;
+  color: #bcc955;
+  font-size: 1.1vw;
+  line-height: 1.45;
+  text-align: left;
+  margin: 0;
+  max-width: 52em;
+}
+
+.ps-breed {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5vw;
+}
+
+.ps-breed-mid {
+  width: 72%;
+  max-width: 100%;
+  align-self: center;
+}
+
+.ps-grid {
+  width: 100%;
+  display: grid;
+  gap: 1vw;
+}
+
+.ps-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ps-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ps-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5vw;
+  object-fit: cover;
+}
+
+.ps-grid-mixed {
+  align-items: end;
+}
+
+.ps-grid-mixed img {
+  object-fit: contain;
+  height: 100%;
+  max-height: 42vw;
+  background: transparent;
+}
+
+/* Illustration */
+.illu-pagina {
+  width: auto;
+  margin: 0 6vw 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2vw;
+}
+
+.illu-pagina .paginatitel {
+  margin-bottom: 0.4vw;
+}
+
+.illu-rij {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 1.2vw;
+}
+
+.illu-rij img {
+  display: block;
+  border-radius: 0.5vw;
+}
+
+.illu-rij-portret img {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  height: auto;
+  object-fit: contain;
+}
+
+.illu-rij-eten {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: stretch;
+  gap: 1.4vw;
+}
+
+.illu-pannen {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 0.8vw 1.2vw;
+}
+
+.illu-pannen img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+.illu-ingredienten {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.6vw;
+}
+
+.illu-ingredienten-hoofd {
+  width: 100%;
+  height: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.illu-ingredienten-voet {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.8vw;
+  flex: 0 0 auto;
+}
+
+.illu-kommen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  flex: 0 0 38%;
+  min-width: 0;
+}
+
+.illu-kommen img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.illu-duim {
+  flex: 1 1 auto;
+  width: auto;
+  max-width: 58%;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+.illu-rij-drie {
+  width: 100%;
+  max-width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.illu-rij-drie img {
+  min-width: 0;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+.illu-rij-drie img:nth-child(1) {
+  flex: 0.695 1 0;
+}
+
+.illu-rij-drie img:nth-child(2) {
+  flex: 1.439 1 0;
+}
+
+.illu-rij-drie img:nth-child(3) {
+  flex: 0.665 1 0;
+}
+
+.illu-karakters {
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.illu-karakters img {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  height: 18vw;
+  object-fit: contain;
+}
+
+.illu-karakters img:first-child {
+  flex: 1.6 1 0;
+}
+
+/* Bakkie Babbel */
+.bb-pagina {
+  width: auto;
+  margin: 0 6vw 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2vw;
+}
+
+.bb-pagina .paginatitel {
+  margin-bottom: 0;
+}
+
+.bb-intro {
+  font-family: brevia, sans-serif;
+  color: #bcc955;
+  font-size: 1.15vw;
+  line-height: 1.45;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 52em;
+}
+
+.bb-sectie {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.bb-kop {
+  font-family: "Chelsea Market", cursive;
+  font-weight: 400;
+  color: #1a2d4f;
+  font-size: 1.8vw;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0;
+}
+
+.bb-rij {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 1.2vw;
+}
+
+.bb-rij img {
+  display: block;
+  border-radius: 0.5vw;
+  object-fit: cover;
+  min-width: 0;
+}
+
+.bb-rij-posters img {
+  flex: 1 1 0;
+  width: 0;
+  height: auto;
+  object-fit: contain;
+}
+
+.bb-rij-concept {
+  align-items: flex-start;
+}
+
+.bb-storyboard {
+  flex: 1 1 0;
+  width: 0;
+  height: auto;
+  object-fit: contain;
+}
+
+.bb-concept-tekst {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.bb-concept-tekst p {
+  font-family: brevia, sans-serif;
+  color: #bcc955;
+  font-size: 1.1vw;
+  line-height: 1.45;
+  text-align: left;
+  margin: 0;
+}
+
+.bb-rij-promotie img {
+  flex: 1 1 0;
+  width: 0;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.bb-rij-expo img {
+  flex: 1 1 0;
+  width: 0;
+  height: 22vw;
+  object-fit: cover;
+}
+
+/* Out Of It */
+.ooi-pagina {
+  width: auto;
+  margin: 0 6vw 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2vw;
+}
+
+.ooi-pagina .paginatitel {
+  margin-bottom: 0;
+}
+
+.ooi-ondertitel {
+  font-family: brevia, sans-serif;
+  color: #bcc955;
+  font-size: 1.2vw;
+  text-align: center;
+  margin: 0 0 1.2vw;
+}
+
+.ooi-rij {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 1.4vw;
+}
+
+.ooi-rij-intro {
+  align-items: stretch;
+  min-height: 0;
+}
+
+.ooi-rij-intro .ooi-video {
+  flex: 0 0 auto;
+  width: auto;
+  height: 58vh;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background: #1a2d4f;
+  border-radius: 0.6vw;
+  align-self: stretch;
+}
+
+.ooi-intro-tekst {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5vw;
+  min-width: 0;
+  min-height: 58vh;
+  height: 58vh;
+  box-sizing: border-box;
+}
+
+.ooi-hook {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
+  color: #1a2d4f;
+  font-size: 3.2vw;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin: 0;
+  text-align: left;
+}
+
+.ooi-hook strong {
+  font-weight: 700;
+}
+
+.ooi-body {
+  font-family: brevia, sans-serif;
+  color: #1a2d4f;
+  font-size: 1.15vw;
+  line-height: 1.45;
+  text-align: left;
+  margin: 0;
+}
+
+.ooi-body strong {
+  font-weight: 700;
+}
+
+.ooi-rij-twee > img,
+.ooi-rij-twee > .ooi-blok,
+.ooi-rij-drie > .ooi-blok {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+}
+
+.ooi-rij-twee > img {
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5vw;
+  display: block;
+}
+
+.ooi-rij-outfit {
+  width: 100%;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 1.4vw;
+  container-type: inline-size;
+  container-name: ooi-outfit;
+  box-sizing: border-box;
+}
+
+.ooi-rij-outfit > .ooi-blok {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+}
+
+.ooi-blok-kast,
+.ooi-blok-anders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vw;
+}
+
+.ooi-blok img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5vw;
+}
+
+/* Shared image height; width stays auto from aspect ratio.
+   Height scaled to fit both columns in the row (~combined aspect 3.2). */
+.ooi-blok-anders .ooi-outfit-main {
+  height: min(42vw, calc((100cqi - 1.4vw) / 3.2));
+  width: auto;
+  max-width: none;
+  display: block;
+  border-radius: 0.5vw;
+  object-fit: contain;
+}
+
+.ooi-blok-kast .ooi-kast-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vw;
+  height: min(42vw, calc((100cqi - 1.4vw) / 3.2));
+  width: auto;
+}
+
+.ooi-blok-kast .ooi-kast-stack img {
+  flex: 1 1 0;
+  min-height: 0;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  border-radius: 0.5vw;
+  display: block;
+  align-self: flex-start;
+}
+
+.ooi-rij-drie {
+  align-items: stretch;
+}
+
+.ooi-rij-drie > .ooi-blok {
+  justify-content: flex-start;
+  height: auto;
+}
+
+.ooi-rij-drie > .ooi-blok .ooi-label {
+  flex-shrink: 0;
+}
+
+.ooi-rij-drie > .ooi-blok img {
+  margin-top: auto;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.ooi-blok {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vw;
+}
+
+.ooi-blok-breed {
+  width: 100%;
+}
+
+.ooi-label {
+  font-family: "Chelsea Market", cursive;
+  color: #1a2d4f;
+  font-size: 1.15vw;
+  text-align: left;
+  margin: 0;
+}
+
+.ooi-sectie {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
+  color: #1a2d4f;
+  font-size: 3.4vw;
+  letter-spacing: 0.04em;
+  margin: 1.5vw 0 0.2vw;
+  text-align: left;
+}
+
+.ooi-video {
+  width: 100%;
+  display: block;
+  border-radius: 0.6vw;
+  background: #1a2d4f;
+}
+
+.breederijfotos{
+  width: 88%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vw;
+}
+
+.breederijfotos img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .fotosnaast{
@@ -584,7 +1729,7 @@ footer {
   border-radius: 8px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -604,7 +1749,7 @@ footer {
 }
 
 .balktekststyle{
-  font-family: "aptly", sans-serif;
+  font-family: "Londrina Solid", sans-serif;
 font-weight: 500;
 font-style: normal;
   font-size: 2vw;
@@ -673,7 +1818,7 @@ justify-content: space-around;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
-    font-family: "aptly", sans-serif;
+    font-family: "Londrina Solid", sans-serif;
     font-weight: 100;
     font-style: normal;
     font-size: 6.7vw;
@@ -720,9 +1865,9 @@ justify-content: space-around;
 }
 
 .fotospaginas{
-  margin-left: auto;
-  margin-right: auto;
-    width: 95%;
+  margin-left: 6vw;
+  margin-right: 6vw;
+    width: auto;
     display: flex;
     gap: 1vw;
     flex-direction: column;
@@ -766,6 +1911,8 @@ justify-content: space-around;
     width: 80%;
     display: flex;
     align-self: center;
+    border-radius: 0 !important;
+    border: 8px solid #ffffff;
   }
 
   .tablink {
@@ -793,6 +1940,21 @@ justify-content: space-around;
   
   .videocategorien {
     flex-direction: column;
+  }
+
+  .video-rij,
+  .video-rij-omgekeerd {
+    flex-direction: column;
+    width: 92%;
+    gap: 3vw;
+  }
+
+  .video-rij .video {
+    width: 100%;
+  }
+
+  .video-rij-tekst h3 {
+    font-size: 6vw;
   }
   
   .balktekststyle{
@@ -830,13 +1992,13 @@ justify-content: space-around;
     display: block;
     position: fixed;
     top: 1.5rem;
-    right: 1.5rem;
+    left: 1.5rem;
     z-index: 6000;
     background: none;
     border: none;
     font-size: 8vw;
     cursor: pointer;
-    color: rgb(255, 255, 255);
+    color: #1a2d4f;
   }
 
   .hamburger img {
@@ -844,24 +2006,311 @@ justify-content: space-around;
   }
 
 
+  .page-content {
+    width: 100%;
+    padding: 4em 6vw 3em;
+  }
+
+  .paginatitel {
+    font-size: 9vw;
+  }
+
+  .home-collage {
+    width: 88vw;
+    height: 58vw;
+  }
+
+  .overmij-layout {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 5vw;
+  }
+
+  .overmij-groet {
+    font-size: 6vw;
+  }
+
+  .overmij-lead,
+  .overmij-label {
+    font-size: 4vw;
+  }
+
+  .overmij-feitjes p,
+  .overmij-contact p {
+    font-size: 3.4vw;
+  }
+
+  .hobby-iconen img {
+    height: 8vw;
+    max-width: 10vw;
+  }
+
+  .feit-pagina {
+    margin: 0 4vw 3vw;
+    gap: 4vw;
+  }
+
+  .feit-titel {
+    width: 90%;
+  }
+
+  .feit-sectie-kop {
+    font-size: 5vw;
+  }
+
+  .feit-tekst,
+  .feit-lijst {
+    font-size: 3.4vw;
+  }
+
+  .feit-blok,
+  .feit-blok-middelen,
+  .feit-middelen-beelden {
+    grid-template-columns: 1fr;
+    gap: 3vw;
+  }
+
+  .feit-rij {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .feit-rij > img,
+  .feit-rij > video {
+    width: 100%;
+  }
+
+  .feit-rij-twee > img:first-child,
+  .feit-rij-twee > img:last-child {
+    flex: none;
+    width: 100%;
+  }
+
+  .feit-kop {
+    font-size: 8vw;
+  }
+
+  .feit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+  }
+
+  .ps-pagina {
+    margin: 0 4vw 3vw;
+    gap: 4vw;
+  }
+
+  .ps-kop {
+    font-size: 4.4vw;
+  }
+
+  .ps-tekst {
+    font-size: 3.4vw;
+  }
+
+  .ps-breed-mid {
+    width: 100%;
+  }
+
+  .ps-grid-4,
+  .ps-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+  }
+
+  .ps-grid-mixed {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  .ps-grid-mixed img {
+    max-height: none;
+  }
+
+  .illu-pagina {
+    margin: 0 4vw 3vw;
+    gap: 4vw;
+  }
+
+  .illu-rij,
+  .illu-rij-drie,
+  .illu-karakters {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .illu-rij-eten {
+    grid-template-columns: 1fr;
+    gap: 3vw;
+  }
+
+  .illu-rij-portret img,
+  .illu-rij-drie img {
+    width: 100%;
+    flex: none;
+    height: auto;
+  }
+
+  .illu-rij-drie img:nth-child(1),
+  .illu-rij-drie img:nth-child(2),
+  .illu-rij-drie img:nth-child(3) {
+    flex: none;
+  }
+
+  .illu-pannen {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    height: auto;
+    gap: 2vw;
+  }
+
+  .illu-pannen img {
+    height: auto;
+  }
+
+  .illu-ingredienten {
+    width: 100%;
+  }
+
+  .illu-duim {
+    max-width: 50%;
+  }
+
+  .illu-karakters img,
+  .illu-karakters img:first-child {
+    width: 100%;
+    flex: none;
+    height: auto;
+    max-height: 45vh;
+  }
+
+  .bb-pagina {
+    margin: 0 4vw 3vw;
+    gap: 4vw;
+  }
+
+  .bb-intro {
+    font-size: 3.4vw;
+    text-align: left;
+  }
+
+  .bb-kop {
+    font-size: 5vw;
+  }
+
+  .bb-rij,
+  .bb-rij-posters,
+  .bb-rij-concept,
+  .bb-rij-promotie,
+  .bb-rij-expo {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .bb-rij-posters img,
+  .bb-storyboard,
+  .bb-rij-promotie img,
+  .bb-rij-expo img {
+    width: 100%;
+    flex: none;
+    height: auto;
+  }
+
+  .bb-concept-tekst p {
+    font-size: 3.4vw;
+  }
+
+  .ooi-pagina {
+    margin: 0 4vw 3vw;
+    gap: 4vw;
+  }
+
+  .ooi-ondertitel {
+    font-size: 3.4vw;
+  }
+
+  .ooi-rij,
+  .ooi-rij-intro,
+  .ooi-rij-twee,
+  .ooi-rij-drie,
+  .ooi-rij-outfit {
+    flex-direction: column;
+    width: 100%;
+    gap: 3vw;
+  }
+
+  .ooi-rij-intro .ooi-video,
+  .ooi-rij-twee > img,
+  .ooi-rij-twee > .ooi-blok,
+  .ooi-rij-drie > .ooi-blok,
+  .ooi-rij-outfit > .ooi-blok {
+    width: 100%;
+    flex: none;
+  }
+
+  .ooi-rij-intro .ooi-video {
+    height: auto;
+    width: 100%;
+    max-height: 55vh;
+    aspect-ratio: 16 / 9;
+  }
+
+  .ooi-intro-tekst {
+    height: auto;
+    min-height: 0;
+    gap: 4vw;
+  }
+
+  .ooi-hook {
+    font-size: 7vw;
+  }
+
+  .ooi-body {
+    font-size: 3.4vw;
+  }
+
+  .ooi-outfit-main,
+  .ooi-kast-stack {
+    height: auto;
+    width: 100%;
+  }
+
+  .ooi-kast-stack img {
+    flex: none;
+    height: auto;
+    width: 100%;
+  }
+
+  .ooi-rij-drie > .ooi-blok img {
+    margin-top: 0;
+  }
+
+  .ooi-label {
+    font-size: 3.6vw;
+  }
+
+  .ooi-sectie {
+    font-size: 8vw;
+  }
+
   /* tabmenu = overlay */
   .tabmenu {
     position: fixed;
     top: 0;
-    right: 0;
-    height: auto;
-    width: 50vw;
-    background-color: rgb(255, 255, 255);
+    left: 0;
+    height: 100vh;
+    width: 72vw;
+    background-color: #f9f6ea;
    z-index: 5000;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem 2rem;
-    gap: 1vw;
-    border-radius: 3vw;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 2rem 1.5rem;
+    gap: 0;
+    border-radius: 0;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.12);
 
-    transform: translateX(100%);
+    transform: translateX(-100%);
     transition: transform 0.3s ease;
   }
 
@@ -870,12 +2319,20 @@ justify-content: space-around;
     transform: translateX(0);
   }
 
+  .nav-group.open .submenu {
+    display: flex;
+  }
+
+  #scroll-bar {
+    display: flex;
+  }
+
   .tablink {
     width: 100%;
     text-align: left;
     font-size: 4.5vw;
-    padding: 2vw;
-    background-color: rgba(255, 255, 255, 0.98);
+    padding: 1.2vw 0;
+    background: none;
   }
 
   .tablink:hover {
@@ -883,8 +2340,12 @@ justify-content: space-around;
     width: 100%;
     text-align: left;
     font-size: 4.5vw;
-    padding: 2vw;
-    background-color: rgb(255, 255, 255);
+    padding: 1.2vw 0;
+    background: none;
+  }
+
+  .sublink {
+    font-size: 3.6vw;
   }
 
   .menu-header {
@@ -896,7 +2357,7 @@ justify-content: space-around;
   }
   
   .menu-title {
-    font-family: "aptly", sans-serif;
+    font-family: "Londrina Solid", sans-serif;
     font-size: 7vw;
     font-weight: 500;
   }
