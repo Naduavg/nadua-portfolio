@@ -7,14 +7,14 @@
   <title>Nadua Portfolio</title>
   <meta name="description" content="Dit is mijn portfolio website">
   <meta name="keywords" content="portfolio, Nadua, werk">
-  <link href="styles.css" rel="stylesheet">
-  <script src="script.js" defer></script>
+  <link href="styles.css?v=assetnames1" rel="stylesheet">
+  <script src="script.js?v=assetnames1" defer></script>
   <link rel="manifest" href="manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="img/png" rel="noopener" target="_blank" href="beeldthumbnails/header/illu.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Capriola&family=Mea+Culpa&family=Rum+Raisin&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Londrina+Solid:wght@400;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/vci3xss.css"> <!--nieeuwe fonts-->
 <link rel="stylesheet" href="https://use.typekit.net/apm2imn.css">
 </head>
@@ -26,47 +26,21 @@
 
 		<!-- Fullscreen image viewer -->
 		<div id="lightbox" aria-hidden="true">
-			<button class="lightbox-close" aria-label="Afbeelding sluiten">✕</button>
+			<button class="lightbox-nav lightbox-prev" type="button" aria-label="Vorige afbeelding">&lt;</button>
+			<button class="lightbox-close" type="button" aria-label="Afbeelding sluiten">✕</button>
+			<button class="lightbox-nav lightbox-next" type="button" aria-label="Volgende afbeelding">&gt;</button>
 			<img id="lightbox-image" src="" alt="">
 		</div>
 
 		<main>
 	
-				<div class="header-container"> 
-					<img src="beeldthumbnails/header/groenvlak3.png" alt="header" id="headerlaag1">
-					<img src="beeldthumbnails/header/DSC015272.jpg" alt="header" id="headerlaag2" class="headerlaag2">
-					<div class="headertelefoon">
-					<h1 class="titelnaam">
-						Nadua
-						<br> 
-						van 
-						<br>
-						Gorkum
-					</h1>
-					<h3 class="headersubtekst">
-						Welkom
-						<br>
-						bij mijn
-						<br>
-						Portfolio
-					</h3>
-				</div>
-					
-					<div class="titelsmiley" id="balk">
-						<img src="beeldthumbnails/header/beer.png" alt="logofull" class="groen">
-						<img src="beeldthumbnails/header/hamburger.png" alt="menuknop" class="hamburger wit"  id="hamburger" >
-
-					</div>
-				</div>
-					<!-- <img src="beeld/HEADER.png" alt="header" class="top"> -->
+				<button class="hamburger wit" id="hamburger" aria-label="Menu openen">☰</button>
+				<div class="titelsmiley" id="balk"></div>
 
 					<div id="scroll-bar">
 						<div class="balktekst">
 						<p class="balktekststyle">
 							Nadua van Gorkum
-						</p>
-						<p >
-							<img src="beeldthumbnails/header/illu.png" alt="logowit" class="scrollloggo">
 						</p>
 						</div>
 					  </div>
@@ -83,22 +57,79 @@
 			  ✕
 			</button>
 		  </div>
+
+		<button class="site-name" onclick="openPage('home', this)" id="defaultOpen" type="button">
+			<span>Nadua</span>
+			<span>van Gorkum</span>
+		</button>
 		  
-						<button class="tablink" onclick="openPage('fotografie', this)" id="defaultOpen">fotografie.</button>
-						<button class="tablink" onclick="openPage('video', this,)">video.</button>
-						<button class="tablink" onclick="openPage('gamedesign', this)">game design.</button>
-						<button class="tablink" onclick="openPage('drieD', this)">3D.</button>
-						<button class="tablink" onclick="openPage('groengeluk', this)">groen geluk.</button>
-						<button class="tablink" onclick="openPage('CMDprojecten', this)">CMD projecten.</button>
-					<!-- 	<button class="tablink" onclick="openPage('hobby', this, 'rgba(198, 228, 201)')">hobby's.</button> -->
-						<button class="tablink" onclick="openPage('overmij', this)">over mij.</button>
+		<div class="nav-group" data-section="fotografie">
+			<button class="tablink" onclick="openPage('fotografie', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Fotografie</button>
+			<div class="submenu">
+				<button class="sublink" onclick="showKattenContent()" type="button">Katten</button>
+				<button class="sublink" onclick="showMensenContent()" type="button">Mensen</button>
+				<button class="sublink" onclick="showHerfstContent()" type="button">Herfst</button>
+				<button class="sublink" onclick="showZomerContent()" type="button">Zomer</button>
+				<button class="sublink" onclick="showEtenContent()" type="button">Eten</button>
+				<button class="sublink" onclick="showLightroomContent()" type="button">Lightroom</button>
+			</div>
+		</div>
+
+		<div class="nav-group" data-section="design">
+			<button class="tablink" onclick="openPage('design', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Design</button>
+			<div class="submenu">
+				<button class="sublink" onclick="openPage('graphic', this)" type="button">Graphic</button>
+				<button class="sublink" onclick="openPage('drieD', this)" type="button">3D modeling</button>
+				<button class="sublink" onclick="openPage('video', this)" type="button">Video</button>
+				<button class="sublink" onclick="openPage('photoshop', this)" type="button">Photoshop</button>
+				<button class="sublink" onclick="openPage('illustratie', this)" type="button">Illustration</button>
+			</div>
+		</div>
+
+		<div class="nav-group" data-section="projecten">
+			<button class="tablink" onclick="openPage('projecten', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Projecten</button>
+			<div class="submenu">
+				<button class="sublink" onclick="openPage('groengeluk', this)" type="button">Groen Geluk</button>
+				<button class="sublink" onclick="openPage('feitoffictie', this)" type="button">Feit of Fictie</button>
+				<button class="sublink" onclick="openPage('gamedesign', this)" type="button">What's Buggin'</button>
+				<hr class="submenu-lijn">
+				<button class="sublink" onclick="openPage('onhandig', this)" type="button">OnHANDig</button>
+				<button class="sublink" onclick="openPage('firehazard', this)" type="button">Fire Hazard</button>
+				<button class="sublink" onclick="openPage('bakkiebabbel', this)" type="button">Bakkie Babbel</button>
+				<button class="sublink" onclick="openPage('oertijdmuseum', this)" type="button">Oertijd Museum</button>
+				<button class="sublink" onclick="openPage('pankoek', this)" type="button">Pan & Koek</button>
+				<button class="sublink" onclick="openPage('generatief', this)" type="button">Generatief</button>
+				<button class="sublink" onclick="openPage('speculatief', this)" type="button">Speculatief</button>
+				<button class="sublink" onclick="openPage('internetteveel', this)" type="button">InterNetTeVeel</button>
+				<button class="sublink" onclick="openPage('fastfashion', this)" type="button">Out Of It</button>
+			</div>
+		</div>
+
+		<button class="tablink" onclick="openPage('overmij', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Over Mij</button>
+
+		<div class="sidebar-voet">
+			<img src="beeldthumbnails/ikcirkel.png" alt="Nadua" class="sidebar-avatar">
+			<p>Nadua, 2026</p>
+		</div>
 					</div>
 					
 					<div class="page-content">
+	<!-- home -->
+						<div id="home" class="tabcontent">
+							<h3 class="paginatitel">Portfolio</h3>
+							<div class="home-collage">
+								<img src="beeldthumbnails/header/zwcamera.jpg" alt="camera" class="home-foto home-foto-links">
+								<img src="beeldthumbnails/header/ikhomepage.jpg" alt="Nadua" class="home-foto home-foto-midden">
+								<img src="beeldthumbnails/header/noorwegen.JPG" alt="Noorwegen" class="home-foto home-foto-rechts">
+							</div>
+							<p class="home-groet">Hi :)</p>
+						</div>
+
 	<!-- fotografie-->	
 						<!-- fotografie -->
 						<div id="fotografie" class="tabcontent">
-							<h3>Fotografie.</h3>
+							<h3 class="paginatitel">Fotografie</h3>
+							<p class="pagina-uitleg">Uitleg</p>
 							<figure>
 							<div class="fotorij">
 								<div>
@@ -138,7 +169,8 @@
 
 				<!--fotografie inhoud--> 
 								<div id="katten-content" style="display:none;" class="tabcontent">
-									<h3 class="kopje">Katten fotografie</h3>
+									<h3 class="kopje paginatitel">Katten</h3>
+									<p class="pagina-uitleg">Uitleg</p>
 									<div class="fotospaginas">
 										<div class="fotosnaast">
 											<img src="Beeldfotografie/katten/01katwit.jpg" alt="katcontent" style="width: 49%;">
@@ -219,7 +251,8 @@
 
 								<!-- Mensen content -->
 								<div id="mensen-content" style="display:none;" class="tabcontent">
-									<h3 class="kopje">Mensen fotografie</h3>
+									<h3 class="kopje paginatitel">Mensen</h3>
+									<p class="pagina-uitleg">Uitleg</p>
 										<div class="fotospaginas">
 
 											<div class="fotosnaast">
@@ -239,11 +272,11 @@
 											</div>	
 
 											<div class="fotosnaastonevenboven">
-												<img src="Beeldfotografie/mensen/04linkssmal.jog" alt="mensen" style="width: 30%; height: auto;">
+												<img src="Beeldfotografie/mensen/04linkssmal.jpg" alt="mensen" style="width: 30%; height: auto;">
 												<img src="Beeldfotografie/mensen/04rechtsbreed.jpg" alt="mensen" style="width: 67.8%; height: auto;">
 											</div>	
 
-											<img src="Beeldfotografie/mensen/05alleen.JPG" alt="mensen" style="width: 100%" class="fotosnaast4boven">
+											<img src="Beeldfotografie/mensen/05alleen.jpg" alt="mensen" style="width: 100%" class="fotosnaast4boven">
 
 											<div class="fotosnaast">
 												<img src="Beeldfotografie/mensen/06links.jpg" alt="mensen" style="width: 49%;">
@@ -287,7 +320,8 @@
 								
 								<!-- Herfst content -->
 								<div id="herfst-content" style="display:none;" class="tabcontent">
-									<h3 class="kopje">Herfst fotografie</h3>
+									<h3 class="kopje paginatitel">Herfst</h3>
+									<p class="pagina-uitleg">Uitleg</p>
 
 									<div class="fotospaginas">
 
@@ -318,14 +352,14 @@
 
 
 										<div class="fotosnaast">
-											<img src="Beeldfotografie/herfst/09Links.jpg" alt="herfst" style="width: 32%;">
+											<img src="Beeldfotografie/herfst/09links.jpg" alt="herfst" style="width: 32%;">
 											<img src="Beeldfotografie/herfst/09midden.jpg" alt="herfst" style="width: 32%;">
 											<img src="Beeldfotografie/herfst/09rechts.jpg" alt="herfst" style="width: 32%">											
 										</div>
 
 										<div class="fotosnaast4boven">
 											<img src="Beeldfotografie/herfst/10links1.jpg" alt="herfst" style="width: 49%;">
-											<img src="Beeldfotografie/herfst/10Links2.jpg" alt="herfst" style="width: 49%;">
+											<img src="Beeldfotografie/herfst/10links2.jpg" alt="herfst" style="width: 49%;">
 										</div>
 
 										<div class="fotosnaast">
@@ -344,7 +378,8 @@
 								
 								<!-- Zomer content -->
 								<div id="zomer-content" style="display:none;" class="tabcontent">
-									<h3 class="kopje">zomer fotografie</h3>
+									<h3 class="kopje paginatitel">Zomer</h3>
+									<p class="pagina-uitleg">Uitleg</p>
 
 									<div class="fotospaginas">
 
@@ -430,7 +465,8 @@
 								
 								<!-- Eten content -->
 								<div id="eten-content" style="display:none;" class="tabcontent">
-									<h3 class="kopje">Food fotografie</h3>
+									<h3 class="kopje paginatitel">Eten</h3>
+									<p class="pagina-uitleg">Uitleg</p>
 
 										<div class="fotospaginas">
 
@@ -454,7 +490,8 @@
 								
 								<!-- Lightroom content -->
 								<div id="lightroom-content" style="display:none;" class="tabcontent">
-									<h3 class="kopje">Lightroom edits</h3>
+									<h3 class="kopje paginatitel">Lightroom</h3>
+									<p class="pagina-uitleg">Uitleg</p>
 
 											<div class="fotospaginas">
 													
@@ -498,58 +535,544 @@
 									
 
 
+	<!-- design (leeg tot content is aangeleverd) -->
+						<div id="design" class="tabcontent">
+							<h3 class="paginatitel">Design</h3>
+						</div>
+						<div id="graphic" class="tabcontent">
+							<h3 class="paginatitel">Graphic</h3>
+						</div>
+						<div id="photoshop" class="tabcontent">
+							<div class="ps-pagina">
+								<h3 class="paginatitel">Photoshop</h3>
+
+								<div class="ps-sectie">
+									<h4 class="ps-kop">Cadeau’s</h4>
+									<p class="ps-tekst">Deze ontwerpen heb ik gemaakt voor de verjaardagen van vrienden en familie. De ontwerpen zijn bedrukt op mokken, shirts en kaarten.</p>
+								</div>
+								<div class="ps-grid ps-grid-4">
+									<img src="BeeldProjecten/Photoshop/bestbuddies.png" alt="#BESTBUDDIES">
+									<img src="BeeldProjecten/Photoshop/anoukkeind.png" alt="Spider-Verse collage">
+									<img src="BeeldProjecten/Photoshop/evelien.png" alt="Wedding edit">
+									<img src="BeeldProjecten/Photoshop/vaderdag24.png" alt="Fijne vaderdag">
+									<img src="BeeldProjecten/Photoshop/dwivee.png" alt="IVE collage">
+									<img src="BeeldProjecten/Photoshop/joppe.png" alt="Bos collage">
+									<img src="BeeldProjecten/Photoshop/metalfan.png" alt="Metal fan collage">
+									<img src="BeeldProjecten/Photoshop/mokafdeclan.png" alt="Cowabunga">
+								</div>
+
+								<div class="ps-sectie">
+									<h4 class="ps-kop">60 jaar Jos</h4>
+									<p class="ps-tekst">Voor mijn vaders 60ste verjaardag heb ik een puzzel laten bedrukken. In het ontwerp zit alles wat bij mijn vader past en dingen die voor ons belangrijk en grappig zijn.</p>
+								</div>
+								<img src="BeeldProjecten/Photoshop/papaspuzzel.png" alt="Papa puzzel collage" class="ps-breed">
+
+								<div class="ps-sectie">
+									<h4 class="ps-kop">Verjaardagsuitnodiging</h4>
+									<p class="ps-tekst">De uitnodiging die ik voor mijn oma’s 80ste verjaardagsfeest heb ontworpen.</p>
+								</div>
+								<img src="BeeldProjecten/Photoshop/omauitnodiging.png" alt="Hoera, Mieke wordt 80" class="ps-breed">
+								<img src="BeeldProjecten/Photoshop/feestje.png" alt="Familie collage" class="ps-breed ps-breed-mid">
+
+								<div class="ps-sectie">
+									<h4 class="ps-kop">Laura’s grote wereldreis</h4>
+									<p class="ps-tekst">Voor de volledige animatie: zie bij de video’s :)</p>
+								</div>
+								<div class="ps-grid ps-grid-4">
+									<img src="BeeldProjecten/Photoshop/koraal.png" alt="Onderwater">
+									<img src="BeeldProjecten/Photoshop/skydive.png" alt="Rio skydive">
+									<img src="BeeldProjecten/Photoshop/kano.png" alt="Kano met dolfijnen">
+									<img src="BeeldProjecten/Photoshop/jungle.png" alt="Jungle">
+									<img src="BeeldProjecten/Photoshop/sneeuw.png" alt="Sneeuw">
+									<img src="BeeldProjecten/Photoshop/egypte1.png" alt="Egypte">
+									<img src="BeeldProjecten/Photoshop/giraffe.png" alt="Safari">
+									<img src="BeeldProjecten/Photoshop/luchtballon.png" alt="Luchtballonnen">
+								</div>
+
+								<div class="ps-grid ps-grid-3 ps-grid-mixed">
+									<img src="BeeldProjecten/Photoshop/komplotten.png" alt="Kom Plotten">
+									<img src="BeeldProjecten/Photoshop/unclejerry.png" alt="Uncle Jerry comic">
+									<img src="BeeldProjecten/Photoshop/gatenkaas.png" alt="Ze houden je in de gaten">
+								</div>
+
+								<div class="ps-sectie">
+									<h4 class="ps-kop">Pannenkoeken</h4>
+									<p class="ps-tekst">In het project Pan &amp; Koek, waarbij ik mijn eigen pop-up store heb ontworpen, is een van de aspecten pannenkoeken met bijzondere combinaties. Om een beter beeld te creëren heb ik de combinaties gephotoshopt.</p>
+								</div>
+								<div class="ps-grid ps-grid-3">
+									<img src="BeeldProjecten/Photoshop/gluten.png" alt="Beschuit met pasta">
+									<img src="BeeldProjecten/Photoshop/groenebodem.png" alt="Beschuit met ei">
+									<img src="BeeldProjecten/Photoshop/helekomkommertomaatmozarelle.png" alt="Beschuit met komkommer">
+									<img src="BeeldProjecten/Photoshop/ijsroodfruitchochip.png" alt="Beschuit met fruit">
+									<img src="BeeldProjecten/Photoshop/kaasflamkuchen.png" alt="Beschuit met kaas">
+									<img src="BeeldProjecten/Photoshop/fietpeperzalm.png" alt="Beschuit met zalm">
+								</div>
+							</div>
+						</div>
+						<div id="illustratie" class="tabcontent">
+							<div class="illu-pagina">
+								<h3 class="paginatitel">Illustration</h3>
+
+								<div class="illu-rij illu-rij-portret">
+									<img src="BeeldProjecten/illustratie/IMG_1514.PNG" alt="Party illustratie">
+									<img src="BeeldProjecten/illustratie/Untitled_Artwork 4.png" alt="Kikker en eend">
+								</div>
+
+								<div class="illu-rij illu-rij-eten">
+									<div class="illu-pannen">
+										<img src="BeeldProjecten/illustratie/BEHA 9.png" alt="Pannenkoek met ijs">
+										<img src="BeeldProjecten/illustratie/BEHA 8.png" alt="Pannenkoek met fruit">
+										<img src="BeeldProjecten/illustratie/BEHA 5.png" alt="Pannenkoek met bessen">
+										<img src="BeeldProjecten/illustratie/BEHA 6.png" alt="Groene pannenkoek">
+										<img src="BeeldProjecten/illustratie/BEHA 3.png" alt="Pannenkoek met chocolade">
+										<img src="BeeldProjecten/illustratie/BEHA 7.png" alt="Pannenkoek met ham">
+										<img src="BeeldProjecten/illustratie/BEHA 4.png" alt="Pannenkoek met champignons">
+										<img src="BeeldProjecten/illustratie/BEHA 10.png" alt="Pannenkoek met augurk">
+									</div>
+									<div class="illu-ingredienten">
+										<img src="BeeldProjecten/illustratie/BEHA 14.png" alt="Ingrediënten" class="illu-ingredienten-hoofd">
+										<div class="illu-ingredienten-voet">
+											<div class="illu-kommen">
+												<img src="BeeldProjecten/illustratie/BEHA 1.png" alt="Kom met gele saus">
+												<img src="BeeldProjecten/illustratie/BEHA 2.png" alt="Kom met rode saus">
+											</div>
+											<img src="BeeldProjecten/illustratie/BEHA 11.png" alt="Duim omhoog" class="illu-duim">
+										</div>
+									</div>
+								</div>
+
+								<div class="illu-rij illu-rij-drie">
+									<img src="BeeldProjecten/illustratie/Untitled_Artwork 2.png" alt="Abstract figuur">
+									<img src="BeeldProjecten/illustratie/Untitled_Artwork 3.png" alt="Kat in magnetron">
+									<img src="BeeldProjecten/illustratie/Untitled_Artwork kopie.png" alt="Robotfiguur">
+								</div>
+
+								<div class="illu-rij illu-karakters">
+									<img src="BeeldProjecten/illustratie/IMG_1513.PNG" alt="Eenden">
+									<img src="BeeldProjecten/illustratie/IMG_1522.PNG" alt="Beertje met sjaal">
+									<img src="BeeldProjecten/illustratie/IMG_1523.PNG" alt="Dating Donkey">
+									<img src="BeeldProjecten/illustratie/IMG_1524.PNG" alt="Groen skeletfiguur">
+									<img src="BeeldProjecten/illustratie/IMG_1527.PNG" alt="Fee">
+									<img src="BeeldProjecten/illustratie/whutttttttt23456789.png" alt="Kikker met vleugels">
+								</div>
+							</div>
+						</div>
+
+	<!-- projecten (leeg tot content is aangeleverd) -->
+						<div id="projecten" class="tabcontent">
+							<h3 class="paginatitel">Projecten</h3>
+						</div>
+						<div id="feitoffictie" class="tabcontent">
+							<div class="feit-pagina">
+								<img src="BeeldProjecten/Feitoffictie/titel.png" alt="Feit of fictie" class="feit-titel">
+
+								<section class="feit-sectie">
+									<h4 class="feit-sectie-kop">Project introductie</h4>
+									<p class="feit-tekst">Feit of fictie is een campagne gericht op Generatie X (45–60 jaar) die Facebook gebruikt als belangrijkste nieuwsbron. Omdat Facebook geen content meer factcheckt en algoritmes gebruikers steeds dieper in filterbubbels trekken, is deze generatie extra kwetsbaar voor misleidende informatie en complottheorieën. Feit of fictie biedt een laagdrempelige oplossing: een browser-extensie en de bijbehorende website. Het doel is niet om mensen van Facebook af te jagen, maar om ze met een beetje humor en een kritische blik bewuster te laten omgaan met wat ze dagelijks voorbij zien komen.</p>
+									<p class="feit-tekst feit-vraag">Hoe kan ontwerp Generatie X (45–60 jaar) activeren om kritisch en bewust te kijken naar de betrouwbaarheid van content op Facebook, op een laagdrempelige manier die aansluit bij hun bestaande gebruik van het platform?</p>
+								</section>
+
+								<div class="feit-rij">
+									<img src="BeeldProjecten/Feitoffictie/expo1.png" alt="Expositie">
+									<video controls class="feit-video" playsinline>
+										<source src="BeeldProjecten/Feitoffictie/exporond.MOV" type="video/quicktime">
+										<source src="BeeldProjecten/Feitoffictie/exporond.MOV" type="video/mp4">
+									</video>
+									<img src="BeeldProjecten/Feitoffictie/expo2.png" alt="Expositie">
+								</div>
+
+								<video controls class="feit-video feit-video-groot" playsinline>
+									<source src="BeeldProjecten/Feitoffictie/expovid1.mp4" type="video/mp4">
+								</video>
+
+								<section class="feit-sectie feit-blok">
+									<div class="feit-blok-tekst">
+										<h4 class="feit-sectie-kop">Webextensie</h4>
+										<ul class="feit-lijst">
+											<li>Laagdrempelig.</li>
+											<li>Betrouwbaarheidsoordeel.</li>
+											<li>Laadcirkel, aantal gescande berichten, info-knop, foutmelding.</li>
+											<li>Iedereen kan installeren (videouitleg).</li>
+										</ul>
+										<ol class="feit-lijst feit-lijst-nummers">
+											<li>‘Controleer’-knop</li>
+											<li>Scan Facebook</li>
+											<li>AI-analyse via Chutes/Qwen API</li>
+											<li>Betrouwbaarheidsoordeel</li>
+										</ol>
+									</div>
+									<img src="BeeldProjecten/Feitoffictie/1extensie.png" alt="Webextensie" class="feit-blok-beeld">
+								</section>
+
+								<section class="feit-sectie feit-blok">
+									<div class="feit-blok-tekst">
+										<h4 class="feit-sectie-kop">Website</h4>
+										<ul class="feit-lijst">
+											<li>5 pagina’s.</li>
+											<li>Mobiel responsive.</li>
+											<li><a href="https://www.feitoffictie.com" target="_blank" rel="noopener">www.feitoffictie.com</a> echt live.</li>
+										</ul>
+										<ol class="feit-lijst feit-lijst-nummers">
+											<li>Home</li>
+											<li>Informatiepagina</li>
+											<li>Extensie + uitlegvideo’s</li>
+											<li>Webshop</li>
+											<li>Over ons</li>
+										</ol>
+									</div>
+									<img src="BeeldProjecten/Feitoffictie/2website.png" alt="Website" class="feit-blok-beeld">
+								</section>
+
+								<section class="feit-sectie feit-blok feit-blok-middelen">
+									<div class="feit-blok-tekst">
+										<h4 class="feit-sectie-kop">Middelen</h4>
+										<ul class="feit-lijst">
+											<li>Stickers (kritisch + algemeen).</li>
+											<li>Flyers bij bibliotheek.</li>
+											<li>Telefoonhoesje voor mobielgebruik.</li>
+											<li>Mokken voor werkvloer.</li>
+										</ul>
+									</div>
+									<div class="feit-middelen-beelden">
+										<img src="BeeldProjecten/Feitoffictie/middelenalles.jpg" alt="Middelen overzicht">
+										<img src="BeeldProjecten/Feitoffictie/flyer.png" alt="Flyer">
+									</div>
+								</section>
+
+								<video controls class="feit-video feit-video-groot" playsinline>
+									<source src="BeeldProjecten/Feitoffictie/uitlegvideohome.mp4" type="video/mp4">
+								</video>
+
+								<div class="feit-rij feit-rij-twee">
+									<img src="BeeldProjecten/Feitoffictie/customerjourneyff.png" alt="Customer journey">
+									<img src="BeeldProjecten/Feitoffictie/persona.png" alt="Persona">
+								</div>
+
+								<h3 class="feit-kop">middelen</h3>
+								<div class="feit-grid">
+									<img src="BeeldProjecten/Feitoffictie/mok11.jpg" alt="Mok">
+									<img src="BeeldProjecten/Feitoffictie/mok33.jpg" alt="Mok">
+									<img src="BeeldProjecten/Feitoffictie/telefoonhoesje11.jpg" alt="Telefoonhoesje">
+									<img src="BeeldProjecten/Feitoffictie/telefoonhoesje22.jpg" alt="Telefoonhoesje">
+									<img src="BeeldProjecten/Feitoffictie/sticker11.jpg" alt="Sticker">
+									<img src="BeeldProjecten/Feitoffictie/sticker1los.jpg" alt="Sticker">
+									<img src="BeeldProjecten/Feitoffictie/sticker22.jpg" alt="Sticker">
+									<img src="BeeldProjecten/Feitoffictie/sticker2los.jpg" alt="Sticker">
+									<img src="BeeldProjecten/Feitoffictie/sticker3.jpg" alt="Sticker">
+									<img src="BeeldProjecten/Feitoffictie/sticker3Los.jpg" alt="Sticker">
+									<img src="BeeldProjecten/Feitoffictie/sticker4.jpg" alt="Sticker">
+									<img src="BeeldProjecten/Feitoffictie/sticker4los.jpg" alt="Sticker">
+								</div>
+							</div>
+						</div>
+						<div id="onhandig" class="tabcontent">
+							<h3 class="paginatitel">OnHANDig</h3>
+							<p class="uitleg">
+								In dit vak doet de student creatief onderzoek op basis van een experimentele aanpak. Door middel van experimenten met een zelfgemaakte research tool en het zoeken en verwerken van bronnen. Onderzoek voor dit vak richt zich op het adaptieve karakter van de mens, de zintuigelijke waarneming en de relatie tussen mens en technologie. Ook leert de student conclusies te verbinden aan de gevonden resultaten en dit systematisch te verwerken in een research poster.
+							</p>
+							<img src="Beeldcmd/READ/READ1.png" alt="READ" style="width:60%;">
+							<div class="fotospaginas">
+								<div class="fotosnaast">
+									<img src="Beeldcmd/READ/01handlinks.jpg" alt="readtool" style="width: 32%;">
+									<img src="Beeldcmd/READ/01handmidden.jpg" alt="readtool" style="width:32%;">
+									<img src="Beeldcmd/READ/01handrechts.jpg" alt="readtool" style="width: 32%;">
+								</div>
+								<img src="Beeldcmd/READ/02handschuin.jpg" alt="readtool" style="width: 100%" class="fotosnaast4boven">
+								<div class="fotosnaast">
+									<img src="Beeldcmd/READ/03handlinks.jpg" alt="readtool" style="width: 49%;">
+									<img src="Beeldcmd/READ/03handvooruit.jpg" alt="readtool" style="width: 49%;">
+								</div>
+								<div class="fotosnaast4boven">
+									<img src="Beeldcmd/READ/04toollinks.jpg" alt="readtool" style="width: 49%;">
+									<img src="Beeldcmd/READ/04tool.jpg" alt="readtool" style="width: 49%;">
+								</div>
+								<div class="fotosnaast">
+									<img src="Beeldcmd/READ/05klitteband.jpg" alt="readtool" style="width: 49%;">
+									<img src="Beeldcmd/READ/05vullinfrechts.jpg" alt="readtool" style="width: 49%;">
+								</div>
+							</div>
+							<div class="breederijfotos">
+								<img src="Beeldcmd/READ/READA03.png" alt="READ poster">
+								<img src="Beeldcmd/READ/READA06.png" alt="READ poster">
+								<img src="Beeldcmd/READ/READA19.png" alt="READ poster">
+							</div>
+						</div>
+						<div id="firehazard" class="tabcontent">
+							<h3 class="paginatitel">Fire Hazard</h3>
+							<p class="uitleg">
+								LIAR LIAR PANTS ON FIRE
+								<br>
+								Don't let them know otherwise your ass will show
+								<br><br>
+								You and your friends have gathered around to play a game of cards, when suddenly you feel a burning sensation in your upper leg. An ember from the nearby fireplace has jumped right in your pocket and set your pants on fire! Your friends are starting to raise their eyebrows at your red-hot face. Quick, make up a lie so they won't discover your bare bottom! But smoke is rising up from beneath one of your friends asses, maybe they are hiding something as well...
+							</p>
+
+							<div class="fotospaginas">
+								<img src="Beeld/Game design/Fire Hazard/01alleen.jpg" alt="firehazard" style="width: 100%" class="fotosnaast">
+
+								<div class="fotosnaast">
+									<img src="Beeld/Game design/Fire Hazard/02links.jpg" alt="firehazard" style="width: 49%; height: auto;">
+									<img src="Beeld/Game design/Fire Hazard/02rechts.jpg" alt="firehazard" style="width: 49%; height: auto;">
+								</div>
+
+								<img src="Beeld/Game design/Fire Hazard/03alleen.jpg" alt="firehazard" style="width: 100%" class="fotosnaast">
+							</div>
+							<p> Foto's gemaakt door Evelien Denneman</p>
+						</div>
+						<div id="bakkiebabbel" class="tabcontent">
+							<div class="bb-pagina">
+								<h3 class="paginatitel">Bakkie Babbel</h3>
+								<p class="bb-intro">Hoe kan ik namens Bibliotheek Midden-Brabant onverwachte ontmoeting tussen bezoekers in de publieke ruimte stimuleren? Met als doel de interactie tussen bezoekers uit verschillende ‘bubbels’.</p>
+
+								<div class="bb-rij bb-rij-posters">
+									<img src="Beeldcmd/bibliotheek/posterbakkiebabbel.png" alt="Poster Bakkie Babbel">
+									<img src="Beeldcmd/bibliotheek/posterpraattafel.png" alt="Poster De Praat Tafel">
+								</div>
+
+								<section class="bb-sectie">
+									<h4 class="bb-kop">The concept</h4>
+									<div class="bb-rij bb-rij-concept">
+										<img src="Beeldcmd/bibliotheek/storyboard.png" alt="Storyboard Bakkie Babbel" class="bb-storyboard">
+										<div class="bb-concept-tekst">
+											<p>Met Bakkie Babbel en De Praat Tafel willen wij onverwachte ontmoetingen stimuleren door de drempel tot contact te verlagen. Met het Bakkie Babbel kun je aangeven dat jij open staat voor een gesprek. Het kopje of de beker met fel gekleurde strepen laat duidelijk zien dat jij open staat voor een snelle babbel of een lang gesprek.</p>
+											<p>Weet je niet waar je het over moet hebben? Geen probleem! Op het Bakkie Babbel staat een laagdrempelig gespreksonderwerp zodat je altijd iets hebt om over te praten!</p>
+											<p>De Praat Tafel tilt dit naar een nieuw niveau door een aangewezen plek te creëren met oneindig veel gespreksonderwerpen. Van luchtig en simpel tot wat meer serieus, alles komt aan bod.</p>
+										</div>
+									</div>
+								</section>
+
+								<section class="bb-sectie">
+									<h4 class="bb-kop">Promotie</h4>
+									<div class="bb-rij bb-rij-promotie">
+										<img src="Beeldcmd/bibliotheek/krant.png" alt="Krantpromotie Bakkie Babbel">
+										<img src="Beeldcmd/bibliotheek/website.jpg" alt="Websitepromotie Bakkie Babbel">
+									</div>
+								</section>
+
+								<section class="bb-sectie">
+									<h4 class="bb-kop">Expositie op school</h4>
+									<div class="bb-rij bb-rij-expo">
+										<img src="Beeldcmd/bibliotheek/expopraattafel.jpg" alt="Expositie Praat Tafel">
+										<img src="Beeldcmd/bibliotheek/expoalles.jpg" alt="Expositie overzicht">
+										<img src="Beeldcmd/bibliotheek/expobakkiebabbel.jpg" alt="Expositie Bakkie Babbel">
+									</div>
+								</section>
+							</div>
+						</div>
+						<div id="oertijdmuseum" class="tabcontent">
+							<h3 class="paginatitel">Oertijd Museum</h3>
+						</div>
+						<div id="pankoek" class="tabcontent">
+							<h3 class="paginatitel">Pan & Koek</h3>
+							<p class="uitleg">
+								Vak uitleg:<br>
+								Experience Design<br>
+								Je ontwerpt je eigen pop up store. Verzint een uitdagend concept. Je bent helemaal vrij in waar de store over gaat en wat je er gaat verkopen.
+								Werk de totaalervaring van een (potentiële) klant uit in een customer journey. Visualiseer de belangrijkste touchpoints. De bedoeling is mensen op een actieve manier aan te spreken en in aanraking te brengen met het aangeboden product of dienst.
+								<br><br>
+								Mobile Design<br>
+								Het tweede deel draait om Mobile Design, dus het ontwerpen voor apps en wearables. Binnen jouw pop-up store ervaring maak je gebruik van een zelf ontworpen app. Je werkt de vormgeving, functionaliteit en navigatie van de app uit voor gebruiksvriendelijk mobiel gebruik.
+							</p>
+							<div class="breederijfotos">
+								<img src="Beeldcmd/mdes/mdes01.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes02.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes03.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes04.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes05.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes06.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes07.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes08.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes09.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes10.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes11.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes12.png" alt="Pan & Koek">
+								<img src="Beeldcmd/mdes/mdes13.png" alt="Pan & Koek">
+							</div>
+						</div>
+						<div id="generatief" class="tabcontent">
+							<h3 class="paginatitel">Generatief</h3>
+							<p class="uitleg">
+								Met Generative Design maak je gebruik van vaststaande systemen,
+								regelsets of algoritmes binnen het ontwerpproces om gevarieerde output
+								te genereren. In het proces werk je met navolgbare regels en variabelen
+								waarbinnen beperkte keuzes gemaakt kunnen worden. “Als dit, dan dat”.
+								Het proces kan zowel analoog als digitaal plaatsvinden. Generative
+								Design volgt een iteratief ontwerpproces waarin de ontwerper
+								verschillende versies (regels, variabelen, inputs, outputs) test voordat
+								een uiteindelijk systeem wordt toegepast.
+							</p>
+							<div class="breederijfotos">
+								<img src="Beeldcmd/workgeneratief/generatief3.png" alt="Generatief">
+								<img src="Beeldcmd/workgeneratief/generatief4.png" alt="Generatief">
+								<img src="Beeldcmd/workgeneratief/generatief5.png" alt="Generatief">
+								<img src="Beeldcmd/workgeneratief/generatief6.png" alt="Generatief">
+								<img src="Beeldcmd/workgeneratief/generatief7.png" alt="Generatief">
+								<img src="Beeldcmd/workgeneratief/generatief8.png" alt="Generatief">
+								<img src="Beeldcmd/workgeneratief/generatief9.png" alt="Generatief">
+							</div>
+						</div>
+						<div id="speculatief" class="tabcontent">
+							<h3 class="paginatitel">Speculatief</h3>
+							<p class="uitleg">
+								Ontwerpers moeten in staat zijn om te bepalen hoe toekomstige ontwikkelingen invloed hebben op hun werk. Maar ook: hoe hun ontwerpen kunnen bijdragen aan mogelijke of gewenste toekomstige ontwikkelingen. In deze module breng je (jouw visie op) de toekomst in kaart en ontwerp je toekomstscenario’s waarin door jou bedachte producten medebepalend zijn. Behandelde onderwerpen in deze module zijn: speculative design, design fiction, scenario planning, artificial intelligence en bio-based design.
+							</p>
+							<div class="fotospaginas">
+								<div class="fotosnaastoneven">
+									<img src="Beeldcmd/futu/01links.jpg" alt="speculatief" style="width: 68.8%; height: auto;">
+									<img src="Beeldcmd/futu/01rechts.jpg" alt="speculatief" style="width: 30.5%; height: auto;">
+								</div>
+								<div class="fotosnaastoneven">
+									<img src="Beeldcmd/futu/02links.jpg" alt="speculatief" style="width: 30.5%; height: auto;">
+									<img src="Beeldcmd/futu/02rechts.jpg" alt="speculatief" style="width: 68.8%; height: auto;">
+								</div>
+								<div class="fotosnaast">
+									<img src="Beeldcmd/futu/03lniks.jpg" alt="speculatief" style="width: 32%;">
+									<img src="Beeldcmd/futu/03midden.jpg" alt="speculatief" style="width:32%;">
+									<img src="Beeldcmd/futu/03rechts.jpg" alt="speculatief" style="width: 32%;">
+								</div>
+								<div class="fotosnaast">
+									<img src="Beeldcmd/futu/04links.jpg" alt="speculatief" style="width: 49%; height: auto;">
+									<img src="Beeldcmd/futu/04rechts.jpg" alt="speculatief" style="width: 49%; height: auto;">
+								</div>
+								<img src="Beeldcmd/futu/05alleen.jpg" alt="speculatief" style="width: 100%" class="fotosnaast4boven">
+								<div class="fotosnaastoneven">
+									<img src="Beeldcmd/futu/06links.jpg" alt="speculatief" style="width: 30.5%; height: auto;">
+									<img src="Beeldcmd/futu/06rechts.jpg" alt="speculatief" style="width: 68.8%; height: auto;">
+								</div>
+								<div class="fotosnaast">
+									<img src="Beeldcmd/futu/08extralinks.png" alt="speculatief" style="width: 32%;">
+									<img src="Beeldcmd/futu/08extramidden.png" alt="speculatief" style="width:36%;" height="auto">
+									<img src="Beeldcmd/futu/08extrarechts.png" alt="speculatief" style="width: 32%;">
+								</div>
+							</div>
+						</div>
+						<div id="internetteveel" class="tabcontent">
+							<h3 class="paginatitel">InterNetTeVeel</h3>
+						</div>
+						<div id="fastfashion" class="tabcontent">
+							<div class="ooi-pagina">
+								<h3 class="paginatitel">Out Of It</h3>
+								<p class="ooi-ondertitel">een speculatief project over het gevolg van de fast fashion industrie</p>
+
+								<div class="ooi-rij ooi-rij-intro">
+									<video controls class="ooi-video" playsinline>
+										<source src="BeeldProjecten/outofit/introvideo.mp4" type="video/mp4">
+									</video>
+									<div class="ooi-intro-tekst">
+										<h4 class="ooi-hook">Wat als iedereen nog maar<br><strong>één outfit</strong><br>mocht dragen</h4>
+										<p class="ooi-body">Zou je de outfit die je nu aan hebt dragen bij een sollicitatiegesprek? Bij je trouwdag? Zou je hem ook nog morgen dragen? En over morgen? En over over morgen? Zou je deze outfit de komende 25 jaar dragen? <strong>Wat als je geen keuze zou hebben.</strong> Wat als de fast fashion industrie zo erg is doorgedraaid dat er geen keuze meer is. Zo erg dat alles moet veranderen, behalve je outfit. In deze wereld heb je <strong>één outfit</strong> en daar moet je het mee doen. Hoe ziet een wereld eruit waarin mensen weg gehaald worden van de eindeloze trends en overconsumptie.</p>
+									</div>
+								</div>
+
+								<div class="ooi-rij ooi-rij-twee">
+									<img src="BeeldProjecten/outofit/outifit1.png" alt="Storyboard Out Of It">
+									<img src="BeeldProjecten/outofit/outofit7.png" alt="Afval kleding continent">
+								</div>
+
+								<h3 class="ooi-sectie">hoe</h3>
+
+								<div class="ooi-rij ooi-rij-twee">
+									<figure class="ooi-blok">
+										<p class="ooi-label">Hoe wordt er gecontroleerd?</p>
+										<img src="BeeldProjecten/outofit/hoe1.png" alt="Controle">
+									</figure>
+									<figure class="ooi-blok">
+										<p class="ooi-label">Wat valt er onder één outfit?</p>
+										<img src="BeeldProjecten/outofit/hoe2.png" alt="Één outfit">
+									</figure>
+								</div>
+
+								<div class="ooi-rij ooi-rij-outfit">
+									<figure class="ooi-blok ooi-blok-kast">
+										<p class="ooi-label">Hoe zou een kleding kast voor één outfit eruit zien?</p>
+										<div class="ooi-kast-stack">
+											<img src="BeeldProjecten/outofit/outofit6.png" alt="Kledingkast">
+											<img src="BeeldProjecten/outofit/outofit5.png" alt="Gestapelde outfits">
+										</div>
+									</figure>
+									<figure class="ooi-blok ooi-blok-anders">
+										<p class="ooi-label">Dezelfde outfit maar toch anders</p>
+										<img src="BeeldProjecten/outofit/outofit2.png" alt="Dezelfde outfit maar toch anders" class="ooi-outfit-main">
+									</figure>
+								</div>
+
+								<h3 class="ooi-sectie">gevolg</h3>
+
+								<div class="ooi-rij ooi-rij-drie">
+									<figure class="ooi-blok">
+										<p class="ooi-label">Speciale gelegeheden in je enige outfit</p>
+										<img src="BeeldProjecten/outofit/gevolga.png" alt="Speciale gelegenheden">
+									</figure>
+									<figure class="ooi-blok">
+										<p class="ooi-label">werken in je enige outfit</p>
+										<img src="BeeldProjecten/outofit/gevolgb.png" alt="Werken in je outfit">
+									</figure>
+									<figure class="ooi-blok">
+										<p class="ooi-label">Wat gaat er met de fashion media gebeuren?</p>
+										<img src="BeeldProjecten/outofit/gevolgc.png" alt="Fashion media">
+									</figure>
+								</div>
+
+								<figure class="ooi-blok ooi-blok-breed">
+									<p class="ooi-label">Wat gebeurd er met fabrieksarbeiders?</p>
+									<div class="ooi-rij ooi-rij-twee">
+										<img src="BeeldProjecten/outofit/gevolgd.png" alt="Fabrieksarbeiders">
+										<img src="BeeldProjecten/outofit/gevolgdd.png" alt="Andere werkplek">
+									</div>
+								</figure>
+							</div>
+						</div>
+
 	<!-- videografie-->						
 						<div id="video" class="tabcontent">
-							<h3>Video.</h3>
-							<p class="uitleg">
-									stopmotion, animatie, videografie
-								</p>
-		<!-- stopmotion-->		
-					<h3>stopmotion.</h3>
-						<div class="videocategorien">		
-							<!-- freespace-->
-							<div>
-								<video controls class="video">	
-									<source src="Beeld/video/Freespaceklein.mp4" type="video/mp4">
-									Your browser does not support the video tag.
-								</video>
-								<h3 class="kopjeVideo">jaren 80 speelgoed reclame</h3>
-								<p class="uitlegonderproject">	</p>
-							</div>
+							<h3 class="paginatitel">Video</h3>
 
-							<!-- animatie proj-->
-							<div>
-								<video controls class="video">	
-									<source src="Beeld/video/animatieprojectklein.mp4" type="video/mp4">
-									Your browser does not support the video tag.
-								</video>	
-								<h3 class="kopjeVideo">animation project </h3>
-								<p class="uitlegonderproject">	</p>		
-							</div>	
-						</div>										  
+		<!-- stopmotion-->		
+					<h3 class="paginatitel">stopmotion.</h3>
+					<div class="video-rij">
+						<video controls class="video">	
+							<source src="Beeld/video/Freespaceklein.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="video-rij-tekst">
+							<h3>jaren 80 speelgoed reclame</h3>
+							<p class="uitlegonderproject">[uitleg over dit project.]</p>
+						</div>
+					</div>
+					<div class="video-rij video-rij-omgekeerd">
+						<video controls class="video">	
+							<source src="Beeld/video/animatieprojectklein.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="video-rij-tekst">
+							<h3>animation project</h3>
+							<p class="uitlegonderproject">[uitleg over dit project.]</p>
+						</div>
+					</div>
+
 		<!-- animatie-->	
-					<h3>animatie.</h3>
-						<div class="videocategorien">						
-							<!-- laura 20-->
-							<div>
-									<video controls class="video">	
-										<source src="Beeld/video/Laura20klein.mp4" type="video/mov">
-										<source src="Beeld/video/Laura20klein.mp4" type="video/ogg">
-										Your browser does not support the video tag.
-									</video>
-									<h3 class="kopjeVideo">Laura's wereld reis</h3>
-									<p class="uitlegonderproject">	</p>	
-								</div><div>
-								<!-- PMED-->
-									<video controls class="video">	
-										<source src="Beeld/video/Eindversie1.mp4" type="video/mov">
-										<source src="Beeld/video/Eindversie1.mp4" type="video/ogg">
-										Your browser does not support the video tag.
-									</video>
-									<h3 class="kopjeVideo">Berry's koffie café</h3>
-									<p class="uitlegonderproject">	</p>	
-								</div>	
-							</div>  
+					<h3 class="paginatitel">animatie.</h3>
+					<div class="video-rij">
+						<video controls class="video">	
+							<source src="Beeld/video/laura20klein.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="video-rij-tekst">
+							<h3>Laura's wereldreis</h3>
+							<p class="uitlegonderproject">[uitleg over dit project.]</p>
+						</div>
+					</div>
+					<div class="video-rij video-rij-omgekeerd">
+						<video controls class="video">	
+							<source src="Beeld/video/Eindversie1.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="video-rij-tekst">
+							<h3>Berry's Koffie Café</h3>
+							<p class="uitlegonderproject">[uitleg over dit project.]</p>
+						</div>
+					</div>
+
 			<!-- korte animaties-->		
 					<h3>korte animatie.</h3>					
 								<!-- animatie proj kort-->
@@ -604,29 +1127,6 @@
 							<img src="Beeld/Game design/bugging/Gbugging11.png" alt="huisjebuiten">
 							<img src="Beeld/Game design/bugging/Gbugging12.png" alt="huisjebuiten">
 						</div>
-
-							<h3>Fire Hazard</h3>
-							<p class="uitleg">
-								LIAR LIAR PANTS ON FIRE
-								<br>
-								Don't let them know otherwise your ass will show
-								<br><br>
-								You and your friends have gathered around to play a game of cards, when suddenly you feel a burning sensation in your upper leg. An ember from the nearby fireplace has jumped right in your pocket and set your pants on fire! Your friends are starting to raise their eyebrows at your red-hot face. Quick, make up a lie so they won't discover your bare bottom! But smoke is rising up from beneath one of your friends asses, maybe they are hiding something as well... 	
-							</p>
-
-							<div class="fotospaginas">	
-								<img src="Beeld/Game design/Fire Hazard/01alleen.jpg" alt="firehazard" style="width: 100%" class="fotosnaast">
-
-								<div class="fotosnaast">
-									<img src="Beeld/Game design/Fire Hazard/02links.jpg" alt="firehazard" style="width: 49%; height: auto;">
-									<img src="Beeld/Game design/Fire Hazard/02rechts.jpg" alt="firehazard" style="width: 49%; height: auto;">
-								</div>	
-
-								<img src="Beeld/Game design/Fire Hazard/03alleen.jpg" alt="firehazard" style="width: 100%" class="fotosnaast">
-								</div>
-								<p> Foto's gemaakt door Evelien Denneman</p>
-
-
 						</div>
 
 						
@@ -690,8 +1190,8 @@
 								</div>	
 
 						<!--		<div class="fotosnaast">
-									<img src="Beeld/3D/karakter/render4.2.png" alt="karakter" style="width: 57%; height: auto;">
-									<img src="Beeld/3D/karakter/render5.png" alt="karakter" style="width: 41%; height: auto;"> 
+									<img src="Beeld/3D/karakter/Render4.2.png" alt="karakter" style="width: 57%; height: auto;">
+									<img src="Beeld/3D/karakter/Render5.png" alt="karakter" style="width: 41%; height: auto;"> 
 								</div>	 -->
 
 						</div>
@@ -829,8 +1329,6 @@
 												verschillende versies (regels, variabelen, inputs, outputs) test voordat
 												een uiteindelijk systeem wordt toegepast</p>
 												<div class="breederijfotos">
-											<img src="Beeldcmd/workgeneratief/generatief1.png" alt="huisjebuiten">
-											<img src="Beeldcmd/workgeneratief/generatief2.png" alt="huisjebuiten" >
 											<img src="Beeldcmd/workgeneratief/generatief3.png" alt="huisjebuiten">
 											<img src="Beeldcmd/workgeneratief/generatief4.png" alt="huisjebuiten">
 											<img src="Beeldcmd/workgeneratief/generatief5.png" alt="huisjebuiten" >
@@ -997,26 +1495,44 @@
 
 
 								</div>
-							-->/Users/jamvangorkum/Downloads/Werk/Portfolio/Web/beeldthumbnails/header/groenvlak3.png
+							-->
 							</div>
 				
 
 	<!-- overmij-->		
 						<div id="overmij" class="tabcontent">
-							<h3>Over mij.</h3>
-							<p class="uitleg">
-
-							<figure>
-								<img src="beeldthumbnails/ikn.jpg" alt="ik" class="fotoik" style="border-radius: auto;">
-								<figcaption>me.</figcaption>
-							</figure>
-							<br><br><br>
-							Personal email-address: nadua.van.gorkum@gmail.com
-							<br><br>
-							School email-address: nk.vangorkum@student.avans.nl
-							<br><br>
-							Phone-number: +31 6 40999736
-							</p>
+							<h3 class="paginatitel">Over mij</h3>
+							<div class="overmij-layout">
+								<div class="overmij-tekst">
+									<p class="overmij-groet">Hellooo,</p>
+									<p class="overmij-lead">Een paar leuke feitjes over mij,</p>
+									<div class="overmij-feitjes">
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Ik <strong>journal iedere dag</strong>, soms is het meer een dagboek, maar ik kan hierdoor heel goed reflecteren over de dag en mijn <strong>gedachtes een plekje geven</strong> om met een rustig hoofd te slapen.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Ik heb na honderden kilometers op mijn versnellingsloze stadsfiets toch toegegeven en een hele <strong>oude retro racefiets</strong> aangeschaft genaamd Japie aka Vlugge Japie (het achterneefje van Snelle Jelle), waar ik nu ontzettend van geniet. Inmiddels ben ik hierdoor ook met plezier <strong>beginnend fietsenmaker</strong> geworden.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Ik <strong>hou enorm van lezen</strong>, iets wat ik vroeger nooit dacht te kunnen zeggen, maar nu ga ik nooit de deur uit zonder boek. Ik lees met plezier <strong>boeken meermaals</strong>; het scheelt want mijn geheugen is in dat opzicht niet gigantisch denderend, dus ieder half jaar heb ik weer een nieuwe boekenkast die ik opnieuw kan lezen.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Alles wat met draad is vind ik enorm leuk. Ik ben al jaren een <strong>fanatieke haker en breier</strong>, en daar is een naaimachine bij gekomen. Voor alles wat ik nodig heb verzin ik wel een manier om het eerst zelf te maken. Is het te ingewikkeld, dan verzin ik wel een manier dat ik het toch kan maken, want een patroon of tutorial daar ben ik <strong>iets te eigenwijs</strong> voor.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Knutselen doe ik niet alleen graag met de hand maar ook op mijn laptop. Voor iedere verjaardag of speciale gelegenheid creëer ik graag <strong>iets persoonlijks</strong> voor mijn vrienden en familie: een bedrukte mok, t-shirt of puzzel. Ik ben vaste klant bij de HEMA-fotoservice. Vaak door middel van foto’s die ik heb verzameld, <strong>een vleugje humor</strong> en Photoshop, knutsel ik van alles in elkaar.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Mijn guilty pleasures zijn <strong>documentaires en puzzelboekjes</strong>. Ik heb ongeveer alle documentaires van alle streamingdiensten afgeplukt en gekeken, met als favoriet ‘Free Solo’ en 'The Social Dilemma'. Ik speel <strong>iedere dag alle puzzels</strong> in de Algemeen Dagblad-app, maar mijn favoriete puzzel is en blijft toch altijd de tectonic.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Ik kijk graag tv, en dan bedoel ik niet Netflix of Disney+, maar <strong>echte Nederlandse tv</strong>. Mijn all-time favorieten zijn: Heel Holland Bakt, Boer Zoekt Vrouw, Expeditie Robinson, Wie is de Mol, De Slimste Mens en B&amp;B/Winter vol Liefde.</span></p>
+									</div>
+									<p class="overmij-label">Hobbies:</p>
+									<div class="hobby-iconen">
+										<img src="beeldthumbnails/icon/boek.png" alt="lezen">
+										<img src="beeldthumbnails/icon/wol.png" alt="breien">
+										<img src="beeldthumbnails/icon/fiets.png" alt="fietsen">
+										<img src="beeldthumbnails/icon/hardlopen.png" alt="hardlopen">
+										<img src="beeldthumbnails/icon/camera.png" alt="fotografie">
+										<img src="beeldthumbnails/icon/documontaire.png" alt="documentaires">
+									</div>
+									<p class="overmij-groet overmij-afscheid">liefs,<br>Nadua</p>
+									<p class="overmij-label">Contact:</p>
+									<div class="overmij-contact">
+										<p><span>Personal email-address:</span><br>nadua.van.gorkum@gmail.com</p>
+										<p><span>Phone-number:</span><br>+31 6 40999736</p>
+									</div>
+								</div>
+								<img src="beeldthumbnails/ikn.jpg" alt="ik" class="fotoik">
+							</div>
 						</div>
 				
 
