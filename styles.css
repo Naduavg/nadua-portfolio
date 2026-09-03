@@ -45,7 +45,8 @@ body {
 #menu {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: auto;
+  flex: 0 0 auto;
   align-items: stretch;
 }
 
@@ -74,7 +75,7 @@ font-family: "Londrina Solid", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 300%;
-  color: #67752f;
+  color: #bcc955;
   letter-spacing: 0.28em;
 }
 
@@ -82,7 +83,7 @@ font-family: "Londrina Solid", sans-serif;
 h3.paginatitel {
   font-family: "Londrina Solid", sans-serif;
   font-weight: 700;
-  color: #67752f;
+  color: #bcc955;
   font-size: 4.2vw;
   text-align: center;
   margin: 0.4em 0 0.2em;
@@ -91,7 +92,7 @@ h3.paginatitel {
 
 .pagina-uitleg {
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #1a2d4f;
   font-size: 1.1vw;
   margin: 0 0 1.5em;
 }
@@ -116,13 +117,14 @@ p{
   border: none;
   text-align: left;
   cursor: pointer;
-  padding: 0 0 1.5em;
+  padding: 0 0 0.5em;
   font-family: "Londrina Solid", sans-serif;
   font-weight: 700;
   color: #1a2d4f;
-  line-height: 0.95;
-  font-size: 1.7vw;
-  letter-spacing: 0.22em;
+  line-height: 0.78;
+  font-size: clamp(36px, 3.8vw, 72px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .site-name span {
@@ -131,8 +133,15 @@ p{
   white-space: nowrap;
 }
 
-.site-name span:first-child {
-  font-size: 1.95em;
+.site-name-top {
+  line-height: 0.78;
+}
+
+.site-name-bottom {
+  font-size: 0.6em;
+  letter-spacing: 0.24em;
+  line-height: 1.1;
+  margin-top: 0.18em;
 }
 
 .tablink {
@@ -144,7 +153,7 @@ p{
   outline: none;
   cursor: pointer;
   padding: 0.35em 0;
-  font-size: 1.15vw;
+  font-size: 1.55vw;
   border-radius: 0;
   background: none;
   display: flex;
@@ -176,7 +185,7 @@ p{
   padding: 0.2em 0 0.6em 1.6em;
 }
 
-.nav-group:hover .submenu {
+.nav-group.open .submenu {
   display: flex;
 }
 
@@ -187,7 +196,7 @@ p{
   cursor: pointer;
   padding: 0.15em 0;
   font-family: "Chelsea Market", cursive;
-  font-size: 0.95vw;
+  font-size: 1.2vw;
   color: #e2a651;
 }
 
@@ -257,7 +266,7 @@ p{
   width: auto;
   min-width: 0;
   margin: 0;
-  padding: 1.5vw 2vw 4vw;
+  padding: 1.2vw 1vw 3vw;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -274,11 +283,22 @@ p{
   display: none;
 }
 
+#home {
+  flex-direction: column;
+  min-height: calc(100dvh - 4.2vw);
+  box-sizing: border-box;
+}
+
+#home .paginatitel {
+  flex: 0 0 auto;
+}
+
 .home-collage {
   position: relative;
-  width: 46vw;
-  height: 28vw;
-  margin: 2vw auto 1vw;
+  width: min(62vw, calc((100dvh - 16vw) * 1.63));
+  height: min(38vw, calc(100dvh - 16vw));
+  margin: 1vw auto;
+  flex: 0 1 auto;
 }
 
 .home-foto {
@@ -290,24 +310,24 @@ p{
 }
 
 .home-foto-midden {
-  width: 28vw;
-  height: 22vw;
-  left: 7vw;
-  top: 1vw;
+  width: 61.29%;
+  height: 78.95%;
+  left: 15.32%;
+  top: 3.42%;
   z-index: 2;
 }
 
 .home-foto-links {
-  width: 16vw;
-  height: 11vw;
+  width: 34.68%;
+  height: 39.47%;
   left: 0;
-  bottom: 1vw;
+  bottom: 2.63%;
   z-index: 3;
 }
 
 .home-foto-rechts {
-  width: 13vw;
-  height: 18vw;
+  width: 28.23%;
+  height: 63.16%;
   right: 0;
   top: 0;
   z-index: 3;
@@ -318,7 +338,9 @@ p{
   color: #e2a651;
   font-size: 2.4vw;
   font-weight: 600;
-  margin-top: 0.5em;
+  margin: auto 0 0;
+  flex: 0 0 auto;
+  text-align: center;
 }
 
 .overmij-layout {
@@ -399,7 +421,7 @@ p{
 .overmij-label {
   font-family: "Chelsea Market", cursive;
   font-weight: 400;
-  color: #1a2d4f;
+  color: #e2a651;
   font-size: 1.25vw;
   margin: 0.6vw 0 0;
 }
@@ -432,7 +454,7 @@ p{
 
 .overmij-contact p {
   font-family: brevia, sans-serif;
-  color: #1a2d4f;
+  color: #e2a651;
   font-size: 1.05vw;
   line-height: 1.45;
   text-align: left;
@@ -441,7 +463,7 @@ p{
 
 .overmij-contact span {
   font-family: "Chelsea Market", cursive;
-  color: #1a2d4f;
+  color: #e2a651;
   font-size: 0.95em;
 }
 
@@ -466,7 +488,7 @@ p{
 
 .uitleg{
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #1a2d4f;
   font-size: 110%;
   text-align: center;
   letter-spacing: 1px;
@@ -742,18 +764,64 @@ border-radius: 0 !important;
 border: 8px solid #ffffff;
 }
 
-#fotografie figure {
+.thumbnail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6vw;
+  max-width: 68vw;
+  margin: 0 auto 2vw;
+}
+
+.thumbnail-grid .fotorij-drie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6vw;
+}
+
+#projecten .thumbnail-grid .fotorij-vier {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2vw;
+}
+
+.thumbnail-grid .fotorij-drie > div,
+#projecten .thumbnail-grid .fotorij-vier > div {
+  min-width: 0;
+}
+
+.thumbnail-grid figcaption {
+  color: #67752f;
+}
+
+/* Overview grids: same 3:2 crop as beeldthumbnails */
+.thumbnail-grid .select {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+#CMDprojecten figure {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5vw 2vw;
 }
 
-#fotografie .fotorij {
+#CMDprojecten .fotorij {
   display: contents;
 }
 
-#fotografie figcaption {
+#CMDprojecten figcaption {
   color: #67752f;
+}
+
+#CMDprojecten figure .select {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .kopje {
@@ -840,6 +908,18 @@ footer {
   max-width: 100%;
 }
 
+video:fullscreen,
+video:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: #000;
+}
+
 .video-rij {
   display: flex;
   align-items: center;
@@ -865,12 +945,12 @@ footer {
 
 .video-rij-tekst h3 {
   font-family: "Londrina Solid", sans-serif;
-  font-weight: 700;
-  color: #1a2d4f;
-  font-size: 2.2vw;
-  letter-spacing: 0.04em;
-  margin: 0 0 0.35em;
-  text-align: left;
+    font-weight: 700;
+ 	 color: #67752f;
+    font-size: 1.7vw;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.35em;
+    text-align: left;
 }
 
 .video-rij-tekst .uitlegonderproject {
@@ -881,7 +961,7 @@ footer {
 .videocategorien {
   display: flex;
   gap: 2%;
-  width: 100%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   flex-wrap: wrap;
@@ -905,12 +985,34 @@ footer {
   max-width: 100%;
 }
 
+.video-kop {
+  font-family: "Chelsea Market", cursive;
+  font-weight: 400;
+  color: #1a2d4f;
+  font-size: 1.8vw;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.35em;
+  text-align: center;
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .fotospaginas{
   width: auto;
   margin-left: 6vw;
   margin-right: 6vw;
   justify-self: center;
   box-sizing: border-box;
+}
+
+.scand-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5vw;
+  background: #0f1a2e;
 }
 
 /* Feit of Fictie */
@@ -947,7 +1049,7 @@ footer {
 .feit-sectie-kop {
   font-family: "Chelsea Market", cursive;
   font-weight: 400;
-  color: #1a2d4f;
+  color: #bcc955;
   font-size: 1.8vw;
   letter-spacing: 0.02em;
   text-align: left;
@@ -956,7 +1058,7 @@ footer {
 
 .feit-tekst {
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #0f1a2e;
   font-size: 1.1vw;
   line-height: 1.45;
   text-align: left;
@@ -991,7 +1093,7 @@ footer {
 
 .feit-lijst {
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #1a2d4f;
   font-size: 1.05vw;
   line-height: 1.45;
   text-align: left;
@@ -1080,11 +1182,11 @@ footer {
 }
 
 .feit-kop {
-  font-family: "Londrina Solid", sans-serif;
-  font-weight: 700;
+    font-family: "Chelsea Market", cursive;
+  font-weight: 400;
   color: #1a2d4f;
-  font-size: 3.2vw;
-  letter-spacing: 0.06em;
+  font-size: 1.8vw;
+  letter-spacing: 0.02em;
   margin: 1vw 0 0;
   text-align: center;
 }
@@ -1174,6 +1276,10 @@ footer {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.ps-grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
 .ps-grid img {
   width: 100%;
   height: auto;
@@ -1182,15 +1288,24 @@ footer {
   object-fit: cover;
 }
 
-.ps-grid-mixed {
-  align-items: end;
+.ps-extra-rij {
+  display: flex;
+  width: 100%;
+  gap: 1vw;
+  align-items: stretch;
+  aspect-ratio: 3.884 / 1;
+  max-height: 38vw;
 }
 
-.ps-grid-mixed img {
-  object-fit: contain;
+.ps-extra-rij img {
+  flex: var(--ar, 1) 1 0;
+  min-width: 0;
   height: 100%;
-  max-height: 42vw;
-  background: transparent;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 0.5vw;
 }
 
 /* Illustration */
@@ -1218,11 +1333,49 @@ footer {
   border-radius: 0.5vw;
 }
 
-.illu-rij-portret img {
-  flex: 1 1 0;
-  width: 0;
-  min-width: 0;
+.illu-rij-portret {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2vw;
+  align-items: stretch;
+}
+
+.illu-portret-kaart {
+  width: 100%;
+  aspect-ratio: 723 / 1024;
+  border-radius: 0.5vw;
+  overflow: hidden;
+}
+
+.illu-portret-kaart img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0;
+}
+
+.illu-portret-blok {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2vw;
+}
+
+.illu-portret-onder {
+  width: calc((100% - 1.2vw) / 2);
+  max-width: 100%;
+  border-radius: 0.5vw;
+  overflow: hidden;
+}
+
+.illu-portret-onder img {
+  width: 100%;
   height: auto;
+  display: block;
+  border-radius: 0;
   object-fit: contain;
 }
 
@@ -1357,7 +1510,7 @@ footer {
 
 .bb-intro {
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #0f1a2e;
   font-size: 1.15vw;
   line-height: 1.45;
   text-align: center;
@@ -1377,7 +1530,7 @@ footer {
   color: #1a2d4f;
   font-size: 1.8vw;
   letter-spacing: 0.02em;
-  text-align: left;
+  text-align: center;
   margin: 0;
 }
 
@@ -1423,7 +1576,7 @@ footer {
 
 .bb-concept-tekst p {
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #1a2d4f;
   font-size: 1.1vw;
   line-height: 1.45;
   text-align: left;
@@ -1445,6 +1598,81 @@ footer {
   object-fit: cover;
 }
 
+/* InterNetTeVeel */
+.int-pagina {
+  width: auto;
+  margin: 0 6vw 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2vw;
+}
+
+.int-pagina .paginatitel {
+  margin-bottom: 0;
+}
+
+.int-rij {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 1.2vw;
+}
+
+.int-rij img,
+.int-rij video {
+  display: block;
+  border-radius: 0.5vw;
+  min-width: 0;
+}
+
+.int-rij-posters img {
+  flex: 1 1 0;
+  width: 0;
+  height: auto;
+  object-fit: contain;
+}
+
+.int-rij-twee img {
+  flex: 1 1 0;
+  width: 0;
+  height: auto;
+  object-fit: contain;
+}
+
+.int-rij-illu img:first-child {
+  flex: 1.35 1 0;
+}
+
+.int-rij-illu img:last-child {
+  flex: 0.85 1 0;
+}
+
+.int-storyboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1vw;
+}
+
+.int-storyboard img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.4vw;
+  object-fit: cover;
+}
+
+.int-rij-video {
+  align-items: flex-start;
+}
+
+.int-video {
+  flex: 1 1 0;
+  width: 0;
+  max-height: 36vw;
+  object-fit: contain;
+  background: #0f1a2e;
+}
+
 /* Out Of It */
 .ooi-pagina {
   width: auto;
@@ -1460,7 +1688,7 @@ footer {
 
 .ooi-ondertitel {
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #0f1a2e;
   font-size: 1.2vw;
   text-align: center;
   margin: 0 0 1.2vw;
@@ -1493,8 +1721,8 @@ footer {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5vw;
+  justify-content: flex-start;
+  gap: 0.6vw;
   min-width: 0;
   min-height: 58vh;
   height: 58vh;
@@ -1693,8 +1921,15 @@ footer {
   gap: 2vw; /* ruimte tussen de foto's */
   justify-content: space-between;
   height: auto;
-  align-items: flex-start; /* zorgt dat de bovenkanten gelijk zijn */
+  align-items: stretch;
   margin-bottom: 5%;
+}
+
+.fotosnaastoneven img {
+  display: block;
+  height: 34vw;
+  object-fit: cover;
+  object-position: center;
 }
 
 .fotosnaastonevenboven{
@@ -1703,8 +1938,52 @@ footer {
   gap: 2vw; /* ruimte tussen de foto's */
   justify-content: space-between;
   height: auto;
-  align-items: flex-start; /* zorgt dat de bovenkanten gelijk zijn */
+  align-items: stretch;
   margin-bottom: 2%;
+}
+
+.fotosnaastonevenboven img {
+  display: block;
+  height: 34vw;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fotospaginas .fotos-mix {
+  display: flex;
+  gap: 1.2vw;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+.fotospaginas .fotos-mix img {
+  display: block;
+  height: 34vw;
+  width: auto;
+  max-width: calc(100% - 0.6vw);
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.fotospaginas .fotos-drie {
+  display: flex;
+  gap: 1.2vw;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+.fotospaginas .fotos-drie img {
+  display: block;
+  height: 24vw;
+  width: auto;
+  max-width: calc(33.33% - 0.8vw);
+  object-fit: contain;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 
@@ -1785,14 +2064,28 @@ font-style: normal;
 
 @media (max-width: 800px) {
 
-  body{
+  body {
     font-size: 2.2vw;
     width: 100%;
+    overflow-x: hidden;
   }
 
-  img{
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  body.menu-open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 45, 79, 0.35);
+    z-index: 4999;
+  }
+
+  img {
     border-radius: 1.3vw;
-}
+    max-width: 100%;
+  }
 
   #headerlaag1{
     position: absolute;
@@ -1832,16 +2125,23 @@ justify-content: space-around;
   .alles {
     margin-left: 0;
     margin-right: 0;
-    margin-top: 27%;
+    margin-top: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
   }
 
+  #menu {
+    width: 0;
+    min-width: 0;
+    flex: 0 0 0;
+    overflow: visible;
+  }
+
   .page-content {
-    padding: calc(2em + 1.5vw) 2.5vw 0;
     width: 100%;
-    margin-top: -1.5vw;
+    padding: 4.5rem 4vw 3em;
+    margin-top: 0;
   }
 
 
@@ -1865,13 +2165,12 @@ justify-content: space-around;
 }
 
 .fotospaginas{
-  margin-left: 6vw;
-  margin-right: 6vw;
-    width: auto;
-    display: flex;
-    gap: 1vw;
-    flex-direction: column;
-  
+  margin-left: 0;
+  margin-right: 0;
+  width: auto;
+  display: flex;
+  gap: 1vw;
+  flex-direction: column;
 }
 
 
@@ -1879,9 +2178,52 @@ justify-content: space-around;
   width: 17vw;
   }
 
+  .thumbnail-grid {
+    max-width: 92vw;
+    gap: 3vw;
+  }
+
+  .thumbnail-grid .fotorij-drie {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+  }
+
+  #projecten .thumbnail-grid .fotorij-vier {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+  }
+
+  .thumbnail-grid .select {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .pagina-uitleg {
+    font-family: brevia, sans-serif;
+    color: #1a2d4f;
+    font-size: 3.4vw;
+    margin-bottom: 1.2em;
+  }
+
+  .tabcontent > img {
+    width: 100% !important;
+    height: auto;
+  }
+
+  .scand-video,
+  .fotospaginas video,
+  .tabcontent video:not(.select) {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+  }
+
   .fotorij {
     flex-direction: column;
-    gap: 1vw;
+    gap: 4vw;
     align-items: center;
   }
 
@@ -1889,22 +2231,36 @@ justify-content: space-around;
   .fotosnaast,
   .fotosnaast4boven,
   .fotosnaastoneven,
-  .fotosnaastonevenboven {
+  .fotosnaastonevenboven,
+  .fotos-mix,
+  .fotos-drie {
     flex-direction: column;
     align-items: center;
     gap: 1vw;
   }
 
   /* Alle afbeeldingen op mobiel volle breedte */
-  .fotorij img,
   .fotospaginas img,
   .fotosnaast img,
   .fotosnaast4boven img,
   .fotosnaastoneven img,
   .fotosnaastonevenboven img,
+  .fotos-mix img,
+  .fotos-drie img,
   .breederijfotos img {
     width: 100% !important;
     height: auto;
+  }
+
+  #fotografie figure .select,
+  #design figure .select,
+  #projecten figure .select,
+  #CMDprojecten figure .select,
+  .thumbnail-grid .select {
+    width: 100% !important;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
   }
 
   .fotoik {
@@ -1915,23 +2271,15 @@ justify-content: space-around;
     border: 8px solid #ffffff;
   }
 
-  .tablink {
-    width: 90%;
-  }
-
-  .tabmenu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tablink {
-    width: 90%;
-    font-size: 3.3vw;
-  }
-
-  p, .uitleg, .uitlegonderproject {
+  p, .uitlegonderproject {
     margin: 1em 5%;
     font-size: 3vw;
+  }
+
+  .uitleg {
+    margin: 1em 5%;
+    font-size: 3vw;
+    color: #1a2d4f;
   }
 
   .videocategorien > div {
@@ -1954,7 +2302,12 @@ justify-content: space-around;
   }
 
   .video-rij-tekst h3 {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 700;
+    color: #67752f;
     font-size: 6vw;
+    letter-spacing: 0.04em;
+    text-align: left;
   }
   
   .balktekststyle{
@@ -2001,23 +2354,71 @@ justify-content: space-around;
     color: #1a2d4f;
   }
 
+  body.menu-open .hamburger {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   .hamburger img {
     pointer-events: none;
   }
 
-
-  .page-content {
-    width: 100%;
-    padding: 4em 6vw 3em;
-  }
-
-  .paginatitel {
+  .paginatitel,
+  h3.paginatitel {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 700;
+    color: #bcc955;
     font-size: 9vw;
+    letter-spacing: 0.28em;
+    text-align: center;
   }
 
   .home-collage {
-    width: 88vw;
-    height: 58vw;
+    width: min(92vw, calc((100dvh - 28vw) * 1.64));
+    height: min(56vw, calc(100dvh - 28vw));
+    margin: 2vw auto 1vw;
+  }
+
+  .home-foto-midden {
+    width: 61.29%;
+    height: 78.95%;
+    left: 15.32%;
+    top: 3.42%;
+  }
+
+  .home-foto-links {
+    width: 34.68%;
+    height: 39.47%;
+    left: 0;
+    bottom: 2.63%;
+  }
+
+  .home-foto-rechts {
+    width: 28.23%;
+    height: 63.16%;
+    right: 0;
+    top: 0;
+  }
+
+  .home-groet {
+    font-size: 6vw;
+    margin: auto 0 0;
+  }
+
+  #home {
+    flex-direction: column;
+    min-height: calc(100dvh - 4.5rem - 3em);
+  }
+
+  .video-kop {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 700;
+    color: #1a2d4f;
+    font-size: 5.5vw;
+    letter-spacing: 0.04em;
+    margin: 0 auto 0.35em;
+    text-align: left;
+    width: 92%;
   }
 
   .overmij-layout {
@@ -2033,6 +2434,12 @@ justify-content: space-around;
   .overmij-lead,
   .overmij-label {
     font-size: 4vw;
+  }
+
+  .overmij-label,
+  .overmij-contact p,
+  .overmij-contact span {
+    color: #e2a651;
   }
 
   .overmij-feitjes p,
@@ -2056,11 +2463,16 @@ justify-content: space-around;
 
   .feit-sectie-kop {
     font-size: 5vw;
+    color: #bcc955;
   }
 
   .feit-tekst,
   .feit-lijst {
     font-size: 3.4vw;
+  }
+
+  .feit-lijst {
+    color: #1a2d4f;
   }
 
   .feit-blok,
@@ -2118,13 +2530,22 @@ justify-content: space-around;
     gap: 2vw;
   }
 
-  .ps-grid-mixed {
-    grid-template-columns: 1fr;
-    align-items: center;
+  .ps-grid-6 {
+    grid-template-columns: repeat(6, minmax(14vw, 1fr));
+    gap: 1.5vw;
+    overflow-x: auto;
   }
 
-  .ps-grid-mixed img {
-    max-height: none;
+  .ps-extra-rij {
+    flex-direction: column;
+    height: auto;
+    gap: 3vw;
+  }
+
+  .ps-extra-rij img {
+    flex: none;
+    width: 100%;
+    height: auto;
   }
 
   .illu-pagina {
@@ -2144,7 +2565,14 @@ justify-content: space-around;
     gap: 3vw;
   }
 
-  .illu-rij-portret img,
+  .illu-portret-onder {
+    width: 100%;
+  }
+
+  .illu-rij-portret {
+    grid-template-columns: 1fr;
+  }
+
   .illu-rij-drie img {
     width: 100%;
     flex: none;
@@ -2220,6 +2648,32 @@ justify-content: space-around;
     font-size: 3.4vw;
   }
 
+  .int-pagina {
+    margin: 0 4vw 3vw;
+    gap: 4vw;
+  }
+
+  .int-rij,
+  .int-rij-posters,
+  .int-rij-twee,
+  .int-rij-video {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .int-rij-posters img,
+  .int-rij-twee img,
+  .int-video {
+    width: 100%;
+    flex: none;
+    max-height: none;
+  }
+
+  .int-storyboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2vw;
+  }
+
   .ooi-pagina {
     margin: 0 4vw 3vw;
     gap: 4vw;
@@ -2258,7 +2712,7 @@ justify-content: space-around;
   .ooi-intro-tekst {
     height: auto;
     min-height: 0;
-    gap: 4vw;
+    gap: 2vw;
   }
 
   .ooi-hook {
@@ -2299,9 +2753,10 @@ justify-content: space-around;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 72vw;
-    background-color: #f9f6ea;
-   z-index: 5000;
+    height: 100dvh;
+    width: min(82vw, 320px);
+    background-color: #f4f4f3;
+    z-index: 5000;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2309,9 +2764,10 @@ justify-content: space-around;
     gap: 0;
     border-radius: 0;
     box-shadow: 4px 0 16px rgba(0, 0, 0, 0.12);
-
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* open toestand */
@@ -2321,6 +2777,46 @@ justify-content: space-around;
 
   .nav-group.open .submenu {
     display: flex;
+  }
+
+  .site-name {
+    font-size: clamp(28px, 8vw, 44px);
+    padding-bottom: 1em;
+  }
+
+  .sidebar-avatar {
+    width: 16vw;
+    max-width: 72px;
+  }
+
+  .sidebar-voet p {
+    font-size: 3.2vw;
+  }
+
+  #lightbox-image {
+    max-width: 94vw;
+    max-height: 80vh;
+  }
+
+  .lightbox-close,
+  .lightbox-nav {
+    font-size: 2rem;
+    padding: 0.75rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .lightbox-prev {
+    left: 0.75rem;
+  }
+
+  .lightbox-next {
+    right: 0.75rem;
   }
 
   #scroll-bar {
