@@ -13,12 +13,12 @@ function openPage(pageName, elmnt, color) {
 
   // Toon geselecteerd tabblad
   const selectedTab = document.getElementById(pageName);
-  if (selectedTab) selectedTab.style.display = "block";
+  if (selectedTab) selectedTab.style.display = pageName === "home" ? "flex" : "block";
 
   if (elmnt) elmnt.classList.add("actief");
 
   document.querySelectorAll(".nav-group").forEach(group => group.classList.remove("open"));
-  if (elmnt && window.innerWidth <= 800) {
+  if (elmnt) {
     const group = elmnt.closest(".nav-group");
     if (group) group.classList.add("open");
   }
@@ -37,6 +37,18 @@ function openPage(pageName, elmnt, color) {
   hideAllSubContent();
 }
 
+function openSection(pageName, elmnt) {
+  const group = elmnt?.closest(".nav-group");
+  const wasOpen = group?.classList.contains("open");
+
+  openPage(pageName, elmnt);
+
+  document.querySelectorAll(".nav-group").forEach(item => item.classList.remove("open"));
+  if (group && !wasOpen) {
+    group.classList.add("open");
+  }
+}
+
 // -------------------------
 // Fotografie functionaliteit
 // -------------------------
@@ -44,9 +56,8 @@ function openPage(pageName, elmnt, color) {
 function resetFotografieTab() {
   const fotografieDiv = document.getElementById("fotografie");
 
-  // Laat fotorijen, titel en uitleg zien
-  const fotorijen = fotografieDiv.querySelectorAll(".fotorij");
-  fotorijen.forEach(rij => rij.style.display = "");
+  const thumbnailGrid = fotografieDiv?.querySelector(".thumbnail-grid");
+  if (thumbnailGrid) thumbnailGrid.style.display = "";
 
   const h3 = fotografieDiv.querySelector("h3");
   if (h3) h3.style.display = "block";
@@ -61,7 +72,9 @@ function showPhotoCategory(contentId) {
     "mensen-content",
     "herfst-content",
     "zomer-content",
-    "eten-content",
+    "ijsland-content",
+    "kastelen-content",
+    "noorwegen-content",
     "lightroom-content",
     "MDES-content",
     "generatief-content",
@@ -87,7 +100,7 @@ function showPhotoCategory(contentId) {
   if (selectedContent) selectedContent.style.display = "block";
 
   const fotoGroup = document.querySelector('.nav-group[data-section="fotografie"]');
-  if (fotoGroup && window.innerWidth <= 800) {
+  if (fotoGroup) {
     document.querySelectorAll(".nav-group").forEach(group => group.classList.remove("open"));
     fotoGroup.classList.add("open");
   }
@@ -100,16 +113,16 @@ function showPhotoCategory(contentId) {
   });
 
   // Verberg hoofdinhoud fotografie indien van toepassing
-  if (["katten-content", "mensen-content", "herfst-content", "zomer-content", "eten-content", "lightroom-content"].includes(contentId)) {
+  if (["katten-content", "mensen-content", "herfst-content", "zomer-content", "ijsland-content", "kastelen-content", "noorwegen-content", "lightroom-content"].includes(contentId)) {
     const fotografieDiv = document.getElementById("fotografie");
     if (fotografieDiv) {
-      const fotorijen = fotografieDiv.querySelectorAll(".fotorij");
-      fotorijen.forEach(rij => rij.style.display = "none");
+      const thumbnailGrid = fotografieDiv.querySelector(".thumbnail-grid");
+      if (thumbnailGrid) thumbnailGrid.style.display = "none";
 
       const h3 = fotografieDiv.querySelector("h3");
       if (h3) h3.style.display = "none";
 
-      const uitlegP = fotografieDiv.querySelector(".uitleg");
+      const uitlegP = fotografieDiv.querySelector(".uitleg, .pagina-uitleg");
       if (uitlegP) uitlegP.style.display = "none";
     }
   }
@@ -154,7 +167,9 @@ function hideAllSubContent() {
     "mensen-content",
     "herfst-content",
     "zomer-content",
-    "eten-content",
+    "ijsland-content",
+    "kastelen-content",
+    "noorwegen-content",
     "lightroom-content",
     "MDES-content",
     "generatief-content",
@@ -171,8 +186,8 @@ function hideAllSubContent() {
 }
 
 function matchSiteNameWidth() {
-  const first = document.querySelector(".site-name span:first-child");
-  const last = document.querySelector(".site-name span:last-child");
+  const first = document.querySelector(".site-name-top");
+  const last = document.querySelector(".site-name-bottom");
   if (!first || !last) return;
 
   function textWidth(el) {
@@ -356,8 +371,16 @@ function showZomerContent() {
   showPhotoCategory("zomer-content");
 }
 
-function showEtenContent() {
-  showPhotoCategory("eten-content");
+function showIjslandContent() {
+  showPhotoCategory("ijsland-content");
+}
+
+function showKastelenContent() {
+  showPhotoCategory("kastelen-content");
+}
+
+function showNoorwegenContent() {
+  showPhotoCategory("noorwegen-content");
 }
 
 function showLightroomContent() {
@@ -426,24 +449,55 @@ const hamburger = document.getElementById("hamburger");
 const tabmenu = document.querySelector(".tabmenu");
 const menuClose = document.getElementById("menuClose");
 
+function closeMobileMenu() {
+  if (tabmenu) tabmenu.classList.remove("open");
+  document.body.classList.remove("menu-open");
+}
+
+function openMobileMenu() {
+  if (!tabmenu) return;
+  tabmenu.classList.add("open");
+  document.body.classList.add("menu-open");
+}
+
 if (hamburger && tabmenu) {
-  hamburger.addEventListener("click", () => {
-    tabmenu.classList.add("open");
+  hamburger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    openMobileMenu();
   });
 }
 
 if (menuClose && tabmenu) {
   menuClose.addEventListener("click", () => {
-    tabmenu.classList.remove("open");
+    closeMobileMenu();
   });
 }
 
-// sluit menu na tab klik (mobile)
+document.addEventListener("click", (event) => {
+  if (window.innerWidth > 800 || !tabmenu?.classList.contains("open")) return;
+  if (tabmenu.contains(event.target) || hamburger?.contains(event.target)) return;
+  closeMobileMenu();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMobileMenu();
+});
+
+function bindMobileMenuClose(selector) {
+  document.querySelectorAll(selector).forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 800) closeMobileMenu();
+    });
+  });
+}
+
 document.querySelectorAll(".tablink").forEach(link => {
   link.addEventListener("click", () => {
-    if (window.innerWidth <= 800) {
-      tabmenu.classList.remove("open");
-    }
+    if (window.innerWidth > 800) return;
+    if (link.closest(".nav-group")) return;
+    closeMobileMenu();
   });
 });
+bindMobileMenuClose(".sublink");
+bindMobileMenuClose(".site-name");
 
