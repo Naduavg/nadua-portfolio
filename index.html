@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="nl" dir="ltr">
 
-	
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Nadua van Gorkum">
   <title>Nadua Portfolio</title>
   <meta name="description" content="Dit is mijn portfolio website">
   <meta name="keywords" content="portfolio, Nadua, werk">
-  <link href="styles.css?v=assetnames1" rel="stylesheet">
-  <script src="script.js?v=assetnames1" defer></script>
+  <link href="styles.css?v=mobile18" rel="stylesheet">
+  <script src="script.js?v=mobile8" defer></script>
   <link rel="manifest" href="manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="img/png" rel="noopener" target="_blank" href="beeldthumbnails/header/illu.png">
@@ -60,49 +59,48 @@
 		  </div>
 
 		<button class="site-name" onclick="openPage('home', this)" id="defaultOpen" type="button">
-			<span>Nadua</span>
-			<span>van Gorkum</span>
+			<span class="site-name-top">NADUA</span>
+			<span class="site-name-bottom">VAN GORKUM</span>
 		</button>
 		  
 		<div class="nav-group" data-section="fotografie">
-			<button class="tablink" onclick="openPage('fotografie', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Fotografie</button>
+			<button class="tablink" onclick="openSection('fotografie', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Fotografie</button>
 			<div class="submenu">
 				<button class="sublink" onclick="showKattenContent()" type="button">Katten</button>
 				<button class="sublink" onclick="showMensenContent()" type="button">Mensen</button>
 				<button class="sublink" onclick="showHerfstContent()" type="button">Herfst</button>
 				<button class="sublink" onclick="showZomerContent()" type="button">Zomer</button>
-				<button class="sublink" onclick="showEtenContent()" type="button">Eten</button>
+				<button class="sublink" onclick="showNoorwegenContent()" type="button">Noorwegen</button>
+				<button class="sublink" onclick="showIjslandContent()" type="button">Ijsland</button>
+				<button class="sublink" onclick="showKastelenContent()" type="button">Kastelen</button>
 				<button class="sublink" onclick="showLightroomContent()" type="button">Lightroom</button>
 			</div>
 		</div>
 
 		<div class="nav-group" data-section="design">
-			<button class="tablink" onclick="openPage('design', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Design</button>
+			<button class="tablink" onclick="openSection('design', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Design</button>
 			<div class="submenu">
-				<button class="sublink" onclick="openPage('graphic', this)" type="button">Graphic</button>
-				<button class="sublink" onclick="openPage('drieD', this)" type="button">3D modeling</button>
 				<button class="sublink" onclick="openPage('video', this)" type="button">Video</button>
 				<button class="sublink" onclick="openPage('photoshop', this)" type="button">Photoshop</button>
-				<button class="sublink" onclick="openPage('illustratie', this)" type="button">Illustration</button>
+				<button class="sublink" onclick="openPage('illustratie', this)" type="button">illustraties</button>
+				<button class="sublink" onclick="openPage('drieD', this)" type="button">3D modeling</button>
 			</div>
 		</div>
 
 		<div class="nav-group" data-section="projecten">
-			<button class="tablink" onclick="openPage('projecten', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Projecten</button>
+			<button class="tablink" onclick="openSection('projecten', this)" type="button"><img src="beeldthumbnails/ster.png" alt="" class="ster">Projecten</button>
 			<div class="submenu">
 				<button class="sublink" onclick="openPage('groengeluk', this)" type="button">Groen Geluk</button>
 				<button class="sublink" onclick="openPage('feitoffictie', this)" type="button">Feit of Fictie</button>
 				<button class="sublink" onclick="openPage('gamedesign', this)" type="button">What's Buggin'</button>
 				<hr class="submenu-lijn">
-				<button class="sublink" onclick="openPage('onhandig', this)" type="button">OnHANDig</button>
 				<button class="sublink" onclick="openPage('firehazard', this)" type="button">Fire Hazard</button>
 				<button class="sublink" onclick="openPage('bakkiebabbel', this)" type="button">Bakkie Babbel</button>
-				<button class="sublink" onclick="openPage('oertijdmuseum', this)" type="button">Oertijd Museum</button>
 				<button class="sublink" onclick="openPage('pankoek', this)" type="button">Pan & Koek</button>
 				<button class="sublink" onclick="openPage('generatief', this)" type="button">Generatief</button>
 				<button class="sublink" onclick="openPage('speculatief', this)" type="button">Speculatief</button>
-				<button class="sublink" onclick="openPage('internetteveel', this)" type="button">InterNetTeVeel</button>
 				<button class="sublink" onclick="openPage('fastfashion', this)" type="button">Out Of It</button>
+				<button class="sublink" onclick="openPage('onhandig', this)" type="button">OnHANDig</button>
 			</div>
 		</div>
 
@@ -113,6 +111,7 @@
 			<p>Nadua, 2026</p>
 		</div>
 					</div>
+				</div>
 					
 					<div class="page-content">
 	<!-- home -->
@@ -130,9 +129,14 @@
 						<!-- fotografie -->
 						<div id="fotografie" class="tabcontent">
 							<h3 class="paginatitel">Fotografie</h3>
-							<p class="pagina-uitleg">Uitleg</p>
-							<figure>
-							<div class="fotorij">
+							<p class="uitleg" >
+Foto's maken en mijn leven vastleggen is iets waar ik altijd al van heb gehouden. Vroeger pakte ik de camera van mijn vader of oma en fotografeerde ik alles wat ik maar kon vinden. Een paar jaar geleden kocht ik mijn eerste echte camera: de Sony A6100. Sindsdien neem ik hem graag mee de natuur in. Als ik weer thuiskom, kan ik niet wachten om alle foto's terug te kijken.
+<br>
+Ik kies mijn favoriete beelden uit en bewerk ze in Lightroom en soms ook in Photoshop. Katten zijn een van mijn favoriete onderwerpen om te fotograferen. Ze zijn van nature prachtig en daardoor de perfecte modellen voor mij. Ook fotografeer ik graag mensen. Ik ben soms een beetje verlegen, dus de meeste portretten die ik maak zijn van mijn zus, mijn vader of vrienden. Omdat ik graag buiten ben en de wereld ontdek, zijn de meeste van mijn foto's ook buiten gemaakt.
+
+							</p>
+							<figure class="thumbnail-grid">
+							<div class="fotorij-drie">
 								<div>
 								<img src="beeldthumbnails/kat.jpg" alt="kat" class="select" style="cursor:pointer;" onclick="showKattenContent()">
 								<figcaption>katten.</figcaption>
@@ -146,14 +150,24 @@
 								<figcaption>herfst.</figcaption>
 								</div>
 							</div>
-							<div class="fotorij">
+							<div class="fotorij-drie">
 								<div>
 								<img src="beeldthumbnails/zomer.jpg" alt="zomer" class="select" style="cursor:pointer;" onclick="showZomerContent()">
 								<figcaption>zomer.</figcaption>
 								</div>
 								<div>
-								<img src="beeldthumbnails/eten.jpg" alt="eten" class="select" style="cursor:pointer;" onclick="showEtenContent()">
-								<figcaption>eten.</figcaption>
+								<img src="Beeldfotografie/scandinavie/noorwegen/1.jpg" alt="noorwegen" class="select" style="cursor:pointer;" onclick="showNoorwegenContent()">
+								<figcaption>noorwegen.</figcaption>
+								</div>
+								<div>
+								<img src="Beeldfotografie/scandinavie/ijsland/4757.jpg" alt="ijsland" class="select" style="cursor:pointer;" onclick="showIjslandContent()">
+								<figcaption>ijsland.</figcaption>
+								</div>
+							</div>
+							<div class="fotorij-drie">
+								<div>
+								<img src="Beeldfotografie/scandinavie/kasteel/09457.jpg" alt="kastelen" class="select" style="cursor:pointer;" onclick="showKastelenContent()">
+								<figcaption>kastelen.</figcaption>
 								</div>
 								<div>
 								<img src="beeldthumbnails/lightroom.jpg" alt="lightroom" class="select" style="cursor:pointer;" onclick="showLightroomContent()">
@@ -171,7 +185,6 @@
 				<!--fotografie inhoud--> 
 								<div id="katten-content" style="display:none;" class="tabcontent">
 									<h3 class="kopje paginatitel">Katten</h3>
-									<p class="pagina-uitleg">Uitleg</p>
 									<div class="fotospaginas">
 										<div class="fotosnaast">
 											<img src="Beeldfotografie/katten/01katwit.jpg" alt="katcontent" style="width: 49%;">
@@ -253,7 +266,6 @@
 								<!-- Mensen content -->
 								<div id="mensen-content" style="display:none;" class="tabcontent">
 									<h3 class="kopje paginatitel">Mensen</h3>
-									<p class="pagina-uitleg">Uitleg</p>
 										<div class="fotospaginas">
 
 											<div class="fotosnaast">
@@ -322,8 +334,6 @@
 								<!-- Herfst content -->
 								<div id="herfst-content" style="display:none;" class="tabcontent">
 									<h3 class="kopje paginatitel">Herfst</h3>
-									<p class="pagina-uitleg">Uitleg</p>
-
 									<div class="fotospaginas">
 
 										<img src="Beeldfotografie//herfst/01alleen.jpg" alt="herfst" style="width: 100%;" class="fotosnaast">
@@ -380,8 +390,6 @@
 								<!-- Zomer content -->
 								<div id="zomer-content" style="display:none;" class="tabcontent">
 									<h3 class="kopje paginatitel">Zomer</h3>
-									<p class="pagina-uitleg">Uitleg</p>
-
 									<div class="fotospaginas">
 
 										<div class="fotosnaast">
@@ -463,12 +471,144 @@
 
 									</div>
 								</div>
+
+								<!-- Ijsland content -->
+								<div id="ijsland-content" style="display:none;" class="tabcontent">
+									<h3 class="kopje paginatitel">Ijsland</h3>
+									<div class="fotospaginas">
+										<img src="Beeldfotografie/scandinavie/ijsland/4757.jpg" alt="ijsland" style="width: 100%;" class="fotosnaast4boven">
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/ijsland/4701.jpg" alt="ijsland" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/ijsland/4731.jpg" alt="ijsland" style="width: 49%;">
+										</div>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/ijsland/4723.jpg" alt="ijsland" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/ijsland/4712.jpg" alt="ijsland" style="width: 49%;">
+										</div>
+										<video controls class="scand-video fotosnaast4boven" playsinline>
+											<source src="Beeldfotografie/scandinavie/ijsland/ijsland.mp4" type="video/mp4">
+										</video>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/ijsland/4673.jpg" alt="ijsland" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/ijsland/4718.jpg" alt="ijsland" style="width: 49%;">
+										</div>
+									</div>
+								</div>
+
+								<!-- Kastelen content -->
+								<div id="kastelen-content" style="display:none;" class="tabcontent">
+									<h3 class="kopje paginatitel">Kastelen</h3>
+									<div class="fotospaginas">
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/kasteel/09515.jpg" alt="kastelen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/kasteel/09528.jpg" alt="kastelen" style="width: 30.5%; height: auto;">
+										</div>
+										<img src="Beeldfotografie/scandinavie/kasteel/09505.jpg" alt="kastelen" style="width: 100%;" class="fotosnaast4boven">
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/kasteel/09541.jpg" alt="kastelen" style="width: 30.5%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/kasteel/09545.jpg" alt="kastelen" style="width: 68.8%; height: auto;">
+										</div>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/kasteel/09476.jpg" alt="kastelen" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/kasteel/09616.jpg" alt="kastelen" style="width: 49%;">
+										</div>
+										<img src="Beeldfotografie/scandinavie/kasteel/09561.jpg" alt="kastelen" style="width: 100%;" class="fotosnaast4boven">
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/kasteel/09627.jpg" alt="kastelen" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/kasteel/09418.jpg" alt="kastelen" style="width: 49%;">
+										</div>
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/kasteel/09590.jpg" alt="kastelen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/kasteel/09543.jpg" alt="kastelen" style="width: 30.5%; height: auto;">
+										</div>
+										<img src="Beeldfotografie/scandinavie/kasteel/09457.jpg" alt="kastelen" style="width: 100%;" class="fotosnaast4boven">
+									</div>
+								</div>
+
+								<!-- Noorwegen content -->
+								<div id="noorwegen-content" style="display:none;" class="tabcontent">
+									<h3 class="kopje paginatitel">Noorwegen</h3>
+									<div class="fotospaginas">
+										<img src="Beeldfotografie/scandinavie/noorwegen/1.jpg" alt="noorwegen" style="width: 100%;" class="fotosnaast4boven">
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/2.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/3.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+										</div>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/noorwegen/4.jpg" alt="noorwegen" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/5.jpg" alt="noorwegen" style="width: 49%;">
+										</div>
+										<img src="Beeldfotografie/scandinavie/noorwegen/6.jpg" alt="noorwegen" style="width: 100%;" class="fotosnaast4boven">
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/7.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/8.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+										</div>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/noorwegen/9.jpg" alt="noorwegen" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/10.jpg" alt="noorwegen" style="width: 49%;">
+										</div>
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/11.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/22.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+										</div>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/noorwegen/12.jpg" alt="noorwegen" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/13.jpg" alt="noorwegen" style="width: 49%;">
+										</div>
+										<img src="Beeldfotografie/scandinavie/noorwegen/14.jpg" alt="noorwegen" style="width: 100%;" class="fotosnaast4boven">
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/15.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/16.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+										</div>
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/17.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/18.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+										</div>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/noorwegen/19.jpg" alt="noorwegen" style="width: 32%;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/20.jpg" alt="noorwegen" style="width: 32%;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/21.jpg" alt="noorwegen" style="width: 32%;">
+										</div>
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/23.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/24.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+										</div>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/noorwegen/25.jpg" alt="noorwegen" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/26.jpg" alt="noorwegen" style="width: 49%;">
+										</div>
+										<img src="Beeldfotografie/scandinavie/noorwegen/27.jpg" alt="noorwegen" style="width: 100%;" class="fotosnaast4boven">
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/noorwegen/28.jpg" alt="noorwegen" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/29.jpg" alt="noorwegen" style="width: 49%;">
+										</div>
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/30.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/31.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+										</div>
+										<div class="fotosnaast">
+											<img src="Beeldfotografie/scandinavie/noorwegen/32.jpg" alt="noorwegen" style="width: 49%;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/33.jpg" alt="noorwegen" style="width: 49%;">
+										</div>
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/34.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/35.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+										</div>
+										<img src="Beeldfotografie/scandinavie/noorwegen/36.jpg" alt="noorwegen" style="width: 100%;" class="fotosnaast4boven">
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/37.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/38.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+										</div>
+										<div class="fotosnaastoneven">
+											<img src="Beeldfotografie/scandinavie/noorwegen/39.jpg" alt="noorwegen" style="width: 30.5%; height: auto;">
+											<img src="Beeldfotografie/scandinavie/noorwegen/40.jpg" alt="noorwegen" style="width: 68.8%; height: auto;">
+										</div>
+									</div>
+								</div>
 								
 								<!-- Eten content -->
 								<div id="eten-content" style="display:none;" class="tabcontent">
 									<h3 class="kopje paginatitel">Eten</h3>
-									<p class="pagina-uitleg">Uitleg</p>
-
 										<div class="fotospaginas">
 
 											<img src="Beeldfotografie/eten/01alleen.jpg" alt="eten" style="width: 100%;" class="fotosnaast">
@@ -492,8 +632,6 @@
 								<!-- Lightroom content -->
 								<div id="lightroom-content" style="display:none;" class="tabcontent">
 									<h3 class="kopje paginatitel">Lightroom</h3>
-									<p class="pagina-uitleg">Uitleg</p>
-
 											<div class="fotospaginas">
 													
 												<div class="fotosnaast">
@@ -536,20 +674,42 @@
 									
 
 
-	<!-- design (leeg tot content is aangeleverd) -->
+	<!-- design -->
 						<div id="design" class="tabcontent">
 							<h3 class="paginatitel">Design</h3>
+							<figure class="thumbnail-grid">
+								<div class="fotorij-drie">
+									<div>
+										<video class="select video-thumb" muted playsinline preload="metadata" style="cursor:pointer;" onclick="openPage('video', this)">
+											<source src="Beeld/video/Freespaceklein.mp4" type="video/mp4">
+										</video>
+										<figcaption>video.</figcaption>
+									</div>
+									<div>
+										<img src="BeeldProjecten/Photoshop/bestbuddies.png" alt="Photoshop" class="select" style="cursor:pointer;" onclick="openPage('photoshop', this)">
+										<figcaption>photoshop.</figcaption>
+									</div>
+									<div>
+										<img src="BeeldProjecten/illustratie/IMG_1514.PNG" alt="Illustration" class="select" style="cursor:pointer;" onclick="openPage('illustratie', this)">
+										<figcaption>illustraties</figcaption>
+									</div>
+								</div>
+								<div class="fotorij-drie">
+									<div>
+										<img src="Beeld/3D/01buitenvoor.png" alt="3D modeling" class="select" style="cursor:pointer;" onclick="openPage('drieD', this)">
+										<figcaption>3D modeling.</figcaption>
+									</div>
+								</div>
+							</figure>
 						</div>
-						<div id="graphic" class="tabcontent">
-							<h3 class="paginatitel">Graphic</h3>
-						</div>
+
 						<div id="photoshop" class="tabcontent">
 							<div class="ps-pagina">
 								<h3 class="paginatitel">Photoshop</h3>
 
 								<div class="ps-sectie">
 									<h4 class="ps-kop">Cadeau’s</h4>
-									<p class="ps-tekst">Deze ontwerpen heb ik gemaakt voor de verjaardagen van vrienden en familie. De ontwerpen zijn bedrukt op mokken, shirts en kaarten.</p>
+									<p class="ps-tekst">Deze ontwerpen heb ik gemaakt voor de verjaardagen van vrienden en familie. Deze zijn bedrukt op mokken, shirts en kaarten.</p>
 								</div>
 								<div class="ps-grid ps-grid-4">
 									<img src="BeeldProjecten/Photoshop/bestbuddies.png" alt="#BESTBUDDIES">
@@ -573,11 +733,10 @@
 									<p class="ps-tekst">De uitnodiging die ik voor mijn oma’s 80ste verjaardagsfeest heb ontworpen.</p>
 								</div>
 								<img src="BeeldProjecten/Photoshop/omauitnodiging.png" alt="Hoera, Mieke wordt 80" class="ps-breed">
-								<img src="BeeldProjecten/Photoshop/feestje.png" alt="Familie collage" class="ps-breed ps-breed-mid">
 
 								<div class="ps-sectie">
 									<h4 class="ps-kop">Laura’s grote wereldreis</h4>
-									<p class="ps-tekst">Voor de volledige animatie: zie bij de video’s :)</p>
+									<p class="ps-tekst">Voor de animaite van "Laura's grote wereldreis" heb ik een aantal ansichtkaarten gemaakt.</p>
 								</div>
 								<div class="ps-grid ps-grid-4">
 									<img src="BeeldProjecten/Photoshop/koraal.png" alt="Onderwater">
@@ -590,17 +749,11 @@
 									<img src="BeeldProjecten/Photoshop/luchtballon.png" alt="Luchtballonnen">
 								</div>
 
-								<div class="ps-grid ps-grid-3 ps-grid-mixed">
-									<img src="BeeldProjecten/Photoshop/komplotten.png" alt="Kom Plotten">
-									<img src="BeeldProjecten/Photoshop/unclejerry.png" alt="Uncle Jerry comic">
-									<img src="BeeldProjecten/Photoshop/gatenkaas.png" alt="Ze houden je in de gaten">
-								</div>
-
 								<div class="ps-sectie">
 									<h4 class="ps-kop">Pannenkoeken</h4>
 									<p class="ps-tekst">In het project Pan &amp; Koek, waarbij ik mijn eigen pop-up store heb ontworpen, is een van de aspecten pannenkoeken met bijzondere combinaties. Om een beter beeld te creëren heb ik de combinaties gephotoshopt.</p>
 								</div>
-								<div class="ps-grid ps-grid-3">
+								<div class="ps-grid ps-grid-6">
 									<img src="BeeldProjecten/Photoshop/gluten.png" alt="Beschuit met pasta">
 									<img src="BeeldProjecten/Photoshop/groenebodem.png" alt="Beschuit met ei">
 									<img src="BeeldProjecten/Photoshop/helekomkommertomaatmozarelle.png" alt="Beschuit met komkommer">
@@ -612,11 +765,26 @@
 						</div>
 						<div id="illustratie" class="tabcontent">
 							<div class="illu-pagina">
-								<h3 class="paginatitel">Illustration</h3>
+								<h3 class="paginatitel">illustraties</h3>
 
-								<div class="illu-rij illu-rij-portret">
-									<img src="BeeldProjecten/illustratie/IMG_1514.PNG" alt="Party illustratie">
-									<img src="BeeldProjecten/illustratie/Untitled_Artwork 4.png" alt="Kikker en eend">
+								<div class="illu-portret-blok">
+									<div class="illu-rij illu-rij-portret">
+										<div class="illu-portret-kaart">
+											<img src="BeeldProjecten/illustratie/IMG_1514.PNG" alt="Party illustratie">
+										</div>
+										<div class="illu-portret-kaart">
+											<img src="BeeldProjecten/illustratie/jospost.jpg" alt="Jos Post">
+										</div>
+									</div>
+									<div class="illu-portret-onder">
+										<img src="BeeldProjecten/illustratie/Untitled_Artwork 4.png" alt="Kikker en eend">
+									</div>
+								</div>
+
+								<div class="illu-rij illu-rij-drie">
+									<img src="BeeldProjecten/illustratie/Untitled_Artwork 2.png" alt="Abstract figuur">
+									<img src="BeeldProjecten/illustratie/Untitled_Artwork 3.png" alt="Kat in magnetron">
+									<img src="BeeldProjecten/illustratie/Untitled_Artwork kopie.png" alt="Robotfiguur">
 								</div>
 
 								<div class="illu-rij illu-rij-eten">
@@ -642,34 +810,69 @@
 									</div>
 								</div>
 
-								<div class="illu-rij illu-rij-drie">
-									<img src="BeeldProjecten/illustratie/Untitled_Artwork 2.png" alt="Abstract figuur">
-									<img src="BeeldProjecten/illustratie/Untitled_Artwork 3.png" alt="Kat in magnetron">
-									<img src="BeeldProjecten/illustratie/Untitled_Artwork kopie.png" alt="Robotfiguur">
-								</div>
 
-								<div class="illu-rij illu-karakters">
-									<img src="BeeldProjecten/illustratie/IMG_1513.PNG" alt="Eenden">
-									<img src="BeeldProjecten/illustratie/IMG_1522.PNG" alt="Beertje met sjaal">
-									<img src="BeeldProjecten/illustratie/IMG_1523.PNG" alt="Dating Donkey">
-									<img src="BeeldProjecten/illustratie/IMG_1524.PNG" alt="Groen skeletfiguur">
-									<img src="BeeldProjecten/illustratie/IMG_1527.PNG" alt="Fee">
-									<img src="BeeldProjecten/illustratie/whutttttttt23456789.png" alt="Kikker met vleugels">
-								</div>
+
 							</div>
 						</div>
 
-	<!-- projecten (leeg tot content is aangeleverd) -->
+	<!-- projecten -->
 						<div id="projecten" class="tabcontent">
 							<h3 class="paginatitel">Projecten</h3>
+							<figure class="thumbnail-grid">
+								<div class="fotorij-drie">
+									<div>
+										<img src="Beeld/Groengeluk/GroenGeluk4.jpg" alt="Groen Geluk" class="select" style="cursor:pointer;" onclick="openPage('groengeluk', this)">
+										<figcaption>groen geluk.</figcaption>
+									</div>
+									<div>
+										<img src="BeeldProjecten/Feitoffictie/expo2.png" alt="Feit of Fictie" class="select" style="cursor:pointer;" onclick="openPage('feitoffictie', this)">
+										<figcaption>feit of fictie.</figcaption>
+									</div>
+									<div>
+										<img src="Beeld/Game design/bugging/Gbugging1.png" alt="What's Buggin'" class="select" style="cursor:pointer;" onclick="openPage('gamedesign', this)">
+										<figcaption>what's buggin'.</figcaption>
+									</div>
+								</div>
+								<div class="fotorij-vier">
+									<div>
+										<img src="Beeld/Game design/Fire Hazard/01alleen.jpg" alt="Fire Hazard" class="select" style="cursor:pointer;" onclick="openPage('firehazard', this)">
+										<figcaption>fire hazard.</figcaption>
+									</div>
+									<div>
+										<img src="Beeldcmd/bibliotheek/omslagbieb.png" alt="Bakkie Babbel" class="select" style="cursor:pointer;" onclick="openPage('bakkiebabbel', this)">
+										<figcaption>bakkie babbel.</figcaption>
+									</div>
+									<div>
+										<img src="Beeldcmd/mdes/logo.png" alt="Pan & Koek" class="select" style="cursor:pointer;" onclick="openPage('pankoek', this)">
+										<figcaption>pan & koek.</figcaption>
+									</div>
+									<div>
+										<img src="Beeldcmd/workgeneratief/omslagkast.png" alt="Generatief" class="select" style="cursor:pointer;" onclick="openPage('generatief', this)">
+										<figcaption>generatief.</figcaption>
+									</div>
+								</div>
+								<div class="fotorij-vier">
+									<div>
+										<img src="Beeldcmd/futu/01links.jpg" alt="Speculatief" class="select" style="cursor:pointer;" onclick="openPage('speculatief', this)">
+										<figcaption>speculatief.</figcaption>
+									</div>
+									<div>
+										<img src="BeeldProjecten/outofit/hoe2.png" alt="Out Of It" class="select" style="cursor:pointer;" onclick="openPage('fastfashion', this)">
+										<figcaption>out of it.</figcaption>
+									</div>
+									<div>
+										<img src="Beeldcmd/READ/omslagREAD.jpg" alt="OnHANDig" class="select" style="cursor:pointer;" onclick="openPage('onhandig', this)">
+										<figcaption>onHANDig.</figcaption>
+									</div>
+								</div>
+							</figure>
 						</div>
 						<div id="feitoffictie" class="tabcontent">
 							<div class="feit-pagina">
 								<img src="BeeldProjecten/Feitoffictie/titel.png" alt="Feit of fictie" class="feit-titel">
 
 								<section class="feit-sectie">
-									<h4 class="feit-sectie-kop">Project introductie</h4>
-									<p class="feit-tekst">Feit of fictie is een campagne gericht op Generatie X (45–60 jaar) die Facebook gebruikt als belangrijkste nieuwsbron. Omdat Facebook geen content meer factcheckt en algoritmes gebruikers steeds dieper in filterbubbels trekken, is deze generatie extra kwetsbaar voor misleidende informatie en complottheorieën. Feit of fictie biedt een laagdrempelige oplossing: een browser-extensie en de bijbehorende website. Het doel is niet om mensen van Facebook af te jagen, maar om ze met een beetje humor en een kritische blik bewuster te laten omgaan met wat ze dagelijks voorbij zien komen.</p>
+									<p class="uitleg">Feit of fictie is een campagne gericht op Generatie X (45–60 jaar) die Facebook gebruikt als belangrijkste nieuwsbron. Omdat Facebook geen content meer factcheckt en algoritmes gebruikers steeds dieper in filterbubbels trekken, is deze generatie extra kwetsbaar voor misleidende informatie en complottheorieën. Feit of fictie biedt een laagdrempelige oplossing: een browser-extensie en de bijbehorende website. Het doel is niet om mensen van Facebook af te jagen, maar om ze met een beetje humor en een kritische blik bewuster te laten omgaan met wat ze dagelijks voorbij zien komen.</p>
 									<p class="feit-tekst feit-vraag">Hoe kan ontwerp Generatie X (45–60 jaar) activeren om kritisch en bewust te kijken naar de betrouwbaarheid van content op Facebook, op een laagdrempelige manier die aansluit bij hun bestaande gebruik van het platform?</p>
 								</section>
 
@@ -769,8 +972,9 @@
 						<div id="onhandig" class="tabcontent">
 							<h3 class="paginatitel">OnHANDig</h3>
 							<p class="uitleg">
-								In dit vak doet de student creatief onderzoek op basis van een experimentele aanpak. Door middel van experimenten met een zelfgemaakte research tool en het zoeken en verwerken van bronnen. Onderzoek voor dit vak richt zich op het adaptieve karakter van de mens, de zintuigelijke waarneming en de relatie tussen mens en technologie. Ook leert de student conclusies te verbinden aan de gevonden resultaten en dit systematisch te verwerken in een research poster.
-							</p>
+         Dit is ZWAAR onHANDig.  
+                                         <br><br>
+                                            Een zelfontworpen onderzoekstool die laat ervaren hoe het is om handen te hebben die twee kilo zwaarder zijn, en een experimenteel onderzoek naar hoe dit je waarneming, beweging en dagelijkse handelingen beïnvloedt.</p>
 							<img src="Beeldcmd/READ/READ1.png" alt="READ" style="width:60%;">
 							<div class="fotospaginas">
 								<div class="fotosnaast">
@@ -792,15 +996,12 @@
 									<img src="Beeldcmd/READ/05vullinfrechts.jpg" alt="readtool" style="width: 49%;">
 								</div>
 							</div>
-							<div class="breederijfotos">
-								<img src="Beeldcmd/READ/READA03.png" alt="READ poster">
-								<img src="Beeldcmd/READ/READA06.png" alt="READ poster">
-								<img src="Beeldcmd/READ/READA19.png" alt="READ poster">
-							</div>
 						</div>
 						<div id="firehazard" class="tabcontent">
 							<h3 class="paginatitel">Fire Hazard</h3>
 							<p class="uitleg">
+								Een kaartspel die ik samen met 3 medestudenten heb gemaakt tijdens mijn Minor Game-Design in Finland.
+								<br><br>
 								LIAR LIAR PANTS ON FIRE
 								<br>
 								Don't let them know otherwise your ass will show
@@ -831,7 +1032,7 @@
 								</div>
 
 								<section class="bb-sectie">
-									<h4 class="bb-kop">The concept</h4>
+									<h4 class="bb-kop">Het concept</h4>
 									<div class="bb-rij bb-rij-concept">
 										<img src="Beeldcmd/bibliotheek/storyboard.png" alt="Storyboard Bakkie Babbel" class="bb-storyboard">
 										<div class="bb-concept-tekst">
@@ -860,20 +1061,12 @@
 								</section>
 							</div>
 						</div>
-						<div id="oertijdmuseum" class="tabcontent">
-							<h3 class="paginatitel">Oertijd Museum</h3>
-						</div>
+		
 						<div id="pankoek" class="tabcontent">
 							<h3 class="paginatitel">Pan & Koek</h3>
 							<p class="uitleg">
-								Vak uitleg:<br>
-								Experience Design<br>
-								Je ontwerpt je eigen pop up store. Verzint een uitdagend concept. Je bent helemaal vrij in waar de store over gaat en wat je er gaat verkopen.
-								Werk de totaalervaring van een (potentiële) klant uit in een customer journey. Visualiseer de belangrijkste touchpoints. De bedoeling is mensen op een actieve manier aan te spreken en in aanraking te brengen met het aangeboden product of dienst.
-								<br><br>
-								Mobile Design<br>
-								Het tweede deel draait om Mobile Design, dus het ontwerpen voor apps en wearables. Binnen jouw pop-up store ervaring maak je gebruik van een zelf ontworpen app. Je werkt de vormgeving, functionaliteit en navigatie van de app uit voor gebruiksvriendelijk mobiel gebruik.
-							</p>
+	Een pop-up store gemaakt om pannenkoeken weer net zo bijzonder te maken als vroeger.
+</p>
 							<div class="breederijfotos">
 								<img src="Beeldcmd/mdes/mdes01.png" alt="Pan & Koek">
 								<img src="Beeldcmd/mdes/mdes02.png" alt="Pan & Koek">
@@ -893,14 +1086,15 @@
 						<div id="generatief" class="tabcontent">
 							<h3 class="paginatitel">Generatief</h3>
 							<p class="uitleg">
-								Met Generative Design maak je gebruik van vaststaande systemen,
-								regelsets of algoritmes binnen het ontwerpproces om gevarieerde output
-								te genereren. In het proces werk je met navolgbare regels en variabelen
-								waarbinnen beperkte keuzes gemaakt kunnen worden. “Als dit, dan dat”.
-								Het proces kan zowel analoog als digitaal plaatsvinden. Generative
-								Design volgt een iteratief ontwerpproces waarin de ontwerper
-								verschillende versies (regels, variabelen, inputs, outputs) test voordat
-								een uiteindelijk systeem wordt toegepast.
+Je kast in beeld. Een regelset gecreëerd om gevarieerde output
+												te genereren. Alle kleding items uit je
+kast worden gerepresenteerd op de bui-
+tenkant van je kast in de vorm van een
+cirkel. Hoe de cirkel eruit komt te zien is
+op basis van welk kleding merk het item
+is, in land het geproduceerd is, de stof
+waarvan het gemaakt is, het soort kle-
+dingstuk dat het is en de prijs ervan.
 							</p>
 							<div class="breederijfotos">
 								<img src="Beeldcmd/workgeneratief/generatief3.png" alt="Generatief">
@@ -915,7 +1109,7 @@
 						<div id="speculatief" class="tabcontent">
 							<h3 class="paginatitel">Speculatief</h3>
 							<p class="uitleg">
-								Ontwerpers moeten in staat zijn om te bepalen hoe toekomstige ontwikkelingen invloed hebben op hun werk. Maar ook: hoe hun ontwerpen kunnen bijdragen aan mogelijke of gewenste toekomstige ontwikkelingen. In deze module breng je (jouw visie op) de toekomst in kaart en ontwerp je toekomstscenario’s waarin door jou bedachte producten medebepalend zijn. Behandelde onderwerpen in deze module zijn: speculative design, design fiction, scenario planning, artificial intelligence en bio-based design.
+											Een speculatief project over spionage vliegen aagestuurd vanuit de kerk, die aanhangers van het geloof thuis in de gaten houdt.											</p>
 							</p>
 							<div class="fotospaginas">
 								<div class="fotosnaastoneven">
@@ -948,12 +1142,59 @@
 							</div>
 						</div>
 						<div id="internetteveel" class="tabcontent">
-							<h3 class="paginatitel">InterNetTeVeel</h3>
+							<div class="int-pagina">
+								<h3 class="paginatitel">InterNetTeVeel</h3>
+
+								<div class="int-rij int-rij-posters">
+									<img src="Beeldcmd/internetteveel/posteprotestliggend.png" alt="Poster contentkinderen liggend">
+									<img src="Beeldcmd/internetteveel/posteproteststaand.png" alt="Poster contentkinderen staand">
+								</div>
+
+								<div class="int-rij int-rij-posters">
+									<img src="Beeldcmd/internetteveel/blauwposterliggend.png" alt="Poster blauw liggend">
+									<img src="Beeldcmd/internetteveel/blauwposterstaand.png" alt="Poster blauw staand">
+								</div>
+
+								<div class="int-rij int-rij-twee">
+									<img src="Beeldcmd/internetteveel/postercartoonstaand.png" alt="Poster cartoon">
+									<img src="Beeldcmd/internetteveel/p3.png" alt="Poster cartoon variant">
+								</div>
+
+								<div class="int-rij int-rij-twee int-rij-illu">
+									<img src="Beeldcmd/internetteveel/vissen7.png" alt="Gebruik jij je kind online?">
+									<img src="Beeldcmd/internetteveel/schetsencamerahoofd2.png" alt="Vlogger of vader">
+								</div>
+
+								<div class="int-storyboard">
+									<img src="Beeldcmd/internetteveel/schets1944.jpg" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schets1945.jpg" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schets1946.jpg" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schets1947.jpg" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schets2098.jpg" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schets2100.jpg" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schets2259.jpg" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schets2309.jpg" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schets2269.png" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schetsendagboek.png" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schetsendierenKooi.png" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schetsenkinderkijk.png" alt="Storyboard">
+									<img src="Beeldcmd/internetteveel/schetsensnelgeld.png" alt="Storyboard">
+								</div>
+
+								<div class="int-rij int-rij-video">
+									<video controls class="int-video" playsinline>
+										<source src="Beeldcmd/internetteveel/animatie.mov" type="video/quicktime">
+									</video>
+									<video controls class="int-video" playsinline>
+										<source src="Beeldcmd/internetteveel/animatiecartoon.mov" type="video/quicktime">
+									</video>
+								</div>
+							</div>
 						</div>
 						<div id="fastfashion" class="tabcontent">
 							<div class="ooi-pagina">
 								<h3 class="paginatitel">Out Of It</h3>
-								<p class="ooi-ondertitel">een speculatief project over het gevolg van de fast fashion industrie</p>
+								<p class="ooi-ondertitel">Een speculatief project over het gevolg van de fast fashion industrie.</p>
 
 								<div class="ooi-rij ooi-rij-intro">
 									<video controls class="ooi-video" playsinline>
@@ -961,7 +1202,7 @@
 									</video>
 									<div class="ooi-intro-tekst">
 										<h4 class="ooi-hook">Wat als iedereen nog maar<br><strong>één outfit</strong><br>mocht dragen</h4>
-										<p class="ooi-body">Zou je de outfit die je nu aan hebt dragen bij een sollicitatiegesprek? Bij je trouwdag? Zou je hem ook nog morgen dragen? En over morgen? En over over morgen? Zou je deze outfit de komende 25 jaar dragen? <strong>Wat als je geen keuze zou hebben.</strong> Wat als de fast fashion industrie zo erg is doorgedraaid dat er geen keuze meer is. Zo erg dat alles moet veranderen, behalve je outfit. In deze wereld heb je <strong>één outfit</strong> en daar moet je het mee doen. Hoe ziet een wereld eruit waarin mensen weg gehaald worden van de eindeloze trends en overconsumptie.</p>
+										<p class="ooi-body">Zou je de outfit die je nu aan hebt dragen bij een sollicitatiegesprek? Bij je trouwdag? Zou je hem ook nog morgen dragen? En over morgen? En over over morgen? Zou je deze outfit de komende 25 jaar dragen? <strong>Wat als je geen keuze zou hebben.</strong> Wat als de fast fashion industrie zo erg is doorgedraaid dat er geen keuze meer is. Zo erg dat alles moet veranderen, alles behalve je outfit. In deze wereld heb je <strong>één outfit</strong> en daar moet je het mee doen. Hoe ziet een wereld eruit waarin mensen weg gehaald worden van de eindeloze trends en overconsumptie.</p>
 									</div>
 								</div>
 
@@ -970,7 +1211,7 @@
 									<img src="BeeldProjecten/outofit/outofit7.png" alt="Afval kleding continent">
 								</div>
 
-								<h3 class="ooi-sectie">hoe</h3>
+								<h3 class="ooi-sectie">Hoe?</h3>
 
 								<div class="ooi-rij ooi-rij-twee">
 									<figure class="ooi-blok">
@@ -997,7 +1238,7 @@
 									</figure>
 								</div>
 
-								<h3 class="ooi-sectie">gevolg</h3>
+								<h3 class="ooi-sectie">Gevolg</h3>
 
 								<div class="ooi-rij ooi-rij-drie">
 									<figure class="ooi-blok">
@@ -1029,7 +1270,7 @@
 							<h3 class="paginatitel">Video</h3>
 
 		<!-- stopmotion-->		
-					<h3 class="paginatitel">stopmotion.</h3>
+					<h3 class="video-kop">stopmotion.</h3>
 					<div class="video-rij">
 						<video controls class="video">	
 							<source src="Beeld/video/Freespaceklein.mp4" type="video/mp4">
@@ -1037,7 +1278,7 @@
 						</video>
 						<div class="video-rij-tekst">
 							<h3>jaren 80 speelgoed reclame</h3>
-							<p class="uitlegonderproject">[uitleg over dit project.]</p>
+							<p class="uitlegonderproject">Deze stopmotion is een ode aan het plezier van spelen met speelgoed. Handgemaakt in samenwerking met een team van innerlijke kinderen :)</p>
 						</div>
 					</div>
 					<div class="video-rij video-rij-omgekeerd">
@@ -1047,12 +1288,12 @@
 						</video>
 						<div class="video-rij-tekst">
 							<h3>animation project</h3>
-							<p class="uitlegonderproject">[uitleg over dit project.]</p>
+							<p class="uitlegonderproject">Een stopmotion voor kinderen waar zij zelf geluid aan kunnen toevoegen, in samenwerking met een museum in Duitsland en de LAB University Finland. Volledig analoog met papier en fotocamera. Een verhaal over gekke vormen in een geometriche wereld.</p>
 						</div>
 					</div>
 
 		<!-- animatie-->	
-					<h3 class="paginatitel">animatie.</h3>
+					<h3 class="video-kop">animatie.</h3>
 					<div class="video-rij">
 						<video controls class="video">	
 							<source src="Beeld/video/laura20klein.mp4" type="video/mp4">
@@ -1075,14 +1316,13 @@
 					</div>
 
 			<!-- korte animaties-->		
-					<h3>korte animatie.</h3>					
+					<h3 class="video-kop">korte animatie.</h3>					
 								<!-- animatie proj kort-->
 								<video controls class="video">	
 									<source src="Beeld/video/Face.mp4" type="video/mov">
 									<source src="Beeld/video/Face.mp4" type="video/ogg">
 									Your browser does not support the video tag.
 								  </video>
-								  <h3 class="kopjeVideo">Is there something on my face - eern dags animatie project</h3>
 								  <p class="uitlegonderproject">	<p>	
 
 						<div class="videocategorien">						
@@ -1108,10 +1348,11 @@
 	
 	<!-- gamedesign-->							
 						<div id="gamedesign" class="tabcontent">
-							<h3>Whats bugging?</h3>
+							<h3 class="paginatitel">What's Buggin'</h3>
 							<p class="uitleg">
+								Een mobilegame die ik samen met 3 medestudenten heb gemaakt tijdens mijn Minor Game-Design in Finland.				<br><br>
 								BREW POTIONS & HELP BUGS WITH THEIR PROBLEMS
-								<br><br>
+								<br>
 								A wonderful cozy game where a witch the size of a button sets out to help the lil critters in the forest. They all have their mental health struggles: Time management, creative blocks, you name it. But this little witch can brew magical potions, using ingrediënts with strange effects like cloud moss that calms the mind, or lightbulb flowers for bright ideas. Enjoy a whimsical journey!
 							</p>
 							<div class="fotospaginas" class="breederijfotos">
@@ -1134,7 +1375,7 @@
 
 	<!-- 3D-->								
 						<div id="drieD" class="tabcontent">
-							<h3>3D.</h3>
+							<h3 class="paginatitel">3D modeling</h3>
 							<p class="uitleg">
 								<!-- bla bla bla -->
 							</p>
@@ -1205,9 +1446,9 @@
 	<!-- groen geluk -->
 	
 							<div id="groengeluk" class="tabcontent">
-								<h3>Groen Geluk.</h3>
+								<h3 class="paginatitel">Groen Geluk.</h3>
 								<p class="uitleg">
-									Samen met een redactie stagiair heb ik dit boekje gemaakt van begin tot eind; concept, inhoud, structuur, styleguide, vormgeving, illustraties. Voor het magazine TuinSeizoen, Vipmedia, heeft weken in alle supermarkten en boekwinkels van Nederland en België gelegen.
+									Samen met een redactie stagiair heb ik dit boekje gemaakt van begin tot eind; concept, inhoud, structuur, styleguide, vormgeving, illustraties. Het boekje heeft weken in alle supermarkten en boekwinkels van Nederland en België gelegen.
 									<br><br>
 									“Met de inhoud van dit boekje hopen wij je te begeleiden op jouw weg naar rust, ontspanning en geluk.”								
 								</p>
@@ -1219,17 +1460,17 @@
 										<img src="Beeld/Groengeluk/GroenGeluk5.jpg" alt="groengeluk" style="width: 49%;">										
 									</div>	
 
-									<div class="fotosnaastonevenboven">
+									<div class="fotosnaast">
 										<img src="Beeld/Groengeluk/binnenwerk10.png" alt="groengeluk" style="width: 49%;">
 										<img src="Beeld/Groengeluk/binnenwerk48.png" alt="groengeluk" style="width: 49%;">										
 									</div>	
 
-									<div class="fotosnaastonevenboven">
+									<div class="fotosnaast">
 										<img src="Beeld/Groengeluk/binnenwerk96.png" alt="groengeluk" style="width: 49%;">
 										<img src="Beeld/Groengeluk/binnenwerk16.png" alt="groengeluk" style="width: 49%;">										
 									</div>	
 
-									<div class="fotosnaastonevenboven">
+									<div class="fotosnaast">
 										<img src="Beeld/Groengeluk/binnenwerk62.png" alt="groengeluk" style="width: 49%;">
 										<img src="Beeld/Groengeluk/binnenwerk86.png" alt="groengeluk" style="width: 49%;">										
 									</div>	
@@ -1248,257 +1489,8 @@
 
 							</div></div>
 						
-	<!-- CMD-->		
-						<div id="CMDprojecten" class="tabcontent">
-							<h3>CMD projecten.</h3>
-							<p class="uitleg">
-								Communication and Multimedia Design, Avans University of Applied Sciences
-							</p>
-							<figure>
-								<div class="fotorij">
-									<div>
-										<img src="Beeldcmd/mdes/logo.png" alt="MDES" class="select" style="cursor:pointer;" onclick="showMDESContent()">
-										<figcaption>Pop-up store.</figcaption>
-									</div>
-									<div>
-									<img src="Beeldcmd/workgeneratief/omslagkast.png" alt="generatief" class="select" style="cursor:pointer;" onclick="showgeneratiefContent()">
-									<figcaption>generative design.</figcaption>
-									</div>
-									<div>
-									<img src="Beeldcmd/futu/omslag.jpg" alt="FUTU" class="select" style="cursor:pointer;" onclick="showFUTUContent()">
-									<figcaption>future concepts.</figcaption>
-									</div>
-								</div>
-								<div class="fotorij">
-									<div>
-									<img src="Beeldcmd/READ/omslagREAD.jpg" alt="READ" class="select" style="cursor:pointer;" onclick="showREADContent()">
-									<figcaption>READ.</figcaption>
-									</div>
-									<div>
-									<img src="Beeldcmd/bibliotheek/omslagbieb.png" alt="Bieb" class="select" style="cursor:pointer;" onclick="showBiebContent()"">
-									<figcaption>bieb.</figcaption>
-									</div>
-									<div>
-									<img src="Beeldcmd/PMED/omslagPMED.png" alt="PMED" class="select" style="cursor:pointer;" onclick="showPMEDContent()">
-									<figcaption>PMED.</figcaption>
-									</div>
-								</div>
-								</figure>
-							</div>
-	
-					<!--cmd inhoud--> 
-									<div id="MDES-content" style="display:none;" class="tabcontent">
-										<h3 class="kopje">Pop-up Store</h3>
-										<p class="uitlegonderproject">
-											Vak uitleg: <br>
-											Experience Design <br>
-											Je ontwerpt je eigen pop up store. Verzint een uitdagend concept. Je bent helemaal vrij in waar de store over gaat en wat je er gaat verkopen.
-											Werk de totaalervaring van een (potentiële) klant uit in een customer journey. Visualiseer de belangrijkste touchpoints. De bedoeling is mensen op een actieve manier aan te spreken en in aanraking te brengen met het aangeboden product of dienst.
-											<br><br>
-											Mobile Design <br>
-											Het tweede deel draait om Mobile Design, dus het ontwerpen voor apps en wearables. Binnen jouw pop-up store ervaring maak je gebruik van een zelf ontworpen app. Je werkt de vormgeving, functionaliteit en navigatie van de app uit voor gebruiksvriendelijk mobiel gebruik.
-											
-											
-											
-											</p>
-											<div class="breederijfotos">
-										<img src="Beeldcmd/mdes/mdes01.png" alt="huisjebuiten" >
-										<img src="Beeldcmd/mdes/mdes02.png" alt="huisjebuiten" >
-										<img src="Beeldcmd/mdes/mdes03.png" alt="huisjebuiten">
-										<img src="Beeldcmd/mdes/mdes04.png" alt="huisjebuiten" >
-										<img src="Beeldcmd/mdes/mdes05.png" alt="huisjebuiten">
-										<img src="Beeldcmd/mdes/mdes06.png" alt="huisjebuiten">
-										<img src="Beeldcmd/mdes/mdes07.png" alt="huisjebuiten" >
-										<img src="Beeldcmd/mdes/mdes08.png" alt="huisjebuiten" >
-										<img src="Beeldcmd/mdes/mdes09.png" alt="huisjebuiten" >
-										<img src="Beeldcmd/mdes/mdes10.png" alt="huisjebuiten" >
-										<img src="Beeldcmd/mdes/mdes11.png" alt="huisjebuiten">
-										<img src="Beeldcmd/mdes/mdes12.png" alt="huisjebuiten" >
-										<img src="Beeldcmd/mdes/mdes13.png" alt="huisjebuiten">
-										</div>
-									</div>
-									<!-- generative design content -->
-									<div id="generatief-content" style="display:none;" class="tabcontent">
-										<h3 class="kopje">Generative Design</h3>
-											<p class="uitlegonderproject">
-												Met Generative Design maak je gebruik van vaststaande systemen,
-												regelsets of algoritmes binnen het ontwerpproces om gevarieerde output
-												te genereren. In het proces werk je met navolgbare regels en variabelen
-												waarbinnen beperkte keuzes gemaakt kunnen worden. “Als dit, dan dat”.
-												Het proces kan zowel analoog als digitaal plaatsvinden. Generative
-												Design volgt een iteratief ontwerpproces waarin de ontwerper
-												verschillende versies (regels, variabelen, inputs, outputs) test voordat
-												een uiteindelijk systeem wordt toegepast</p>
-												<div class="breederijfotos">
-											<img src="Beeldcmd/workgeneratief/generatief3.png" alt="huisjebuiten">
-											<img src="Beeldcmd/workgeneratief/generatief4.png" alt="huisjebuiten">
-											<img src="Beeldcmd/workgeneratief/generatief5.png" alt="huisjebuiten" >
-											<img src="Beeldcmd/workgeneratief/generatief6.png" alt="huisjebuiten" >
-											<img src="Beeldcmd/workgeneratief/generatief7.png" alt="huisjebuiten" >
-											<img src="Beeldcmd/workgeneratief/generatief8.png" alt="huisjebuiten" >
-											<img src="Beeldcmd/workgeneratief/generatief9.png" alt="huisjebuiten" >
-											</div>
-									</div>
-									
-									<!-- futu content -->
-									<div id="FUTU-content" style="display:none;" class="tabcontent">
-										<h3 class="kopje">Future Concepts</h3>
-											<p class="uitlegonderproject">
-												Ontwerpers moeten in staat zijn om te bepalen hoe toekomstige ontwikkelingen invloed hebben op hun werk. Maar ook: hoe hun ontwerpen kunnen bijdragen aan mogelijke of gewenste toekomstige ontwikkelingen. In deze module breng je (jouw visie op) de toekomst in kaart en ontwerp je toekomstscenario’s waarin door jou bedachte producten medebepalend zijn. Behandelde onderwerpen in deze module zijn: speculative design, design fiction, scenario planning, artificial intelligence en bio-based design
-											</p>
-												<div class="fotospaginas">
-													
-													<div class="fotosnaastoneven">
-														<img src="Beeldcmd/futu/01links.jpg" alt="futu" style="width: 68.8%; height: auto;">
-														<img src="Beeldcmd/futu/01rechts.jpg" alt="futu" style="width: 30.5%; height: auto;">
-													</div>	
-												
-													<div class="fotosnaastoneven">
-														<img src="Beeldcmd/futu/02links.jpg" alt="futu" style="width: 30.5%; height: auto;">
-														<img src="Beeldcmd/futu/02rechts.jpg" alt="futu" style="width: 68.8%; height: auto;">
-													</div>	
 
-													<div class="fotosnaast">
-														<img src="Beeldcmd/futu/03lniks.jpg" alt="futu" style="width: 32%;">
-														<img src="Beeldcmd/futu/03midden.jpg" alt="futu" style="width:32%;">
-														<img src="Beeldcmd/futu/03rechts.jpg" alt="futu" style="width: 32%;">
-													</div>	
-
-													<div class="fotosnaast">
-														<img src="Beeldcmd/futu/04links.jpg" alt="futu" style="width: 49%; height: auto;">
-														<img src="Beeldcmd/futu/04rechts.jpg" alt="futu" style="width: 49%; height: auto;">
-													</div>	
-
-													<img src="Beeldcmd/futu/05alleen.jpg" alt="readtool" style="width: 100%" class="fotosnaast4boven">
-												
-													<div class="fotosnaastoneven">
-														<img src="Beeldcmd/futu/06links.jpg" alt="futu" style="width: 30.5%; height: auto;">
-														<img src="Beeldcmd/futu/06rechts.jpg" alt="futu" style="width: 68.8%; height: auto;">
-													</div>
-
-													<div class="fotosnaast">
-														<img src="Beeldcmd/futu/08extralinks.png" alt="futu" style="width: 32%;">
-														<img src="Beeldcmd/futu/08extramidden.png" alt="futu" style="width:36%;" height="auto">
-														<img src="Beeldcmd/futu/08extrarechts.png" alt="futu" style="width: 32%;">
-													</div>	
-
-												</div>
-
-
-
-									</div>
-									
-									<!-- read content -->
-									<div id="READ-content" style="display:none;" class="tabcontent">
-										<h3 class="kopje">Research in Adaptivity</h3>
-											<p class="uitlegonderproject">
-												In dit vak doet de student creatief onderzoek op basis van een experimentele aanpak. Door middel van experimenten met een zelfgemaakte research tool en het zoeken en verwerken van bronnen. Onderzoek voor dit vak richt zich op het adaptieve karakter van de mens, de zintuigelijke waarneming en de relatie tussen mens en technologie. Ook leert de student conclusies te verbinden aan de gevonden resultaten en dit systematisch te verwerken in een research poster.
-
-											</p>
-												<img src="Beeldcmd/READ/READ1.png" alt="huisjebuiten" style="width:60%;">
-											<div class="fotospaginas">
-												<div class="fotosnaast">
-													<img src="Beeldcmd/READ/01handlinks.jpg" alt="readtool" style="width: 32%;">
-													<img src="Beeldcmd/READ/01handmidden.jpg" alt="readtool" style="width:32%;">
-													<img src="Beeldcmd/READ/01handrechts.jpg" alt="readtool" style="width: 32%;">
-												</div>	
-
-													<img src="Beeldcmd/READ/02handschuin.jpg" alt="readtool" style="width: 100%" class="fotosnaast4boven">
-
-													<div class="fotosnaast">
-														<img src="Beeldcmd/READ/03handlinks.jpg" alt="readtool" style="width: 49%;">
-														<img src="Beeldcmd/READ/03handvooruit.jpg" alt="readtool" style="width: 49%;">
-													</div>	
-
-													<div class="fotosnaast4boven">
-														<img src="Beeldcmd/READ/04toollinks.jpg" alt="readtool" style="width: 49%;">
-														<img src="Beeldcmd/READ/04tool.jpg" alt="readtool" style="width: 49%;">
-													</div>	
-
-													<div class="fotosnaast">
-														<img src="Beeldcmd/READ/05klitteband.jpg" alt="readtool" style="width: 49%;">
-														<img src="Beeldcmd/READ/05vullinfrechts.jpg" alt="readtool" style="width: 49%;">
-													</div>	
-											</div>		
-											<div class="breederijfotos">
-												<img src="Beeldcmd/READ/READA03.png" alt="huisjebuiten" >
-												<img src="Beeldcmd/READ/READA06.png" alt="huisjebuiten"  >
-												<img src="Beeldcmd/READ/READA19.png" alt="huisjebuiten" >
-											</div>
-									</div>
-									
-									<!-- bieb content -->
-									<div id="Bieb-content" style="display:none;" class="tabcontent">
-										<h3 class="kopje">Bibliotheek Midden-Brabant</h3>
-											<p class="uitlegonderproject">sorry, dit pagina is nog niet af</p>
-												<img src="Beeldcmd/bibliotheek/omslagbieb.png" alt="Biebfoto" style="width:60%;">
-									</div>
-									
-									<!-- pmed content -->
-									<div id="PMED-content" style="display:none;" class="tabcontent">
-										<h3 class="kopje">PMED</h3>
-											<p class="uitlegonderproject">
-												De graphics en audio voor Playful Interaction ontwikkele 
-												<br><br>
-												In deze module leer je de basis om grafische en auditieve onderdelen
-												voor Playful Interaction te ontwikkelen. Keuzes moeten worden
-												onderbouwd en mogelijkheden tot experiment komen aan bo
-											</p>
-
-												<video width="100%" height="auto" controls class="video">	
-													<source src="Beeld/video/Eindversie1.mp4" type="video/mov">
-													<source src="Beeld/video/Eindversie1.mp4" type="video/ogg">
-													Your browser does not support the video tag.
-												  </video>
-												  <h3 class="kopjeVideo">Berry's koffie café</h3>
-												  <p class="uitlegonderproject">sorry, dit pagina is nog niet af
-												  </p>	
-									</div>
-						
-
-	<!-- hobby-->			
-							<div id="hobby" class="tabcontent">
-								<h3>Hobby.</h3>
-								<p class="uitleg">
-									sorry,deze pagina is nog niet af
-								</p>
-
-
-								<h3>Borduur eendjes.</h3>
-								<p class="uitleg">
-									<!-- bla bla bla -->
-								</p>
-
-									<div class="fotospaginas">
-
-										<div class="fotosnaast4boven">
-											<img src="Beeld/hobby/Heend1.png" alt="eend1" style="width: 32%; height: auto;">
-											<img src="Beeld/hobby/Heend2.png" alt="eend2" style="width: 32%; height: auto;">
-											<img src="Beeld/hobby/Heend3.png" alt="eend3" style="width: 32%; height: auto;">
-										</div>	
-
-								</div>
-							<!--
-								<h3>sjaal.</h3>
-								<p class="uitleg">
-									Feyenoord sjaal voor mijn peetoom
-
-								</p>
-									<div class="fotospaginas">
-										<img src="Beeld/hobby/Hfeyenoordsjaal1.png" alt="feyenoord" style="width: 100%; height: auto;" class="fotosnaast4boven">
-
-										<div class="fotosnaast4boven">
-											<img src="Beeld/hobby/Hfeyenoordsjaal2.png" alt="feyenoord" style="width: 24%; height: auto;">
-											<img src="Beeld/hobby/Hfeyenoordsjaal3.png" alt="feyenoord" style="width: 24%; height: auto;">
-											<img src="Beeld/hobby/Hfeyenoordsjaal4.png" alt="feyenoord" style="width: 24%; height: auto;">
-											<img src="Beeld/hobby/Hfeyenoordsjaal5.png" alt="feyenoord" style="width: 24%; height: auto;">
-										</div>	
-
-
-								</div>
-							-->
-							</div>
-				
+							
 
 	<!-- overmij-->		
 						<div id="overmij" class="tabcontent">
@@ -1506,9 +1498,24 @@
 							<div class="overmij-layout">
 								<div class="overmij-tekst">
 									<p class="overmij-groet">Hellooo,</p>
-									<p class="overmij-lead">Een paar leuke feitjes over mij,</p>
-									
-									<p class="overmij-label">Hobbies:</p>
+				<!--<p class="overmij-lead">Een paar leuke feitjes over mij,</p>-->	
+									<div class="overmij-feitjes">
+										<p>
+											Mijn naam is Nadua. Ik ben 21 jaar oud, maar als je me kent, zou je misschien denken dat ik negentig ben. Ik houd van lezen, haken/breien/naaien, bakken, tekenen en documentaires kijken. Ondanks mijn "oma-kant" ben ik ook heel avontuurlijk. Ik ga graag hardlopen, fietsen, wandelen in het park en nieuwe steden ontdekken.
+<br><br>
+Koud weer is mijn favoriet, omdat ik dan lekker binnen kan lezen op de bank met een kopje warme chocolade melk en de kaarsjes aan. Mensen zouden mij omschrijven als geduldig, positief en af en toe een beetje gek. Ik ben graag alleen, maar ik vind het ook leuk om nieuwe mensen te leren kennen.
+<br><br>
+Mijn grootste droom voor de toekomst is om in een knus huisje midden in een bos in Noorwegen te wonen, met een eigen atelier waar ik heel de dag creatief bezig kan zijn en een grote tuin vol zelfgekweekte groenten en fruit.
+										</p>
+								<!--		<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Ik <strong>journal iedere dag</strong>, soms is het meer een dagboek, maar ik kan hierdoor heel goed reflecteren over de dag en mijn <strong>gedachtes een plekje geven</strong> om met een rustig hoofd te slapen.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Ik heb na honderden kilometers op mijn versnellingsloze stadsfiets toch toegegeven en een hele <strong>oude retro racefiets</strong> aangeschaft genaamd Japie aka Vlugge Japie (het achterneefje van Snelle Jelle), waar ik nu ontzettend van geniet. Inmiddels ben ik hierdoor ook met plezier <strong>beginnend fietsenmaker</strong> geworden.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Ik <strong>hou enorm van lezen</strong>, iets wat ik vroeger nooit dacht te kunnen zeggen, maar nu ga ik nooit de deur uit zonder boek. Ik lees met plezier <strong>boeken meermaals</strong>; het scheelt want mijn geheugen is in dat opzicht niet gigantisch denderend, dus ieder half jaar heb ik weer een nieuwe boekenkast die ik opnieuw kan lezen.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Alles wat met draad is vind ik enorm leuk. Ik ben al jaren een <strong>fanatieke haker en breier</strong>, en daar is een naaimachine bij gekomen. Voor alles wat ik nodig heb verzin ik wel een manier om het eerst zelf te maken. Is het te ingewikkeld, dan verzin ik wel een manier dat ik het toch kan maken, want een patroon of tutorial daar ben ik <strong>iets te eigenwijs</strong> voor.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Knutselen doe ik niet alleen graag met de hand maar ook op mijn laptop. Voor iedere verjaardag of speciale gelegenheid creëer ik graag <strong>iets persoonlijks</strong> voor mijn vrienden en familie: een bedrukte mok, t-shirt of puzzel. Ik ben vaste klant bij de HEMA-fotoservice. Vaak door middel van foto’s die ik heb verzameld, <strong>een vleugje humor</strong> en Photoshop, knutsel ik van alles in elkaar.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Mijn guilty pleasures zijn <strong>documentaires en puzzelboekjes</strong>. Ik heb ongeveer alle documentaires van alle streamingdiensten afgeplukt en gekeken, met als favoriet ‘Free Solo’ en 'The Social Dilemma'. Ik speel <strong>iedere dag alle puzzels</strong> in de Algemeen Dagblad-app, maar mijn favoriete puzzel is en blijft toch altijd de tectonic.</span></p>
+										<p><img src="beeldthumbnails/ster.png" alt="" class="ster"><span>Ik kijk graag tv, en dan bedoel ik niet Netflix of Disney+, maar <strong>echte Nederlandse tv</strong>. Mijn all-time favorieten zijn: Heel Holland Bakt, Boer Zoekt Vrouw, Expeditie Robinson, Wie is de Mol, De Slimste Mens en B&amp;B/Winter vol Liefde.</span></p>
+								-->			</div>
+							<!--		<p class="overmij-label">Hobbies:</p>
 									<div class="hobby-iconen">
 										<img src="beeldthumbnails/icon/boek.png" alt="lezen">
 										<img src="beeldthumbnails/icon/wol.png" alt="breien">
@@ -1516,7 +1523,7 @@
 										<img src="beeldthumbnails/icon/hardlopen.png" alt="hardlopen">
 										<img src="beeldthumbnails/icon/camera.png" alt="fotografie">
 										<img src="beeldthumbnails/icon/documontaire.png" alt="documentaires">
-									</div>
+									</div> -->
 									<p class="overmij-groet overmij-afscheid">liefs,<br>Nadua</p>
 									<p class="overmij-label">Contact:</p>
 									<div class="overmij-contact">
@@ -1542,12 +1549,9 @@
 					</address>
 				</footer>
 			</div>
-			</div>
 		</div>
 
 		</main>
 
 	</body>
 </html>
-
-
