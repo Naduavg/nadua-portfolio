@@ -293,6 +293,10 @@ p{
   flex: 0 0 auto;
 }
 
+.home-naam {
+  display: none;
+}
+
 .home-collage {
   position: relative;
   width: min(62vw, calc((100dvh - 16vw) * 1.63));
@@ -504,8 +508,10 @@ p{
   inset: 0;
   background-color: #bcc955;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.2vw;
   z-index: 9999;
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
@@ -518,6 +524,16 @@ p{
 .preloader-logo {
   width: 20vw;
   max-width: 200px;
+}
+
+.preloader-laden {
+  display: none;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 700;
+  color: #1a2d4f;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .header-container {
@@ -795,28 +811,6 @@ border: 8px solid #ffffff;
 
 /* Overview grids: same 3:2 crop as beeldthumbnails */
 .thumbnail-grid .select {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-#CMDprojecten figure {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5vw 2vw;
-}
-
-#CMDprojecten .fotorij {
-  display: contents;
-}
-
-#CMDprojecten figcaption {
-  color: #67752f;
-}
-
-#CMDprojecten figure .select {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
@@ -1232,7 +1226,7 @@ video:-webkit-full-screen {
 .ps-kop {
   font-family: "Chelsea Market", cursive;
   font-weight: 400;
-  color: #1a2d4f;
+  color: #bcc955;
   font-size: 1.6vw;
   letter-spacing: 0.02em;
   text-align: left;
@@ -1241,7 +1235,7 @@ video:-webkit-full-screen {
 
 .ps-tekst {
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #1a2d4f;
   font-size: 1.1vw;
   line-height: 1.45;
   text-align: left;
@@ -1598,81 +1592,6 @@ video:-webkit-full-screen {
   object-fit: cover;
 }
 
-/* InterNetTeVeel */
-.int-pagina {
-  width: auto;
-  margin: 0 6vw 4vw;
-  display: flex;
-  flex-direction: column;
-  gap: 2.2vw;
-}
-
-.int-pagina .paginatitel {
-  margin-bottom: 0;
-}
-
-.int-rij {
-  width: 100%;
-  display: flex;
-  align-items: stretch;
-  gap: 1.2vw;
-}
-
-.int-rij img,
-.int-rij video {
-  display: block;
-  border-radius: 0.5vw;
-  min-width: 0;
-}
-
-.int-rij-posters img {
-  flex: 1 1 0;
-  width: 0;
-  height: auto;
-  object-fit: contain;
-}
-
-.int-rij-twee img {
-  flex: 1 1 0;
-  width: 0;
-  height: auto;
-  object-fit: contain;
-}
-
-.int-rij-illu img:first-child {
-  flex: 1.35 1 0;
-}
-
-.int-rij-illu img:last-child {
-  flex: 0.85 1 0;
-}
-
-.int-storyboard {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1vw;
-}
-
-.int-storyboard img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0.4vw;
-  object-fit: cover;
-}
-
-.int-rij-video {
-  align-items: flex-start;
-}
-
-.int-video {
-  flex: 1 1 0;
-  width: 0;
-  max-height: 36vw;
-  object-fit: contain;
-  background: #0f1a2e;
-}
-
 /* Out Of It */
 .ooi-pagina {
   width: auto;
@@ -2016,26 +1935,33 @@ video:-webkit-full-screen {
 
 .balktekst{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 84%;
+  width: 100%;
 }
 
 .balktekst p {
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .balktekststyle{
   font-family: "Londrina Solid", sans-serif;
-font-weight: 500;
-font-style: normal;
+  font-weight: 500;
+  font-style: normal;
   font-size: 2vw;
   margin: 0;
   line-height: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 #scroll-bar.visible {
@@ -2255,7 +2181,6 @@ justify-content: space-around;
   #fotografie figure .select,
   #design figure .select,
   #projecten figure .select,
-  #CMDprojecten figure .select,
   .thumbnail-grid .select {
     width: 100% !important;
     aspect-ratio: 3 / 2;
@@ -2311,8 +2236,9 @@ justify-content: space-around;
   }
   
   .balktekststyle{
-    font-size: 5vw;
-    margin: 2vw;
+    font-size: 4.2vw;
+    margin: 2vw 0;
+    letter-spacing: 0.14em;
   }
 
 
@@ -2373,29 +2299,41 @@ justify-content: space-around;
     text-align: center;
   }
 
+  .home-naam {
+    display: block;
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 700;
+    color: #1a2d4f;
+    font-size: 6.5vw;
+    letter-spacing: 0.16em;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0.4em 0 0.2em;
+  }
+
   .home-collage {
-    width: min(92vw, calc((100dvh - 28vw) * 1.64));
-    height: min(56vw, calc(100dvh - 28vw));
-    margin: 2vw auto 1vw;
+    width: 94vw;
+    height: min(68vw, calc(100dvh - 42vw));
+    margin: 2vw auto;
   }
 
   .home-foto-midden {
-    width: 61.29%;
-    height: 78.95%;
-    left: 15.32%;
-    top: 3.42%;
+    width: 58%;
+    height: 72%;
+    left: 21%;
+    top: 4%;
   }
 
   .home-foto-links {
-    width: 34.68%;
-    height: 39.47%;
+    width: 42%;
+    height: 38%;
     left: 0;
-    bottom: 2.63%;
+    bottom: 0;
   }
 
   .home-foto-rechts {
-    width: 28.23%;
-    height: 63.16%;
+    width: 36%;
+    height: 52%;
     right: 0;
     top: 0;
   }
@@ -2427,6 +2365,12 @@ justify-content: space-around;
     gap: 5vw;
   }
 
+  .overmij-layout .fotoik {
+    order: -1;
+    width: 88%;
+    margin: 0 auto 2vw;
+  }
+
   .overmij-groet {
     font-size: 6vw;
   }
@@ -2440,6 +2384,10 @@ justify-content: space-around;
   .overmij-contact p,
   .overmij-contact span {
     color: #e2a651;
+  }
+
+  .overmij-label {
+    margin-top: 8vw;
   }
 
   .overmij-feitjes p,
@@ -2514,10 +2462,12 @@ justify-content: space-around;
 
   .ps-kop {
     font-size: 4.4vw;
+    color: #bcc955;
   }
 
   .ps-tekst {
     font-size: 3.4vw;
+    color: #1a2d4f;
   }
 
   .ps-breed-mid {
@@ -2648,32 +2598,6 @@ justify-content: space-around;
     font-size: 3.4vw;
   }
 
-  .int-pagina {
-    margin: 0 4vw 3vw;
-    gap: 4vw;
-  }
-
-  .int-rij,
-  .int-rij-posters,
-  .int-rij-twee,
-  .int-rij-video {
-    flex-direction: column;
-    gap: 3vw;
-  }
-
-  .int-rij-posters img,
-  .int-rij-twee img,
-  .int-video {
-    width: 100%;
-    flex: none;
-    max-height: none;
-  }
-
-  .int-storyboard {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2vw;
-  }
-
   .ooi-pagina {
     margin: 0 4vw 3vw;
     gap: 4vw;
@@ -2729,10 +2653,30 @@ justify-content: space-around;
     width: 100%;
   }
 
-  .ooi-kast-stack img {
+  .ooi-blok-kast,
+  .ooi-blok-anders {
+    width: 100%;
+  }
+
+  .ooi-blok-anders .ooi-outfit-main {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ooi-blok-kast .ooi-kast-stack {
+    height: auto;
+    width: 100%;
+    gap: 3vw;
+  }
+
+  .ooi-kast-stack img,
+  .ooi-blok-kast .ooi-kast-stack img {
     flex: none;
     height: auto;
     width: 100%;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .ooi-rij-drie > .ooi-blok img {
@@ -2780,7 +2724,7 @@ justify-content: space-around;
   }
 
   .site-name {
-    font-size: clamp(28px, 8vw, 44px);
+    font-size: clamp(36px, 11vw, 56px);
     padding-bottom: 1em;
   }
 
@@ -2795,7 +2739,8 @@ justify-content: space-around;
 
   #lightbox-image {
     max-width: 94vw;
-    max-height: 80vh;
+    max-height: 72vh;
+    margin-bottom: 4rem;
   }
 
   .lightbox-close,
@@ -2811,12 +2756,19 @@ justify-content: space-around;
     right: 1rem;
   }
 
+  .lightbox-prev,
+  .lightbox-next {
+    top: auto;
+    bottom: 1.2rem;
+    transform: none;
+  }
+
   .lightbox-prev {
-    left: 0.75rem;
+    left: 1.5rem;
   }
 
   .lightbox-next {
-    right: 0.75rem;
+    right: 1.5rem;
   }
 
   #scroll-bar {
@@ -2826,8 +2778,8 @@ justify-content: space-around;
   .tablink {
     width: 100%;
     text-align: left;
-    font-size: 4.5vw;
-    padding: 1.2vw 0;
+    font-size: 5.8vw;
+    padding: 1.8vw 0;
     background: none;
   }
 
@@ -2835,36 +2787,48 @@ justify-content: space-around;
     transform: none;
     width: 100%;
     text-align: left;
-    font-size: 4.5vw;
-    padding: 1.2vw 0;
+    font-size: 5.8vw;
+    padding: 1.8vw 0;
     background: none;
   }
 
   .sublink {
-    font-size: 3.6vw;
+    font-size: 4.6vw;
+    padding: 0.45em 0;
   }
 
   .menu-header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    margin-bottom: 1vw;
+    margin-bottom: 2vw;
   }
   
   .menu-title {
-    font-family: "Londrina Solid", sans-serif;
-    font-size: 7vw;
-    font-weight: 500;
+    display: none;
   }
   
   .menu-close {
     background: none;
     border: none;
-    font-size: 6vw;
+    font-size: 7vw;
     cursor: pointer;
-    color: black;
+    color: #1a2d4f;
+  }
 
+  #preloader {
+    gap: 5vw;
+  }
+
+  .preloader-logo {
+    width: 58vw;
+    max-width: none;
+  }
+
+  .preloader-laden {
+    display: block;
+    font-size: 6vw;
   }
 
 }
