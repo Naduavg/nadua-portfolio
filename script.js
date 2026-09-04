@@ -28,11 +28,6 @@ function openPage(pageName, elmnt, color) {
     resetFotografieTab();
   }
 
-  // Reset CMD tab
-  if (pageName === "CMDprojecten") {
-    resetCMDTab();
-  }
-
   // Verberg alle sub-content
   hideAllSubContent();
 }
@@ -75,13 +70,7 @@ function showPhotoCategory(contentId) {
     "ijsland-content",
     "kastelen-content",
     "noorwegen-content",
-    "lightroom-content",
-    "MDES-content",
-    "generatief-content",
-    "FUTU-content",
-    "READ-content",
-    "Bieb-content",
-    "PMED-content"
+    "lightroom-content"
   ];
 
   const tabcontent = document.getElementsByClassName("tabcontent");
@@ -126,37 +115,6 @@ function showPhotoCategory(contentId) {
       if (uitlegP) uitlegP.style.display = "none";
     }
   }
-
-  // Verberg hoofdinhoud CMD indien van toepassing
-  if (["MDES-content", "generatief-content", "FUTU-content", "READ-content", "Bieb-content", "PMED-content"].includes(contentId)) {
-    const cmdDiv = document.getElementById("CMDprojecten");
-    if (cmdDiv) {
-      const fotorijen = cmdDiv.querySelectorAll(".fotorij");
-      fotorijen.forEach(rij => rij.style.display = "none");
-
-      const h3 = cmdDiv.querySelector("h3");
-      if (h3) h3.style.display = "none";
-
-      const uitlegP = cmdDiv.querySelector(".uitleg");
-      if (uitlegP) uitlegP.style.display = "none";
-    }
-  }
-}
-
-// CMD functionaliteit
-
-function resetCMDTab() {
-  const cmdDiv = document.getElementById("CMDprojecten");
-
-  // Laat fotorijen, titel en uitleg zien
-  const fotorijen = cmdDiv.querySelectorAll(".fotorij");
-  fotorijen.forEach(rij => rij.style.display = "flex");
-
-  const h3 = cmdDiv.querySelector("h3");
-  if (h3) h3.style.display = "block";
-
-  const uitlegP = cmdDiv.querySelector(".uitleg");
-  if (uitlegP) uitlegP.style.display = "block";
 }
 
 // Verberg alles bij tab wissel
@@ -170,13 +128,7 @@ function hideAllSubContent() {
     "ijsland-content",
     "kastelen-content",
     "noorwegen-content",
-    "lightroom-content",
-    "MDES-content",
-    "generatief-content",
-    "FUTU-content",
-    "READ-content",
-    "Bieb-content",
-    "PMED-content"
+    "lightroom-content"
   ];
 
   allContentIds.forEach(id => {
@@ -385,32 +337,6 @@ function showNoorwegenContent() {
 
 function showLightroomContent() {
   showPhotoCategory("lightroom-content");
-}
-
-// Knop-functies CMD
-
-function showMDESContent() {
-  showPhotoCategory("MDES-content");
-}
-
-function showgeneratiefContent() {
-  showPhotoCategory("generatief-content");
-}
-
-function showFUTUContent() {
-  showPhotoCategory("FUTU-content");
-}
-
-function showREADContent() {
-  showPhotoCategory("READ-content");
-}
-
-function showBiebContent() {
-  showPhotoCategory("Bieb-content");
-}
-
-function showPMEDContent() {
-  showPhotoCategory("PMED-content");
 }
 
 
