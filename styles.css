@@ -376,7 +376,7 @@ p{
   font-weight: 700;
   color: #1a2d4f;
   font-size: 1.8vw;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.28em;
   line-height: 1.15;
 }
 
@@ -430,30 +430,15 @@ p{
   margin: 0.6vw 0 0;
 }
 
-.hobby-iconen {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.1em;
-  margin: 0.2em 0 0.4em;
-}
-
-.hobby-iconen img {
-  height: 2.4vw;
-  width: auto;
-  max-width: 3.2vw;
-  object-fit: contain;
-  border-radius: 0;
-}
-
 .overmij-afscheid {
   margin-top: 0.8vw;
+    margin-bottom: 5vw;
+
 }
 
 .overmij-contact {
   display: flex;
   flex-direction: column;
-  gap: 0.8vw;
 }
 
 .overmij-contact p {
@@ -462,7 +447,6 @@ p{
   font-size: 1.05vw;
   line-height: 1.45;
   text-align: left;
-  margin: 0;
 }
 
 .overmij-contact span {
@@ -816,11 +800,18 @@ border: 8px solid #ffffff;
   gap: 1.6vw;
   max-width: 68vw;
   margin: 0 auto 2vw;
+  font-size: 1.5vw;
 }
 
 .thumbnail-grid .fotorij-drie {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1.6vw;
+}
+
+.thumbnail-grid .fotorij-twee {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.6vw;
 }
 
@@ -831,6 +822,7 @@ border: 8px solid #ffffff;
 }
 
 .thumbnail-grid .fotorij-drie > div,
+.thumbnail-grid .fotorij-twee > div,
 #projecten .thumbnail-grid .fotorij-vier > div {
   min-width: 0;
 }
@@ -891,7 +883,7 @@ letter-spacing: 0.28em;
 
 .uitlegonderproject{
   font-family: brevia, sans-serif;
-  color: #bcc955;
+  color: #0f1a2e;
   font-size: 110%;
   margin-bottom: 5%;
   letter-spacing: 1px;
@@ -970,7 +962,7 @@ video:-webkit-full-screen {
 .video-rij-tekst h3 {
   font-family: "Londrina Solid", sans-serif;
     font-weight: 700;
- 	 color: #67752f;
+ 	 color: #bcc955;
     font-size: 1.7vw;
     letter-spacing: 0.04em;
     margin: 0 0 0.35em;
@@ -2139,7 +2131,8 @@ justify-content: space-around;
     gap: 3vw;
   }
 
-  .thumbnail-grid .fotorij-drie {
+  .thumbnail-grid .fotorij-drie,
+  .thumbnail-grid .fotorij-twee {
     grid-template-columns: repeat(2, 1fr);
     gap: 3vw;
   }
