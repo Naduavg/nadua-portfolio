@@ -1,3 +1,9 @@
+function setSidebarVoetVisible(visible) {
+  const voet = document.querySelector(".sidebar-voet");
+  if (!voet) return;
+  voet.hidden = !visible;
+}
+
 // Algemene tab wisselaar
 function openPage(pageName, elmnt, color) {
   // Verberg alle tabbladen
@@ -30,6 +36,9 @@ function openPage(pageName, elmnt, color) {
 
   // Verberg alle sub-content
   hideAllSubContent();
+
+  // Voet alleen tonen buiten de home
+  setSidebarVoetVisible(pageName !== "home");
 }
 
 function openSection(pageName, elmnt) {
@@ -115,6 +124,8 @@ function showPhotoCategory(contentId) {
       if (uitlegP) uitlegP.style.display = "none";
     }
   }
+
+  setSidebarVoetVisible(true);
 }
 
 // Verberg alles bij tab wissel
