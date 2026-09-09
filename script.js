@@ -182,20 +182,44 @@ if (document.fonts && document.fonts.ready) {
   document.fonts.ready.then(matchSiteNameWidth);
 }
 
-// Pagina standaard starten met fotografie en laadscherm verbergen
+// Start home + lightbox zodra DOM klaar is; preloader wacht niet op alle assets
+function hidePreloader() {
+  const preloader = document.getElementById("preloader");
+  if (!preloader || preloader.dataset.done === "1") return;
+  preloader.dataset.done = "1";
+  preloader.classList.add("hidden");
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 400);
+}
 
-window.addEventListener("load", function () {
+function whenImageReady(img) {
+  if (!img) return Promise.resolve();
+  if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+  return new Promise(resolve => {
+    const done = () => resolve();
+    img.addEventListener("load", done, { once: true });
+    img.addEventListener("error", done, { once: true });
+  });
+}
+
+function hidePreloaderWhenReady() {
+  const critical = [
+    document.querySelector(".preloader-logo"),
+    ...document.querySelectorAll(".home-foto")
+  ];
+
+  const ready = Promise.all(critical.map(whenImageReady));
+  const timeout = new Promise(resolve => setTimeout(resolve, 2500));
+
+  Promise.race([ready, timeout]).then(hidePreloader);
+}
+
+function initSite() {
   const defaultTab = document.getElementById("defaultOpen");
   if (defaultTab) defaultTab.click();
   matchSiteNameWidth();
-
-  const preloader = document.getElementById("preloader");
-  if (preloader) {
-    preloader.classList.add("hidden");
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 500);
-  }
+  hidePreloaderWhenReady();
 
   // Fullscreen image viewer (lightbox)
   const lightbox = document.getElementById("lightbox");
@@ -314,7 +338,13 @@ window.addEventListener("load", function () {
 
     updateNavButtons();
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSite);
+} else {
+  initSite();
+}
 
 // Knop-functies fotografie
 
