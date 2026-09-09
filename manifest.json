@@ -1,34 +1,36 @@
- {
-   "name": "Nadua van Gorkum",
-   "short_name": "NvG",
-   "start_url": "index.html",
-   "scope": ".",
-   "display": "standalone",
-   "background_color": "#ffffff",
-   "theme_color": "ffffff",
-   "orientation": "portrait",
-   "icons": [
-     {
-       "src": "beeldthumbnails/header/illu.png",
+{
+  "name": "Nadua van Gorkum",
+  "short_name": "NvG",
+  "start_url": "index.html",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "beeldthumbnails/lettern.png",
       "type": "image/png",
-       "sizes": "48x48"
-     },
-     {
-       "src": "beeldthumbnails/header/illu.png",
-      "type": "image/png",
-       "sizes": "96x96"
-     },
-     {
-       "src": "beeldthumbnails/header/illu.png",
-       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "48x48",
+      "purpose": "any"
     },
-     {
-       "src": "beeldthumbnails/header/illu.png",
+    {
+      "src": "beeldthumbnails/lettern.png",
       "type": "image/png",
-      "sizes": "512x512"
-   }
+      "sizes": "96x96",
+      "purpose": "any"
+    },
+    {
+      "src": "beeldthumbnails/lettern.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "beeldthumbnails/lettern.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
   ]
- }
-
- 
+}
