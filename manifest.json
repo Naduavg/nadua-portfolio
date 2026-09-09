@@ -4,21 +4,21 @@
   "start_url": "index.html",
   "scope": ".",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#1a2d4f",
+  "theme_color": "#1a2d4f",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "https://naduavangorkum.nl/beeldthumbnails/lettern.png?v=2",
+      "src": "https://naduavangorkum.nl/beeldthumbnails/lettern.png?v=3",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "https://naduavangorkum.nl/beeldthumbnails/lettern.png?v=2",
+      "src": "https://naduavangorkum.nl/beeldthumbnails/lettern.png?v=3",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ]
 }
