@@ -1402,18 +1402,27 @@ video:-webkit-full-screen {
 }
 
 .illu-portret-onder {
-  width: calc((100% - 1.2vw) / 2);
-  max-width: 100%;
-  border-radius: 0.5vw;
-  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 1.2vw;
 }
 
 .illu-portret-onder img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  border-radius: 0;
+  border-radius: 0.5vw;
   object-fit: contain;
+  min-width: 0;
+}
+
+.illu-portret-onder img:first-child {
+  flex: calc(1539 / 2309) 1 0;
+}
+
+.illu-portret-onder img:last-child {
+  flex: calc(1042 / 846) 1 0;
 }
 
 .illu-rij-eten {
@@ -2615,6 +2624,12 @@ justify-content: space-around;
 
   .illu-portret-onder {
     width: 100%;
+    flex-direction: column;
+  }
+
+  .illu-portret-onder img:first-child,
+  .illu-portret-onder img:last-child {
+    flex: none;
   }
 
   .illu-rij-portret {
