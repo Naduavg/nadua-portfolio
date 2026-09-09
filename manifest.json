@@ -9,25 +9,13 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "beeldthumbnails/lettern.png",
-      "type": "image/png",
-      "sizes": "48x48",
-      "purpose": "any"
-    },
-    {
-      "src": "beeldthumbnails/lettern.png",
-      "type": "image/png",
-      "sizes": "96x96",
-      "purpose": "any"
-    },
-    {
-      "src": "beeldthumbnails/lettern.png",
+      "src": "https://naduavangorkum.nl/beeldthumbnails/lettern.png?v=2",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "beeldthumbnails/lettern.png",
+      "src": "https://naduavangorkum.nl/beeldthumbnails/lettern.png?v=2",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
