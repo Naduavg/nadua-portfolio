@@ -468,3 +468,31 @@ document.querySelectorAll(".tablink").forEach(link => {
 bindMobileMenuClose(".sublink");
 bindMobileMenuClose(".site-name");
 
+// Toon eerste frame als thumbnail zolang de video nog niet speelt
+function showVideoPosterFrame(video) {
+  if (!video || video.dataset.posterReady === "1") return;
+
+  const paint = () => {
+    if (video.dataset.posterReady === "1") return;
+    try {
+      if (video.currentTime < 0.05) {
+        video.currentTime = 0.05;
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  };
+
+  const markReady = () => {
+    video.dataset.posterReady = "1";
+    video.pause();
+  };
+
+  video.addEventListener("loadeddata", paint, { once: true });
+  video.addEventListener("seeked", markReady, { once: true });
+
+  if (video.readyState >= 2) paint();
+}
+
+document.querySelectorAll("video").forEach(showVideoPosterFrame);
+
